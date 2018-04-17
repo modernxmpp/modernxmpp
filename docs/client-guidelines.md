@@ -34,7 +34,7 @@ be requested at startup, but should be accessible through an advanced options in
 | Option       | Description                        |
 |:-------------|:-----------------------------------|
 | Connect host | The network hostname to connect to |
-| connect port | The network port to connect to     |
+| Connect port | The network port to connect to     |
 
 Both of the above should be automatically discovered from DNS, according to the [rules in RFC 6120](https://xmpp.org/rfcs/rfc6120.html#tcp-resolution).
 Clients that support other connection mechanisms, such as BOSH, SHOULD also implement [XEP-0156](https://xmpp.org/extensions/xep-0156.html).
@@ -66,7 +66,7 @@ The client MUST display offline contacts by default, and allow sending messages 
 
 ### Sorting of contact list
 
-The client MUST sort the contact list. Either alphabetically [TODO: lexical] or chronilogically by the time of the last message exchanged.
+The client MUST sort the contact list. Either alphabetically [TODO: lexical] or chronologically by the time of the last message exchanged.
 
 ### Visualizing status
 
