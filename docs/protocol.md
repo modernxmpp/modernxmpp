@@ -117,10 +117,22 @@ Example:
 Solving this issue may happen through an extension of Carbons (to reflect sent messages back to the sender
 with the ID added and any other additional info), or through a new MAM subscription protocol.
 
+## Mobile
+
+There are some special considerations that mobile clients can make to increase battery life and reduce
+data consumption.
+
+- XEP-0286 - informational XEP providing advice to mobile developers on efficient data usage
+- XEP-0352 - used to inform the server of whether the client is currently active/focused (which allows
+the server to prioritize traffic)
+
 ## Reliability
 
-- XEP-0184
-- XEP-0198
+In the real world, it is normal for clients to get briefly disconnected. These extensions deal with
+ensuring reliable message delivery and reporting.
+
+- XEP-0184 - end-to-end acknowledgement, i.e. the recipient has successfully received the message
+- XEP-0198 - hop-to-hop acknowledgement, and allows efficient resume of broken connections without data loss
 
 ## File transfer
 
