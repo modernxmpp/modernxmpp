@@ -50,7 +50,114 @@ hash agility and making the algorithm more robust to cache poisoning attacks.
 - XEP-0280
 - XEP-0313
 
+## Reliability
+
+- XEP-0184
+- XEP-0198
+
 ## File transfer
+
+Transferring a file from A to B is surprisingly a non-trivial problem for the internet, it seems.
+
+A number of approaches have been tried in XMPP. They are documented here, and fall into two categories:
+peer-to-peer and server-mediated.
+
+It is strongly recommended for clients to implement HTTP upload to provide the best user experience.
+The other mechanisms are optional (the advantages of implementing each one are documented in the
+relevant section).
+
+### HTTP upload
+
+The newest file transfer mechanism available, described in XEP-0363. It is strongly recommended to
+implement this mechanism to provide the best user experience.
+
+#### Benefits
+
+- Does not depend on the recipient supporting it (simply falls back to sending a URL)
+- Works with group chats
+- Works when the recipient is offline
+- Allows the recipient to receive on multiple devices
+
+#### Disadvantages
+
+- Unsuitable for large files (server determines what the size limit is, and may enforce usage quotas)
+- Does not support streaming (file must be entirely uploaded to the server before recipient can begin to receive it)
+- Requires server support
+
+#### Usage
+
+After uploading the file successfully, the sender should communicate the URL to the recipient by sending a
+`<message>` stanza with the "Get URL" provided by the server in the `<body>` of the message.
+
+Additionally the sender should include a [jabber:x:oob](https://xmpp.org/extensions/xep-0066.html#x-oob)
+element in the message stanza with the same URL.
+
+!!! note
+
+    To enable automatic display of media in the conversation view, Conversations (at least) currently requires
+    that the `<body>` contain *just* the URL, and it must be identical to the URL in the `jabber:x:oob` payload.
+    
+    The `<desc>` element is not used or supported.
+    
+    This behaviour means that it is not possible for any text to directly accompany a media file, and must
+    be sent separately.
+
+### Jingle
+
+Jingle is a generic framework that allows clients to negotiate a direct stream between themselves, which can
+be used to transfer files (it is also used for voice/video and other p2p applications based on XMPP). It was
+originally developed at Google and contributed to the XSF where it evolved into today's standard.
+
+Because it is a generic framework that supports different underlying transports and different media types,
+Jingle is split into multiple XEPs. For file transfer the following are relevant:
+
+- XEP-0166 - the core Jingle framework
+- XEP-0234 - the Jingle file transfer definition
+- XEP-0260 - the most common transport mechanism for files (SOCKS5 bytestreams - may be directly peer-to-peer or server-mediated)
+- XEP-0261 - a fallback transport for tunnelling the data directly over the XMPP stream (inefficient and slow, but always succeeds)
+
+#### Advantages
+
+- Supports streaming (recipient receives at the same time as the sender sends)
+- Allows code re-use if the client also implements Jingle for audio/video streams
+- No server-side storage required, and the data will pass directly between clients if firewalls/network conditions allow, which makes
+it suitable for larger files.
+
+#### Disadvantages
+
+- Because it is a multi-purpose framework it can be complex.
+- Not all clients support it.
+- In the case of the recipient having multiple devices, only a single one can receive the file.
+- Does not work for sharing a file with multiple people (e.g. in a group chat)
+- Only works if the recipient is online
+
+!!! note
+
+Although it is the only recommended negotiation protocol for peer-to-peer streams today, note that Jingle
+support is not nearly universal even among modern clients.
+
+### Stream Initiation (pre-Jingle)
+
+XEP-0096 describes the stream negotiation protocol that was used before Jingle. It is widely supported, and can use the same
+transports:
+
+- XEP-0065
+- XEP-0047
+
+It is not recommended to implement this mechanism in new clients, except for compatibility with older clients
+is required (and HTTP Upload does not suffice for some reason).
+
+#### Advantages
+
+- Supports streaming (recipient receives at the same time as the sender sends)
+- Widely supported in older clients
+
+#### Disadvantages
+
+- Deprecated. Modern clients are switching to Jingle negotiation.
+- In the case of the recipient having multiple devices, only a single one can receive the file.
+- Does not work for sharing a file with multiple people (e.g. in a group chat)
+- Only works if the recipient is online
 
 ## Avatars
 
