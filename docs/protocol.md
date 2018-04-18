@@ -16,6 +16,14 @@ used to implement each.
 Notes are provided to provide context about past and future versions of the protocol,
 which may be helpful for backwards-compatibility or planning future development.
 
+### Target audience
+
+The protocols discussed here should be implemented in reusable libraries. Client developers
+may use this document to assist them in choosing an XMPP library, or submitting feature
+requests or contributions to their library of choice.
+
+Reusing libraries whenever possible reduces fragmentation and duplicated effort.
+
 ## Core
 
 ### Service discovery
@@ -40,10 +48,23 @@ method of transferring a file.
 XEP-0115 may be revised or replaced at some point in the future, such as by XEP-0390, to allow
 hash agility and making the algorithm more robust to cache poisoning attacks.
 
-## Mobile
+## Messaging
 
-- XEP-0286
-- XEP-0352
+This section covers some protocols that are useful for general messaging.
+
+### Formatting
+
+Client developers may implement the rules in XEP-0369 for formatting message bodies that they
+receive.
+
+#### XHTML-IM
+
+A previous formatting specification defined in XEP-0071 has been deprecated. Many implementations
+failed to properly sanitize the formatted payload, leading to security issues (particularly in web
+applications).
+
+Implementation of XEP-0071 is not encouraged, but if formatting is a strong requirement, along with
+backwards compatibility (many clients still implement it currently), it remains an option.
 
 ## Multi-device
 
