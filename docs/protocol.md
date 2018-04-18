@@ -68,8 +68,54 @@ backwards compatibility (many clients still implement it currently), it remains 
 
 ## Multi-device
 
-- XEP-0280
-- XEP-0313
+XMPP was ahead of its time in supporting multiple devices connected to a single account - although
+interestingly even today some popular messaging systems are still limited to a single device,
+typically mobile, when many people have a mobile, tablet and laptop/desktop.
+
+XMPP originally aimed to determine which device the user most likely wanted to receive messages
+on - it did this using a 'priority' mechanism in presence. Over time bandwidth and CPU costs,
+as well as user expectations, have shifted. Today most people want an "everything everywhere"
+approach to messaging, where all their devices are in sync.
+
+Modern XMPP clients should not set a priority in their presence, and they should implement the
+following XEPs:
+
+- XEP-0280 - Carbons - for "live" synchronisation of conversations between online devices
+- XEP-0313 - MAM - for "catch-up" of messages that were exchanged while a device was offline
+
+### Shortcomings
+
+There are currently some minor open issues regarding these protocols that developers should be aware of.
+
+#### Race during login
+
+There is a race condition during login between Carbons and MAM. If you synchronize with the archive first,
+you may miss some messages sent to other devices before you enable Carbons.
+
+If you enable Carbons first, you may receive duplicates from the archive of messages you already received.
+
+The current best solution is to enable Carbons, perform the query, and de-duplicate any received messages
+before presentation to the user.
+
+This issue will be solved in the future through XEP-0386 or an alternative atomic "fetch and subscribe"
+command.
+
+#### IDs of outgoing messages
+
+When a client sends a message, it is not currently possible for it to discover the ID that the
+server assigned to the message in the archive. This means that it is unable to use them as synchronization
+points and therefore it may receive its last outgoing message(s) when performing an archive sync.
+
+Example:
+
+1. Client receives message A, and records the ID so it can use
+2. Client sends message B, but the ID is not known to the client
+3. Client goes offline
+4. Client comes online, and tries to sync with archive. Last known ID was of message A, so it synchronizes from that point
+5. Server responds to the sync with message B, and all subsequent messages.
+
+Solving this issue may happen through an extension of Carbons (to reflect sent messages back to the sender
+with the ID added and any other additional info), or through a new MAM subscription protocol.
 
 ## Reliability
 
