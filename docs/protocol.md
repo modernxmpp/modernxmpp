@@ -163,7 +163,7 @@ implement this mechanism to provide the best user experience.
 - Does not support streaming (file must be entirely uploaded to the server before recipient can begin to receive it)
 - Requires server support
 
-#### Usage
+#### Communicating the URL
 
 After uploading the file successfully, the sender should communicate the URL to the recipient by sending a
 `<message>` stanza with the "Get URL" provided by the server in the `<body>` of the message.
@@ -176,7 +176,7 @@ element in the message stanza with the same URL.
     To enable automatic display of media in the conversation view, Conversations (at least) currently requires
     that the `<body>` contain *just* the URL, and it must be identical to the URL in the `jabber:x:oob` payload.
     
-    The `<desc>` element is not used or supported.
+    The `<desc>` element is not used or supported by Conversations.
     
     This behaviour means that it is not possible for any text to directly accompany a media file, and must
     be sent separately.
@@ -212,8 +212,8 @@ it suitable for larger files.
 
 !!! note
 
-Although it is the only recommended negotiation protocol for peer-to-peer streams today, note that Jingle
-support is not nearly universal even among modern clients.
+    Although it is the only recommended negotiation protocol for peer-to-peer streams today, note that Jingle
+    support is not nearly universal even among modern clients.
 
 ### Stream Initiation (pre-Jingle)
 
@@ -256,7 +256,7 @@ the contents of exchanged messsages, and is known as 'end-to-end
 encryption'.
 
 The current preferred protocol for this in XMPP is OMEMO, specified
-in XEP-0384. Client support is indicated at [https://omemo.top/].
+in XEP-0384. Client support is indicated at <https://omemo.top/>.
 
 ### Notes
 
