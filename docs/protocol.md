@@ -54,7 +54,7 @@ This section covers some protocols that are useful for general messaging.
 
 ### Formatting
 
-Client developers may implement the rules in XEP-0369 for formatting message bodies that they
+Client developers may implement the rules in XEP-0393 for formatting message bodies that they
 receive.
 
 #### XHTML-IM
