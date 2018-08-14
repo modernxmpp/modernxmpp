@@ -3,3 +3,4 @@ site_name: Modern XMPP
 markdown_extensions:
     - admonition
     - def_list
+    - footnotes
