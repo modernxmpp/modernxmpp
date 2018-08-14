@@ -48,31 +48,38 @@ method of transferring a file.
 XEP-0115 may be revised or replaced at some point in the future, such as by XEP-0390, to allow
 hash agility and making the algorithm more robust to cache poisoning attacks.
 
+### Resource generation
+
+The client should generate a unique random identifier per device or client instance. The
+identifier should be reused between sessions, and should not reveal any information
+about the user, their device, or their location.
+
 ## Messaging
 
 This section covers some protocols that are useful for general messaging.
 
 ### Formatting
 
-Client developers may implement the rules in XEP-0393 for formatting message bodies that they
-receive.
+The current recommendation is that developers may simply implement the rules in XEP-0393 for
+formatting message bodies that they receive.
 
-#### XHTML-IM
+#### XHTML-IM deprecation
 
 A previous formatting specification defined in XEP-0071 has been deprecated. Many implementations
-failed to properly sanitize the formatted payload, leading to security issues (particularly in web
-applications).
+failed to properly sanitize the formatted payload (it's tricky), leading to security issues
+(particularly in web applications).
 
-Implementation of XEP-0071 is not encouraged, but if formatting is a strong requirement, along with
-backwards compatibility (many clients still implement it currently), it remains an option.
+Implementation of XEP-0071 is not encouraged, but if formatting is a strong requirement along with
+backwards compatibility (many clients still implement it currently), it remains an option if careful
+attention is given to sanitizing the XHTML before display.
 
 ## Multi-device
 
 XMPP was ahead of its time in supporting multiple devices connected to a single account - although
 interestingly even today some popular messaging systems are still limited to a single device,
-typically mobile, when many people have a mobile, tablet and laptop/desktop.
+typically mobile, even when many people have a mobile, tablet and laptop or desktop.
 
-XMPP originally aimed to determine which device the user most likely wanted to receive messages
+Historically XMPP aimed to determine which device the user most likely wanted to receive messages
 on - it did this using a 'priority' mechanism in presence. Over time bandwidth and CPU costs,
 as well as user expectations, have shifted. Today most people want an "everything everywhere"
 approach to messaging, where all their devices are in sync.
@@ -83,7 +90,7 @@ following XEPs:
 - XEP-0280 - Carbons - for "live" synchronisation of conversations between online devices
 - XEP-0313 - MAM - for "catch-up" of messages that were exchanged while a device was offline
 
-### Shortcomings
+### Known issues
 
 There are currently some minor open issues regarding these protocols that developers should be aware of.
 
@@ -145,7 +152,15 @@ It is strongly recommended for clients to implement HTTP upload to provide the b
 The other mechanisms are optional (the advantages of implementing each one are documented in the
 relevant section).
 
+There are three file transfer methods that a modern XMPP client may implement:
+
+- HTTP upload (required)
+- Jingle streams (recommended for large file support)
+- Stream initiation (deprecated, but may be implemented for backwards-compatibility)
+
 ### HTTP upload
+
+**Required:** *yes*
 
 The newest file transfer mechanism available, described in XEP-0363. It is strongly recommended to
 implement this mechanism to provide the best user experience.
@@ -183,6 +198,8 @@ element in the message stanza with the same URL.
 
 ### Jingle
 
+**Required:** *optional - used for large file support*
+
 Jingle is a generic framework that allows clients to negotiate a direct stream between themselves, which can
 be used to transfer files (it is also used for voice/video and other p2p applications based on XMPP). It was
 originally developed at Google and contributed to the XSF where it evolved into today's standard.
@@ -217,6 +234,8 @@ it suitable for larger files.
 
 ### Stream Initiation (pre-Jingle)
 
+**Required:** *no - optionally implement for sending large files to pre-Jingle clients*
+
 XEP-0096 describes the stream negotiation protocol that was used before Jingle. It is widely supported, and can use the same
 transports:
 
@@ -240,11 +259,17 @@ is required (and HTTP Upload does not suffice for some reason).
 
 ## Avatars
 
+TODO
+
 ## Group chat
+
+TODO
 
 ## Contact management
 
-- XEP-0191
+### Blocking
+
+- XEP-0191 for blocking communication with a list of other JIDs
 
 ## Encryption
 
@@ -271,6 +296,9 @@ drawbacks when used within XMPP. Traditionally it has not supported multiple dev
 very well, nor group chats, and it only protects the message body.
 
 These issues lead to a poor user experience.
+
+Modern XMPP clients that implement OTR must add a XEP-0380 tag to their outgoing
+messages.
 
 #### MLS
 

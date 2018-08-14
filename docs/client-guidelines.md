@@ -2,8 +2,8 @@ TODO: Provide rationale for recommendations as footnotes
 
 # Client design guidelines
 
-This document lays out a set of guidelines for Modern XMPP clients. For contributions,
-please open an issue or pull request at Github for discussion.
+This document lays out a set of guidelines for designing Modern XMPP clients. For contributions,
+please [open an issue or pull request](https://github.com/modernxmpp/modernxmpp) at Github for discussion.
 
 ## Registration
 
@@ -28,8 +28,9 @@ List recommended configuration options.
 | Password | The user's password |
 
 ### Network
+
 Support for these options is OPTIONAL. If included in the client, they MUST NOT
-be requested at startup, but should be accessible through an advanced options interface.
+be requested by default at startup, but should be accessible through an advanced options interface.
 
 | Option       | Description                        |
 |:-------------|:-----------------------------------|
@@ -39,12 +40,13 @@ be requested at startup, but should be accessible through an advanced options in
 Both of the above should be automatically discovered from DNS, according to the [rules in RFC 6120](https://xmpp.org/rfcs/rfc6120.html#tcp-resolution).
 Clients that support other connection mechanisms, such as BOSH, SHOULD also implement [XEP-0156](https://xmpp.org/extensions/xep-0156.html).
 
-### XMPP
+### Deprecated options
+
 Support for these options is NOT RECOMMENDED.
 
-| Option       | Description                              | Default |
+| Option       | Description                              | Notes |
 |:-------------|:-----------------------------------------|:--------|
-| Resource     |  The resource to request from the server | (none)  |
+| Resource     |  The resource to request from the server | see [Resource generation](protocol.md#resource-generation)  |
 | Priority     |  The priority to include in presence     | 0       |
 
 ## User status
