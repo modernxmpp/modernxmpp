@@ -1,3 +1,5 @@
+Title: Overview
+
 TODO: Provide rationale for recommendations as footnotes
 
 # Client design guidelines
@@ -123,3 +125,49 @@ Clients should have documentation covering essential functionality, including: T
 ## Privacy
 
 Clients must not reveal full JID. Don't query unsubscribed contacts.
+
+## Names
+
+When displaying messages received from a remote JID, either within a one-to-one or multi-user chat, clients need to show a human-readable
+name for that sender.
+
+There are multiple sources for such a display name, which depend on the context (e.g. whether the conversation is a private or group chat).
+
+### Name sources
+
+Valid sources are:
+
+Roster
+: If the contact is in the user's roster, and the user has set a custom name.
+
+Address book
+: Platform-dependent. If the application is somehow linked to the user's address book and is able to access a contact's information there.
+
+User nickname
+: A nickname published by the sender in PEP per XEP-0172.
+
+Resource
+: The resource of the sending JID.
+
+Local part
+: The part of a bare JID before the '@' symbol.
+
+Bare JID
+: The sending JID with any resource removed.
+
+### Contexts
+
+The kind of view where a name is displayed decides which sources should be used. Since most sources are optional, they
+should be checked in the order described by the table below, displaying the first one available.
+
+| View type               | Name priorities                                           |
+|-------------------------|-----------------------------------------------------------|
+| Conversation - normal   | Roster name, (Address book), User nickname, Local part    |
+| Conversation - group    | Roster name, (Address book), User nickname, Resource (\*) |
+| Conversation - channel  | Resource                                                  |
+| Contact list            | Roster name, User nickname, Bare JID                      |
+| User profile            | Roster name, User nickname, Bare JID                      |
+
+(\*) Mentions refer to resource. if you do proper references you can live replace it with the 'nice' name.
+
+Avatar display should follow the same order
