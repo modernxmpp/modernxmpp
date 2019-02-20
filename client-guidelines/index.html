@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Overview - Modern XMPP</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">Modern XMPP</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="..">Home</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guidelines <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li class="active">
+    <a href="./">Overview</a>
+</li>
+                                    
+<li >
+    <a href="protocol/">Protocol</a>
+</li>
+                                    
+<li >
+    <a href="groupchat/">Multi-user Chats</a>
+</li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../terminology/">Terminology</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="..">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="protocol/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#client-design-guidelines">Client design guidelines</a></li>
+            <li><a href="#registration">Registration</a></li>
+            <li><a href="#initial-configuration">Initial configuration</a></li>
+            <li><a href="#configuration-options">Configuration options</a></li>
+            <li><a href="#user-status">User status</a></li>
+            <li><a href="#contact-list">Contact list</a></li>
+            <li><a href="#conversation-view">Conversation view</a></li>
+            <li><a href="#notifications">Notifications</a></li>
+            <li><a href="#error-handling">Error handling</a></li>
+            <li><a href="#multiple-accounts">Multiple accounts</a></li>
+            <li><a href="#group-chat">Group chat</a></li>
+            <li><a href="#documentation">Documentation</a></li>
+            <li><a href="#privacy">Privacy</a></li>
+            <li><a href="#names">Names</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p>TODO: Provide rationale for recommendations as footnotes</p>
+<h1 id="client-design-guidelines">Client design guidelines</h1>
+<p>This document lays out a set of guidelines for designing Modern XMPP clients. For contributions,
+please <a href="https://github.com/modernxmpp/modernxmpp">open an issue or pull request</a> at Github for discussion.</p>
+<h2 id="registration">Registration</h2>
+<p>TODO.</p>
+<h2 id="initial-configuration">Initial configuration</h2>
+<p>At initial startup, a client should present a welcome screen, to prompt the user for their JID,
+and a password. Optionally, a button or link to provide other forms of credentials may be included.</p>
+<p>If the client has an out-of-band configuration mechanism, or it can query the OS for sensible defaults,
+it may use these.</p>
+<h2 id="configuration-options">Configuration options</h2>
+<p>List recommended configuration options.</p>
+<h3 id="account">Account</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Option</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">JID</td>
+<td align="left">The user's JID</td>
+</tr>
+<tr>
+<td align="left">Password</td>
+<td align="left">The user's password</td>
+</tr>
+</tbody>
+</table>
+<h3 id="network">Network</h3>
+<p>Support for these options is OPTIONAL. If included in the client, they MUST NOT
+be requested by default at startup, but should be accessible through an advanced options interface.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Option</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Connect host</td>
+<td align="left">The network hostname to connect to</td>
+</tr>
+<tr>
+<td align="left">Connect port</td>
+<td align="left">The network port to connect to</td>
+</tr>
+</tbody>
+</table>
+<p>Both of the above should be automatically discovered from DNS, according to the <a href="https://xmpp.org/rfcs/rfc6120.html#tcp-resolution">rules in RFC 6120</a>.
+Clients that support other connection mechanisms, such as BOSH, SHOULD also implement <a href="https://xmpp.org/extensions/xep-0156.html">XEP-0156</a>.</p>
+<h3 id="deprecated-options">Deprecated options</h3>
+<p>Support for these options is NOT RECOMMENDED.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Option</th>
+<th align="left">Description</th>
+<th align="left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Resource</td>
+<td align="left">The resource to request from the server</td>
+<td align="left">see <a href="protocol/#resource-generation">Resource generation</a></td>
+</tr>
+<tr>
+<td align="left">Priority</td>
+<td align="left">The priority to include in presence</td>
+<td align="left">0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="user-status">User status</h2>
+<p>The client, by default, MUST NOT include any status messages in its presence, unless they are chosen by the user. Built-in status messages that
+convey the same meaning as the user's selected 'show' value (e.g. "Available", "Do not disturb") are not allowed.</p>
+<p>Allowing the user to set a status message is an OPTIONAL feature.</p>
+<h2 id="contact-list">Contact list</h2>
+<h3 id="terminology">Terminology</h3>
+<p>In its interface, the client MUST NOT use the technical term "roster", but MUST instead use the term "contact list" (or a suitable translation)
+where necessary. See the main "Terminology" section for more information.</p>
+<h3 id="offline-contacts">Offline contacts</h3>
+<p>The client MUST display offline contacts by default, and allow sending messages to them, as for online contacts..</p>
+<h3 id="sorting-of-contact-list">Sorting of contact list</h3>
+<p>The client MUST sort the contact list. Either alphabetically [TODO: lexical] or chronologically by the time of the last message exchanged.</p>
+<h3 id="visualizing-status">Visualizing status</h3>
+<p>The client MUST display status messages of contacts when present. It MAY also provide visual indication of the contact's status ('show'), but
+SHOULD NOT rely on colour alone to distinguish different status values. [TODO: colours citation]</p>
+<p>If a contact has multiple resources, an overall FIXME</p>
+<h2 id="conversation-view">Conversation view</h2>
+<h3 id="message-states">Message states</h3>
+<h4 id="outgoing-messages">Outgoing messages</h4>
+<p>A client must be able to unambiguously display the following outgoing message states:</p>
+<ul>
+<li>Message pending delivery</li>
+<li>Message delivered to server</li>
+<li>Message delivered to contact</li>
+<li>Message read by contact</li>
+<li>Delivery error for message</li>
+</ul>
+<p>TODO: Table or flowchart</p>
+<h2 id="notifications">Notifications</h2>
+<p>Carbons, notifications for new messages in MAM</p>
+<h2 id="error-handling">Error handling</h2>
+<p>Obey error types (modify, cancel, wait, etc.)</p>
+<p>Do display error text</p>
+<h2 id="multiple-accounts">Multiple accounts</h2>
+<p>Support for multiple accounts is OPTIONAL.</p>
+<p>TODO: Research recommendations for the best way to handle multiple accounts. E.g. merge contacts, or not.
+Not required. Describe how to display multiple accounts in a single client?</p>
+<h2 id="group-chat">Group chat</h2>
+<p>TODO: Recommendations for MUC (call group chat), separate recommendations for MIX down the road (i.e. allow adding to contact list).</p>
+<h2 id="documentation">Documentation</h2>
+<p>TODO: Recommended documentation topics</p>
+<p>Clients should have documentation covering essential functionality, including: TODO</p>
+<h2 id="privacy">Privacy</h2>
+<p>Clients must not reveal full JID. Don't query unsubscribed contacts.</p>
+<h2 id="names">Names</h2>
+<p>When displaying messages received from a remote JID, either within a one-to-one or multi-user chat, clients need to show a human-readable
+name for that sender.</p>
+<p>There are multiple sources for such a display name, which depend on the context (e.g. whether the conversation is a private or group chat).</p>
+<h3 id="name-sources">Name sources</h3>
+<p>Valid sources are:</p>
+<dl>
+<dt>Roster</dt>
+<dd>If the contact is in the user's roster, and the user has set a custom name.</dd>
+<dt>Address book</dt>
+<dd>Platform-dependent. If the application is somehow linked to the user's address book and is able to access a contact's information there.</dd>
+<dt>User nickname</dt>
+<dd>A nickname published by the sender in PEP per XEP-0172.</dd>
+<dt>Resource</dt>
+<dd>The resource of the sending JID.</dd>
+<dt>Local part</dt>
+<dd>The part of a bare JID before the '@' symbol.</dd>
+<dt>Bare JID</dt>
+<dd>The sending JID with any resource removed.</dd>
+</dl>
+<h3 id="contexts">Contexts</h3>
+<p>The kind of view where a name is displayed decides which sources should be used. Since most sources are optional, they
+should be checked in the order described by the table below, displaying the first one available.</p>
+<table>
+<thead>
+<tr>
+<th>View type</th>
+<th>Name priorities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conversation - normal</td>
+<td>Roster name, (Address book), User nickname, Local part</td>
+</tr>
+<tr>
+<td>Conversation - group</td>
+<td>Roster name, (Address book), User nickname, Resource (*)</td>
+</tr>
+<tr>
+<td>Conversation - channel</td>
+<td>Resource</td>
+</tr>
+<tr>
+<td>Contact list</td>
+<td>Roster name, User nickname, Bare JID</td>
+</tr>
+<tr>
+<td>User profile</td>
+<td>Roster name, User nickname, Bare JID</td>
+</tr>
+</tbody>
+</table>
+<p>(*) Mentions refer to resource. if you do proper references you can live replace it with the 'nice' name.</p>
+<p>Avatar display should follow the same order</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
