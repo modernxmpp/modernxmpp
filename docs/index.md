@@ -18,7 +18,7 @@ and thus make it possible to identify and weed out software that falls behind th
 
 ## Current status
 
-It's early days. We are still building the foundations of what will become the initial set of documents. Nevertheless, we already have a bunch of stuff documented that developers of XMPP software (both new and experienced) will find useful. This includes [design guidelines](client-guidelines/index.md) and lower-level [protocol implementation recommendations](client-guidelines/protocol.md).
+It's early days. We are still building the foundations of what will become the initial set of documents. Nevertheless, we already have a bunch of stuff documented that developers of XMPP software (both new and experienced) will find useful. This includes [design guidelines](client/design.md) and lower-level [protocol implementation recommendations](client/protocol.md).
 
 If you're interested in joining us, our primary discussion venue is our chatroom which can be reached at:
 

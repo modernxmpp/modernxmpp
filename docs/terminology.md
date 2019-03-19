@@ -10,4 +10,4 @@ terms.
 | JID                              | 'Address' or 'XMPP address'                           |
 | Roster                           | 'Contact list'                                        |
 
-[Multi-user Chats]: client-guidelines/groupchat.md
+[Multi-user Chats]: client/groupchat.md

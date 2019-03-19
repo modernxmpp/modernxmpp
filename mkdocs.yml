@@ -3,9 +3,9 @@ site_name: Modern XMPP
 nav:
   - 'Home': 'index.md'
   - 'Guidelines':
-    - 'User Interface': client-guidelines/design.md
-    - 'Protocol': client-guidelines/protocol.md
-    - 'Multi-user Chats': client-guidelines/groupchat.md
+    - 'User Interface': client/design.md
+    - 'Protocol': client/protocol.md
+    - 'Multi-user Chats': client/groupchat.md
   - 'Terminology': terminology.md
 
 markdown_extensions:
