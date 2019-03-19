@@ -1,4 +1,4 @@
-Title: Overview
+Title: Design Guidelines
 
 TODO: Provide rationale for recommendations as footnotes
 
@@ -114,7 +114,7 @@ Not required. Describe how to display multiple accounts in a single client?
 
 ## Group chat
 
-TODO: Recommendations for MUC (call group chat), separate recommendations for MIX down the road (i.e. allow adding to contact list).
+You can find more details about [Group Chats here](groupchat.md).
 
 ## Documentation
 
