@@ -1,8 +1,5 @@
 Title: Design Guidelines
 
-!!! todo
-    Provide rationale for recommendations as footnotes
-
 # Client design guidelines
 
 This document lays out a set of guidelines for designing Modern XMPP clients. For contributions,
