@@ -74,5 +74,5 @@ JID username
 
 <!-- Footnotes -->
 
-[^local-nickname] To avoid requiring the user to configure a nickname manually on each device, shared cross-device
+[^local-nickname]: To avoid requiring the user to configure a nickname manually on each device, shared cross-device
     stores such as PEP and vCard should be preferred.
