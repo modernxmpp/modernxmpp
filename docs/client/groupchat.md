@@ -69,6 +69,9 @@ JID username
 
 # Bookmarks
 
+!!! todo
+    Bookmark management logic
+
 <!-- Footnotes -->
 
 [^local-nickname] To avoid requiring the user to configure a nickname manually on each device, shared cross-device
