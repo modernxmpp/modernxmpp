@@ -1,6 +1,7 @@
 Title: Design Guidelines
 
-TODO: Provide rationale for recommendations as footnotes
+!!! todo
+    Provide rationale for recommendations as footnotes
 
 # Client design guidelines
 
@@ -9,7 +10,7 @@ please [open an issue or pull request](https://github.com/modernxmpp/modernxmpp)
 
 ## Registration
 
-TODO.
+!!! TODO
 
 ## Initial configuration
 
@@ -70,14 +71,16 @@ The client MUST display offline contacts by default, and allow sending messages 
 
 ### Sorting of contact list
 
-The client MUST sort the contact list. Either alphabetically [TODO: lexical] or chronologically by the time of the last message exchanged.
+The client MUST sort the contact list. Either in [lexicographical order](https://en.wikipedia.org/wiki/Lexicographical_order) by contact name or
+chronologically by the time of the last message exchanged with that contact.
 
 ### Visualizing status
 
 The client MUST display status messages of contacts when present. It MAY also provide visual indication of the contact's status ('show'), but
-SHOULD NOT rely on colour alone to distinguish different status values. [TODO: colours citation]
+SHOULD NOT rely on color alone to distinguish different status values[^color].
 
-If a contact has multiple resources, an overall FIXME
+!!! todo
+    Describe how to display multiple remote resources.
 
 ## Conversation view
 
@@ -93,7 +96,8 @@ A client must be able to unambiguously display the following outgoing message st
 * Message read by contact
 * Delivery error for message
 
-TODO: Table or flowchart
+!!! todo
+    Add table or flowchart
 
 ## Notifications
 
@@ -109,8 +113,9 @@ Do display error text
 
 Support for multiple accounts is OPTIONAL.
 
-TODO: Research recommendations for the best way to handle multiple accounts. E.g. merge contacts, or not.
-Not required. Describe how to display multiple accounts in a single client?
+!!! todo
+    Research recommendations for the best way to handle multiple accounts. E.g. merge contacts, or not.
+    Not required. Describe how to display multiple accounts in a single client?
 
 ## Group chat
 
@@ -118,13 +123,18 @@ You can find more details about [Group Chats here](groupchat.md).
 
 ## Documentation
 
-TODO: Recommended documentation topics
+Clients should have documentation covering essential functionality, including:
 
-Clients should have documentation covering essential functionality, including: TODO
+!!! todo
+    List of recommended documentation topics, e.g. how to add a contact
 
 ## Privacy
 
 Clients must not reveal full JID. Don't query unsubscribed contacts.
+
+!!! todo
+    Probably belongs in protocol reference. Probably some things relevant
+    to UI that should be mentioned, however.
 
 ## Names
 
@@ -171,3 +181,10 @@ should be checked in the order described by the table below, displaying the firs
 (\*) Mentions refer to resource. if you do proper references you can live replace it with the 'nice' name.
 
 Avatar display should follow the same order
+
+<!-- Footnotes -->
+
+[^color]: Resources for the use of color in interface design:
+    
+    * [WCAG 2.1: Understanding Use of Color](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html)
+    * [Color contrast checker](https://webaim.org/resources/contrastchecker/)
