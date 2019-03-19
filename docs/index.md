@@ -24,3 +24,5 @@ If you're interested in joining us, our primary discussion venue is our chatroom
 
 - XMPP: [modernxmpp@rooms.modernxmpp.org](xmpp:modernxmpp@rooms.modernxmpp.org?join)
 - Web: [chat.modernxmpp.org](https://chat.modernxmpp.org/)
+
+Contributions to the docs can be made through Github [modernxmpp/modernxmpp](https://github.com/modernxmpp/modernxmpp).
