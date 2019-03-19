@@ -101,6 +101,7 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#multi-user-chats">Multi-user Chats</a></li>
             <li><a href="#types-of-chat">Types of chat</a></li>
+        <li class="main "><a href="#user-nickname">User nickname</a></li>
         <li class="main "><a href="#bookmarks">Bookmarks</a></li>
     </ul>
 </div></div>
@@ -197,7 +198,35 @@ an owner but not admin. So admins are discouraged by the UI but will be displaye
 if the end up being one for some reason.</p>
 <p>(**) Everybody is a member in groupchats</p>
 <p>Clients MAY create an 'advanced view' that displays roles as well.</p>
-<h1 id="bookmarks">Bookmarks<a class="headerlink" href="#bookmarks" title="Permanent link">&para;</a></h1></div>
+<h1 id="user-nickname">User nickname<a class="headerlink" href="#user-nickname" title="Permanent link">&para;</a></h1>
+<p>When joining a group chat, a client needs to select a nickname to use. There are multiple
+sources from which this name may be selected. The client should use the following sources
+in order:</p>
+<dl>
+<dt>Bookmark</dt>
+<dd>If the chat is present in the user's bookmarks and has a nickname present (as the resource).</dd>
+<dt>Reserved name</dt>
+<dd>A chat <a href="https://xmpp.org/extensions/xep-0045.html#reservednick">may be queried</a> to fetch the
+name that is registered by the user for that chat.</dd>
+<dt>User nickname (PEP)</dt>
+<dd>The name stored in the user's account according to
+<a href="https://xmpp.org/extensions/xep-0172.html#manage">XEP-0172</a>.</dd>
+<dt>User nickname (vCard)</dt>
+<dd>The name stored in the user's vCard as <code>NICKNAME</code>.</dd>
+<dt>Local nickname</dt>
+<dd>(Optional, not recommended[^local-nickname]) A nickname previously configured by the user in this client instance.</dd>
+<dt>JID username</dt>
+<dd>The username portion of the user's JID (i.e. before the '@').</dd>
+</dl>
+<h1 id="bookmarks">Bookmarks<a class="headerlink" href="#bookmarks" title="Permanent link">&para;</a></h1>
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+<p>Bookmark management logic</p>
+</div>
+<!-- Footnotes -->
+
+<p>[^local-nickname] To avoid requiring the user to configure a nickname manually on each device, shared cross-device
+    stores such as PEP and vCard should be preferred.</p></div>
         </div>
 
         <footer class="col-md-12">
