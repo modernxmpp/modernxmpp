@@ -7,20 +7,21 @@
         
         
         
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Overview - Modern XMPP</title>
-        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>User Interface - Modern XMPP</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/modernxmpp.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -39,7 +40,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="..">Modern XMPP</a>
+                    <a class="navbar-brand" href="../..">Modern XMPP</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -47,27 +48,27 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="..">Home</a>
+                                <a href="../..">Home</a>
                             </li>
                             <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guidelines <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li class="active">
-    <a href="./">Overview</a>
+    <a href="./">User Interface</a>
 </li>
                                     
 <li >
-    <a href="protocol/">Protocol</a>
+    <a href="../protocol/">Protocol</a>
 </li>
                                     
 <li >
-    <a href="groupchat/">Multi-user Chats</a>
+    <a href="../groupchat/">Multi-user Chats</a>
 </li>
                                 </ul>
                             </li>
                             <li >
-                                <a href="../terminology/">Terminology</a>
+                                <a href="../../terminology/">Terminology</a>
                             </li>
                         </ul>
 
@@ -78,14 +79,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="..">
+                                <a rel="next" href="../..">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="protocol/">
+                                <a rel="prev" href="../protocol/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/modernxmpp/modernxmpp/edit/master/docs/client-guidelines/design.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -113,20 +117,25 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p>TODO: Provide rationale for recommendations as footnotes</p>
-<h1 id="client-design-guidelines">Client design guidelines</h1>
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+<p>Provide rationale for recommendations as footnotes</p>
+</div>
+<h1 id="client-design-guidelines">Client design guidelines<a class="headerlink" href="#client-design-guidelines" title="Permanent link">&para;</a></h1>
 <p>This document lays out a set of guidelines for designing Modern XMPP clients. For contributions,
 please <a href="https://github.com/modernxmpp/modernxmpp">open an issue or pull request</a> at Github for discussion.</p>
-<h2 id="registration">Registration</h2>
-<p>TODO.</p>
-<h2 id="initial-configuration">Initial configuration</h2>
+<h2 id="registration">Registration<a class="headerlink" href="#registration" title="Permanent link">&para;</a></h2>
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+</div>
+<h2 id="initial-configuration">Initial configuration<a class="headerlink" href="#initial-configuration" title="Permanent link">&para;</a></h2>
 <p>At initial startup, a client should present a welcome screen, to prompt the user for their JID,
 and a password. Optionally, a button or link to provide other forms of credentials may be included.</p>
 <p>If the client has an out-of-band configuration mechanism, or it can query the OS for sensible defaults,
 it may use these.</p>
-<h2 id="configuration-options">Configuration options</h2>
+<h2 id="configuration-options">Configuration options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h2>
 <p>List recommended configuration options.</p>
-<h3 id="account">Account</h3>
+<h3 id="account">Account<a class="headerlink" href="#account" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -145,7 +154,7 @@ it may use these.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="network">Network</h3>
+<h3 id="network">Network<a class="headerlink" href="#network" title="Permanent link">&para;</a></h3>
 <p>Support for these options is OPTIONAL. If included in the client, they MUST NOT
 be requested by default at startup, but should be accessible through an advanced options interface.</p>
 <table>
@@ -168,7 +177,7 @@ be requested by default at startup, but should be accessible through an advanced
 </table>
 <p>Both of the above should be automatically discovered from DNS, according to the <a href="https://xmpp.org/rfcs/rfc6120.html#tcp-resolution">rules in RFC 6120</a>.
 Clients that support other connection mechanisms, such as BOSH, SHOULD also implement <a href="https://xmpp.org/extensions/xep-0156.html">XEP-0156</a>.</p>
-<h3 id="deprecated-options">Deprecated options</h3>
+<h3 id="deprecated-options">Deprecated options<a class="headerlink" href="#deprecated-options" title="Permanent link">&para;</a></h3>
 <p>Support for these options is NOT RECOMMENDED.</p>
 <table>
 <thead>
@@ -182,7 +191,7 @@ Clients that support other connection mechanisms, such as BOSH, SHOULD also impl
 <tr>
 <td align="left">Resource</td>
 <td align="left">The resource to request from the server</td>
-<td align="left">see <a href="protocol/#resource-generation">Resource generation</a></td>
+<td align="left">see <a href="../protocol/#resource-generation">Resource generation</a></td>
 </tr>
 <tr>
 <td align="left">Priority</td>
@@ -191,25 +200,29 @@ Clients that support other connection mechanisms, such as BOSH, SHOULD also impl
 </tr>
 </tbody>
 </table>
-<h2 id="user-status">User status</h2>
+<h2 id="user-status">User status<a class="headerlink" href="#user-status" title="Permanent link">&para;</a></h2>
 <p>The client, by default, MUST NOT include any status messages in its presence, unless they are chosen by the user. Built-in status messages that
 convey the same meaning as the user's selected 'show' value (e.g. "Available", "Do not disturb") are not allowed.</p>
 <p>Allowing the user to set a status message is an OPTIONAL feature.</p>
-<h2 id="contact-list">Contact list</h2>
-<h3 id="terminology">Terminology</h3>
+<h2 id="contact-list">Contact list<a class="headerlink" href="#contact-list" title="Permanent link">&para;</a></h2>
+<h3 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h3>
 <p>In its interface, the client MUST NOT use the technical term "roster", but MUST instead use the term "contact list" (or a suitable translation)
 where necessary. See the main "Terminology" section for more information.</p>
-<h3 id="offline-contacts">Offline contacts</h3>
+<h3 id="offline-contacts">Offline contacts<a class="headerlink" href="#offline-contacts" title="Permanent link">&para;</a></h3>
 <p>The client MUST display offline contacts by default, and allow sending messages to them, as for online contacts..</p>
-<h3 id="sorting-of-contact-list">Sorting of contact list</h3>
-<p>The client MUST sort the contact list. Either alphabetically [TODO: lexical] or chronologically by the time of the last message exchanged.</p>
-<h3 id="visualizing-status">Visualizing status</h3>
+<h3 id="sorting-of-contact-list">Sorting of contact list<a class="headerlink" href="#sorting-of-contact-list" title="Permanent link">&para;</a></h3>
+<p>The client MUST sort the contact list. Either in <a href="https://en.wikipedia.org/wiki/Lexicographical_order">lexicographical order</a> by contact name or
+chronologically by the time of the last message exchanged with that contact.</p>
+<h3 id="visualizing-status">Visualizing status<a class="headerlink" href="#visualizing-status" title="Permanent link">&para;</a></h3>
 <p>The client MUST display status messages of contacts when present. It MAY also provide visual indication of the contact's status ('show'), but
-SHOULD NOT rely on colour alone to distinguish different status values. [TODO: colours citation]</p>
-<p>If a contact has multiple resources, an overall FIXME</p>
-<h2 id="conversation-view">Conversation view</h2>
-<h3 id="message-states">Message states</h3>
-<h4 id="outgoing-messages">Outgoing messages</h4>
+SHOULD NOT rely on color alone to distinguish different status values<sup id="fnref:color"><a class="footnote-ref" href="#fn:color" rel="footnote">1</a></sup>.</p>
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+<p>Describe how to display multiple remote resources.</p>
+</div>
+<h2 id="conversation-view">Conversation view<a class="headerlink" href="#conversation-view" title="Permanent link">&para;</a></h2>
+<h3 id="message-states">Message states<a class="headerlink" href="#message-states" title="Permanent link">&para;</a></h3>
+<h4 id="outgoing-messages">Outgoing messages<a class="headerlink" href="#outgoing-messages" title="Permanent link">&para;</a></h4>
 <p>A client must be able to unambiguously display the following outgoing message states:</p>
 <ul>
 <li>Message pending delivery</li>
@@ -218,28 +231,42 @@ SHOULD NOT rely on colour alone to distinguish different status values. [TODO: c
 <li>Message read by contact</li>
 <li>Delivery error for message</li>
 </ul>
-<p>TODO: Table or flowchart</p>
-<h2 id="notifications">Notifications</h2>
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+<p>Add table or flowchart</p>
+</div>
+<h2 id="notifications">Notifications<a class="headerlink" href="#notifications" title="Permanent link">&para;</a></h2>
 <p>Carbons, notifications for new messages in MAM</p>
-<h2 id="error-handling">Error handling</h2>
+<h2 id="error-handling">Error handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h2>
 <p>Obey error types (modify, cancel, wait, etc.)</p>
 <p>Do display error text</p>
-<h2 id="multiple-accounts">Multiple accounts</h2>
+<h2 id="multiple-accounts">Multiple accounts<a class="headerlink" href="#multiple-accounts" title="Permanent link">&para;</a></h2>
 <p>Support for multiple accounts is OPTIONAL.</p>
-<p>TODO: Research recommendations for the best way to handle multiple accounts. E.g. merge contacts, or not.
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+<p>Research recommendations for the best way to handle multiple accounts. E.g. merge contacts, or not.
 Not required. Describe how to display multiple accounts in a single client?</p>
-<h2 id="group-chat">Group chat</h2>
-<p>TODO: Recommendations for MUC (call group chat), separate recommendations for MIX down the road (i.e. allow adding to contact list).</p>
-<h2 id="documentation">Documentation</h2>
-<p>TODO: Recommended documentation topics</p>
-<p>Clients should have documentation covering essential functionality, including: TODO</p>
-<h2 id="privacy">Privacy</h2>
+</div>
+<h2 id="group-chat">Group chat<a class="headerlink" href="#group-chat" title="Permanent link">&para;</a></h2>
+<p>You can find more details about <a href="../groupchat/">Group Chats here</a>.</p>
+<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
+<p>Clients should have documentation covering essential functionality, including:</p>
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+<p>List of recommended documentation topics, e.g. how to add a contact</p>
+</div>
+<h2 id="privacy">Privacy<a class="headerlink" href="#privacy" title="Permanent link">&para;</a></h2>
 <p>Clients must not reveal full JID. Don't query unsubscribed contacts.</p>
-<h2 id="names">Names</h2>
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+<p>Probably belongs in protocol reference. Probably some things relevant
+to UI that should be mentioned, however.</p>
+</div>
+<h2 id="names">Names<a class="headerlink" href="#names" title="Permanent link">&para;</a></h2>
 <p>When displaying messages received from a remote JID, either within a one-to-one or multi-user chat, clients need to show a human-readable
 name for that sender.</p>
 <p>There are multiple sources for such a display name, which depend on the context (e.g. whether the conversation is a private or group chat).</p>
-<h3 id="name-sources">Name sources</h3>
+<h3 id="name-sources">Name sources<a class="headerlink" href="#name-sources" title="Permanent link">&para;</a></h3>
 <p>Valid sources are:</p>
 <dl>
 <dt>Roster</dt>
@@ -255,7 +282,7 @@ name for that sender.</p>
 <dt>Bare JID</dt>
 <dd>The sending JID with any resource removed.</dd>
 </dl>
-<h3 id="contexts">Contexts</h3>
+<h3 id="contexts">Contexts<a class="headerlink" href="#contexts" title="Permanent link">&para;</a></h3>
 <p>The kind of view where a name is displayed decides which sources should be used. Since most sources are optional, they
 should be checked in the order described by the table below, displaying the first one available.</p>
 <table>
@@ -289,7 +316,22 @@ should be checked in the order described by the table below, displaying the firs
 </tbody>
 </table>
 <p>(*) Mentions refer to resource. if you do proper references you can live replace it with the 'nice' name.</p>
-<p>Avatar display should follow the same order</p></div>
+<p>Avatar display should follow the same order</p>
+<!-- Footnotes -->
+
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:color">
+<p>Resources for the use of color in interface design:</p>
+<ul>
+<li><a href="https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html">WCAG 2.1: Understanding Use of Color</a></li>
+<li><a href="https://webaim.org/resources/contrastchecker/">Color contrast checker</a></li>
+</ul>
+<p><a class="footnote-backref" href="#fnref:color" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></div>
         </div>
 
         <footer class="col-md-12">
@@ -297,11 +339,11 @@ should be checked in the order described by the table below, displaying the firs
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "..",
+            var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../js/base.js" defer></script>
-        <script src="../search/main.js" defer></script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">

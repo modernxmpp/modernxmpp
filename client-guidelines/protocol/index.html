@@ -13,6 +13,7 @@
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/modernxmpp.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -54,7 +55,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../">Overview</a>
+    <a href="../design/">User Interface</a>
 </li>
                                     
 <li class="active">
@@ -78,7 +79,7 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../">
+                                <a rel="next" href="../design/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -86,6 +87,9 @@
                                 <a rel="prev" href="../groupchat/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/modernxmpp/modernxmpp/edit/master/docs/client-guidelines/protocol.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -111,8 +115,8 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="xmpp-protocol-guidelines">XMPP Protocol Guidelines</h1>
-<h2 id="overview">Overview</h2>
+<h1 id="xmpp-protocol-guidelines">XMPP Protocol Guidelines<a class="headerlink" href="#xmpp-protocol-guidelines" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The XSF has published nearly 400 XEPs over many years. However as technology,
 user expectations and best practices evolve, the protocol too is always evolving.</p>
 <p>This leads to confusion about which set of XEPs are "current", which are required
@@ -123,13 +127,13 @@ areas of functionality, and describes the currently-recommended XEPs that should
 used to implement each.</p>
 <p>Notes are provided to provide context about past and future versions of the protocol,
 which may be helpful for backwards-compatibility or planning future development.</p>
-<h3 id="target-audience">Target audience</h3>
+<h3 id="target-audience">Target audience<a class="headerlink" href="#target-audience" title="Permanent link">&para;</a></h3>
 <p>The protocols discussed here should be implemented in reusable libraries. Client developers
 may use this document to assist them in choosing an XMPP library, or submitting feature
 requests or contributions to their library of choice.</p>
 <p>Reusing libraries whenever possible reduces fragmentation and duplicated effort.</p>
-<h2 id="core">Core</h2>
-<h3 id="service-discovery">Service discovery</h3>
+<h2 id="core">Core<a class="headerlink" href="#core" title="Permanent link">&para;</a></h2>
+<h3 id="service-discovery">Service discovery<a class="headerlink" href="#service-discovery" title="Permanent link">&para;</a></h3>
 <p>One of the unique features of XMPP is its ability to support a diverse range of software
 on a single network, yet always allow basic functionality to work.</p>
 <p>Either due to the ongoing evolution of technology, or due to constrained environments (e.g. IoT)
@@ -143,26 +147,26 @@ method of transferring a file.</p>
 <li>XEP-0030 is the basic mechanism for advertising and discovering features</li>
 <li>XEP-0115 is a strongly recommended extension that allows caching of these features</li>
 </ul>
-<h4 id="notes">Notes</h4>
+<h4 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h4>
 <p>XEP-0115 may be revised or replaced at some point in the future, such as by XEP-0390, to allow
 hash agility and making the algorithm more robust to cache poisoning attacks.</p>
-<h3 id="resource-generation">Resource generation</h3>
+<h3 id="resource-generation">Resource generation<a class="headerlink" href="#resource-generation" title="Permanent link">&para;</a></h3>
 <p>The client should generate a unique random identifier per device or client instance. The
 identifier should be reused between sessions, and should not reveal any information
 about the user, their device, or their location.</p>
-<h2 id="messaging">Messaging</h2>
+<h2 id="messaging">Messaging<a class="headerlink" href="#messaging" title="Permanent link">&para;</a></h2>
 <p>This section covers some protocols that are useful for general messaging.</p>
-<h3 id="formatting">Formatting</h3>
+<h3 id="formatting">Formatting<a class="headerlink" href="#formatting" title="Permanent link">&para;</a></h3>
 <p>The current recommendation is that developers may simply implement the rules in XEP-0393 for
 formatting message bodies that they receive.</p>
-<h4 id="xhtml-im-deprecation">XHTML-IM deprecation</h4>
+<h4 id="xhtml-im-deprecation">XHTML-IM deprecation<a class="headerlink" href="#xhtml-im-deprecation" title="Permanent link">&para;</a></h4>
 <p>A previous formatting specification defined in XEP-0071 has been deprecated. Many implementations
 failed to properly sanitize the formatted payload (it's tricky), leading to security issues
 (particularly in web applications).</p>
 <p>Implementation of XEP-0071 is not encouraged, but if formatting is a strong requirement along with
 backwards compatibility (many clients still implement it currently), it remains an option if careful
 attention is given to sanitizing the XHTML before display.</p>
-<h2 id="multi-device">Multi-device</h2>
+<h2 id="multi-device">Multi-device<a class="headerlink" href="#multi-device" title="Permanent link">&para;</a></h2>
 <p>XMPP was ahead of its time in supporting multiple devices connected to a single account - although
 interestingly even today some popular messaging systems are still limited to a single device,
 typically mobile, even when many people have a mobile, tablet and laptop or desktop.</p>
@@ -176,9 +180,9 @@ following XEPs:</p>
 <li>XEP-0280 - Carbons - for "live" synchronisation of conversations between online devices</li>
 <li>XEP-0313 - MAM - for "catch-up" of messages that were exchanged while a device was offline</li>
 </ul>
-<h3 id="known-issues">Known issues</h3>
+<h3 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h3>
 <p>There are currently some minor open issues regarding these protocols that developers should be aware of.</p>
-<h4 id="race-during-login">Race during login</h4>
+<h4 id="race-during-login">Race during login<a class="headerlink" href="#race-during-login" title="Permanent link">&para;</a></h4>
 <p>There is a race condition during login between Carbons and MAM. If you synchronize with the archive first,
 you may miss some messages sent to other devices before you enable Carbons.</p>
 <p>If you enable Carbons first, you may receive duplicates from the archive of messages you already received.</p>
@@ -186,7 +190,7 @@ you may miss some messages sent to other devices before you enable Carbons.</p>
 before presentation to the user.</p>
 <p>This issue will be solved in the future through XEP-0386 or an alternative atomic "fetch and subscribe"
 command.</p>
-<h4 id="ids-of-outgoing-messages">IDs of outgoing messages</h4>
+<h4 id="ids-of-outgoing-messages">IDs of outgoing messages<a class="headerlink" href="#ids-of-outgoing-messages" title="Permanent link">&para;</a></h4>
 <p>When a client sends a message, it is not currently possible for it to discover the ID that the
 server assigned to the message in the archive. This means that it is unable to use them as synchronization
 points and therefore it may receive its last outgoing message(s) when performing an archive sync.</p>
@@ -200,7 +204,7 @@ points and therefore it may receive its last outgoing message(s) when performing
 </ol>
 <p>Solving this issue may happen through an extension of Carbons (to reflect sent messages back to the sender
 with the ID added and any other additional info), or through a new MAM subscription protocol.</p>
-<h2 id="mobile">Mobile</h2>
+<h2 id="mobile">Mobile<a class="headerlink" href="#mobile" title="Permanent link">&para;</a></h2>
 <p>There are some special considerations that mobile clients can make to increase battery life and reduce
 data consumption.</p>
 <ul>
@@ -208,14 +212,14 @@ data consumption.</p>
 <li>XEP-0352 - used to inform the server of whether the client is currently active/focused (which allows
 the server to prioritize traffic)</li>
 </ul>
-<h2 id="reliability">Reliability</h2>
+<h2 id="reliability">Reliability<a class="headerlink" href="#reliability" title="Permanent link">&para;</a></h2>
 <p>In the real world, it is normal for clients to get briefly disconnected. These extensions deal with
 ensuring reliable message delivery and reporting.</p>
 <ul>
 <li>XEP-0184 - end-to-end acknowledgement, i.e. the recipient has successfully received the message</li>
 <li>XEP-0198 - hop-to-hop acknowledgement, and allows efficient resume of broken connections without data loss</li>
 </ul>
-<h2 id="file-transfer">File transfer</h2>
+<h2 id="file-transfer">File transfer<a class="headerlink" href="#file-transfer" title="Permanent link">&para;</a></h2>
 <p>Transferring a file from A to B is surprisingly a non-trivial problem for the internet, it seems.</p>
 <p>A number of approaches have been tried in XMPP. They are documented here, and fall into two categories:
 peer-to-peer and server-mediated.</p>
@@ -228,24 +232,24 @@ relevant section).</p>
 <li>Jingle streams (recommended for large file support)</li>
 <li>Stream initiation (deprecated, but may be implemented for backwards-compatibility)</li>
 </ul>
-<h3 id="http-upload">HTTP upload</h3>
+<h3 id="http-upload">HTTP upload<a class="headerlink" href="#http-upload" title="Permanent link">&para;</a></h3>
 <p><strong>Required:</strong> <em>yes</em></p>
 <p>The newest file transfer mechanism available, described in XEP-0363. It is strongly recommended to
 implement this mechanism to provide the best user experience.</p>
-<h4 id="benefits">Benefits</h4>
+<h4 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Does not depend on the recipient supporting it (simply falls back to sending a URL)</li>
 <li>Works with group chats</li>
 <li>Works when the recipient is offline</li>
 <li>Allows the recipient to receive on multiple devices</li>
 </ul>
-<h4 id="disadvantages">Disadvantages</h4>
+<h4 id="disadvantages">Disadvantages<a class="headerlink" href="#disadvantages" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Unsuitable for large files (server determines what the size limit is, and may enforce usage quotas)</li>
 <li>Does not support streaming (file must be entirely uploaded to the server before recipient can begin to receive it)</li>
 <li>Requires server support</li>
 </ul>
-<h4 id="communicating-the-url">Communicating the URL</h4>
+<h4 id="communicating-the-url">Communicating the URL<a class="headerlink" href="#communicating-the-url" title="Permanent link">&para;</a></h4>
 <p>After uploading the file successfully, the sender should communicate the URL to the recipient by sending a
 <code>&lt;message&gt;</code> stanza with the "Get URL" provided by the server in the <code>&lt;body&gt;</code> of the message.</p>
 <p>Additionally the sender should include a <a href="https://xmpp.org/extensions/xep-0066.html#x-oob">jabber:x:oob</a>
@@ -258,7 +262,7 @@ that the <code>&lt;body&gt;</code> contain <em>just</em> the URL, and it must be
 <p>This behaviour means that it is not possible for any text to directly accompany a media file, and must
 be sent separately.</p>
 </div>
-<h3 id="jingle">Jingle</h3>
+<h3 id="jingle">Jingle<a class="headerlink" href="#jingle" title="Permanent link">&para;</a></h3>
 <p><strong>Required:</strong> <em>optional - used for large file support</em></p>
 <p>Jingle is a generic framework that allows clients to negotiate a direct stream between themselves, which can
 be used to transfer files (it is also used for voice/video and other p2p applications based on XMPP). It was
@@ -271,14 +275,14 @@ Jingle is split into multiple XEPs. For file transfer the following are relevant
 <li>XEP-0260 - the most common transport mechanism for files (SOCKS5 bytestreams - may be directly peer-to-peer or server-mediated)</li>
 <li>XEP-0261 - a fallback transport for tunnelling the data directly over the XMPP stream (inefficient and slow, but always succeeds)</li>
 </ul>
-<h4 id="advantages">Advantages</h4>
+<h4 id="advantages">Advantages<a class="headerlink" href="#advantages" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Supports streaming (recipient receives at the same time as the sender sends)</li>
 <li>Allows code re-use if the client also implements Jingle for audio/video streams</li>
 <li>No server-side storage required, and the data will pass directly between clients if firewalls/network conditions allow, which makes
 it suitable for larger files.</li>
 </ul>
-<h4 id="disadvantages_1">Disadvantages</h4>
+<h4 id="disadvantages_1">Disadvantages<a class="headerlink" href="#disadvantages_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Because it is a multi-purpose framework it can be complex.</li>
 <li>Not all clients support it.</li>
@@ -291,7 +295,7 @@ it suitable for larger files.</li>
 <p>Although it is the only recommended negotiation protocol for peer-to-peer streams today, note that Jingle
 support is not nearly universal even among modern clients.</p>
 </div>
-<h3 id="stream-initiation-pre-jingle">Stream Initiation (pre-Jingle)</h3>
+<h3 id="stream-initiation-pre-jingle">Stream Initiation (pre-Jingle)<a class="headerlink" href="#stream-initiation-pre-jingle" title="Permanent link">&para;</a></h3>
 <p><strong>Required:</strong> <em>no - optionally implement for sending large files to pre-Jingle clients</em></p>
 <p>XEP-0096 describes the stream negotiation protocol that was used before Jingle. It is widely supported, and can use the same
 transports:</p>
@@ -301,28 +305,28 @@ transports:</p>
 </ul>
 <p>It is not recommended to implement this mechanism in new clients, except for compatibility with older clients
 is required (and HTTP Upload does not suffice for some reason).</p>
-<h4 id="advantages_1">Advantages</h4>
+<h4 id="advantages_1">Advantages<a class="headerlink" href="#advantages_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Supports streaming (recipient receives at the same time as the sender sends)</li>
 <li>Widely supported in older clients</li>
 </ul>
-<h4 id="disadvantages_2">Disadvantages</h4>
+<h4 id="disadvantages_2">Disadvantages<a class="headerlink" href="#disadvantages_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Deprecated. Modern clients are switching to Jingle negotiation.</li>
 <li>In the case of the recipient having multiple devices, only a single one can receive the file.</li>
 <li>Does not work for sharing a file with multiple people (e.g. in a group chat)</li>
 <li>Only works if the recipient is online</li>
 </ul>
-<h2 id="avatars">Avatars</h2>
+<h2 id="avatars">Avatars<a class="headerlink" href="#avatars" title="Permanent link">&para;</a></h2>
 <p>TODO</p>
-<h2 id="group-chat">Group chat</h2>
+<h2 id="group-chat">Group chat<a class="headerlink" href="#group-chat" title="Permanent link">&para;</a></h2>
 <p>TODO</p>
-<h2 id="contact-management">Contact management</h2>
-<h3 id="blocking">Blocking</h3>
+<h2 id="contact-management">Contact management<a class="headerlink" href="#contact-management" title="Permanent link">&para;</a></h2>
+<h3 id="blocking">Blocking<a class="headerlink" href="#blocking" title="Permanent link">&para;</a></h3>
 <ul>
 <li>XEP-0191 for blocking communication with a list of other JIDs</li>
 </ul>
-<h2 id="encryption">Encryption</h2>
+<h2 id="encryption">Encryption<a class="headerlink" href="#encryption" title="Permanent link">&para;</a></h2>
 <p>All XMPP streams must be encrypted using TLS as specified in RFC 6920.</p>
 <p>Clients may additionally support encrypting messages within the XMPP
 stream. This can prevent untrusted servers from viewing or modifying
@@ -330,8 +334,8 @@ the contents of exchanged messsages, and is known as 'end-to-end
 encryption'.</p>
 <p>The current preferred protocol for this in XMPP is OMEMO, specified
 in XEP-0384. Client support is indicated at <a href="https://omemo.top/">https://omemo.top/</a>.</p>
-<h3 id="notes_1">Notes</h3>
-<h4 id="otr">OTR</h4>
+<h3 id="notes_1">Notes<a class="headerlink" href="#notes_1" title="Permanent link">&para;</a></h3>
+<h4 id="otr">OTR<a class="headerlink" href="#otr" title="Permanent link">&para;</a></h4>
 <p>Prior to OMEMO, many clients implemented the protocol-agnostic
 encryption protocol "OTR".</p>
 <p>Although it sufficed for simple use cases (sender and recipient have
@@ -341,7 +345,7 @@ very well, nor group chats, and it only protects the message body.</p>
 <p>These issues lead to a poor user experience.</p>
 <p>Modern XMPP clients that implement OTR must add a XEP-0380 tag to their outgoing
 messages.</p>
-<h4 id="mls">MLS</h4>
+<h4 id="mls">MLS<a class="headerlink" href="#mls" title="Permanent link">&para;</a></h4>
 <p>The IETF is currently working on standardizing a new protocol for
 <a href="https://datatracker.ietf.org/wg/mls/about/">'Message Layer Security'</a>
 with support from a number of prominent members of the online communications
