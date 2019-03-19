@@ -16,6 +16,7 @@ markdown_extensions:
       permalink: true
 
 repo_url: https://github.com/modernxmpp/modernxmpp
+edit_uri: edit/draft/docs
 
 extra_css:
   - 'css/modernxmpp.css'
