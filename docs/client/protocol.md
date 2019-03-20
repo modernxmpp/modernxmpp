@@ -71,7 +71,7 @@ failed to properly sanitize the formatted payload (it's tricky), leading to secu
 
 Implementation of XEP-0071 is not encouraged, but if formatting is a strong requirement along with
 backwards compatibility (many clients still implement it currently), it remains an option if careful
-attention is given to sanitizing the XHTML before display.
+attention is given to sanitizing the XHTML before display. Consider using [xhtml-im.js](https://github.com/zeen/xhtml-im.js) in a web client, or as a reference.
 
 ## Multi-device
 
