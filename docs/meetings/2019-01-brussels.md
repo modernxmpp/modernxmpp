@@ -91,28 +91,28 @@ Consensus: "XMPP Address"? (until another user-friendly term for "XMPP" can be f
   
 ### Group chats / channels:
  - Private group chat (or groupchat)
-   - members only
-   - Jid visibility: all
-   - MAM: yes
-   - not listed (non public)
-   - peristence
-   - users can invite. default off. (does this need to be configurable?)
-   - subject editability: owner only (probably make it configurable?)
-   - disallow pm
+    - members only
+    - Jid visibility: all
+    - MAM: yes
+    - not listed (non public)
+    - peristence
+    - users can invite. default off. (does this need to be configurable?)
+    - subject editability: owner only (probably make it configurable?)
+    - disallow pm
  - Public channel
-   - public / everyone can join
-   - MAM: yes
-   - listed: yes
-   - persistent
-   - JID: visibility anonymous
-   - subject editability: admins only (probably make it configurable)
+    - public / everyone can join
+    - MAM: yes
+    - listed: yes
+    - persistent
+    - JID: visibility anonymous
+    - subject editability: admins only (probably make it configurable)
  - Possibility to omit the words 'private' and 'public' later down the UI flow and just talk about 'groupchat' and 'channel' (for example when constrained on screen estate)
  
-  - recognize on members only AND visible JIDs AND not listed, everything else is a public channel. but a client should maybe warn before entering a public channel that makes your jid public. Those three 'detection properties' are immutable for private group chats
+   - recognize on members only AND visible JIDs AND not listed, everything else is a public channel. but a client should maybe warn before entering a public channel that makes your jid public. Those three 'detection properties' are immutable for private group chats
   
-  - private group chats use randomized, auto generated JID (always on the server’s own muc host)
-  - public channels always ask for bare jid on create (auto suggest of know muc hosts)
-    - UI suggestion. ask for name first. Then normalize to local part of JID. But let user change the JID if they want to
+   - private group chats use randomized, auto generated JID (always on the server’s own muc host)
+   - public channels always ask for bare jid on create (auto suggest of know muc hosts)
+      - UI suggestion. ask for name first. Then normalize to local part of JID. But let user change the JID if they want to
 
 
 Group chats and channels should be clearly distinguished visually.
