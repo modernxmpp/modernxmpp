@@ -5,7 +5,7 @@ which focused primarily on discussing various UX issues facing
 the community as a whole. There is an associated
 [wiki page](https://wiki.xmpp.org/web/Sprints/2019_January_Brussels).
 
-The notes were taken in realtime by volunteers during the discussions.
+The notes were taken in real-time by volunteers during the discussions.
 As such, they are far from editorially perfect, and are not intended as
 documentation. Relevant items around which consensus was formed are
 either already merged or in the process of being merged into the actual
@@ -33,7 +33,7 @@ I don't know why Tux is here, but I'll let him stay.
   |       `.`,        |      `.
   |         `.    __.j         )
   |__        |--""___|      ,-'
-     `"--...,+""""   `._,.-' 
+     `"--...,+""""   `._,.-'
 ```
 
 ## TODO
@@ -42,31 +42,31 @@ I don't know why Tux is here, but I'll let him stay.
 
 ### Daniel’s list
 * What to name things?
-   * Common Jabber vocabulary for Groups, 'Jabber ID', bookmarks, "muc members / participants"
+   * Common Jabber vocabulary for Groups, 'Jabber ID', bookmarks, "MUC members / participants"
    * Persons; (preference of roster name, pep name, local sync name (address book).
    * Persons in MUC (order of preference of room nick, roster name, pep name, …)
      * order of people in member list admins first?, alphabetical? (see affiliations)
    * Groups / Chats (preference of description, subject, local part, name, bookmark name, auto generated name)
- * do not get muc name from identity name but from disco form fields because identity name is set to localpart on some servers
+ * do not get MUC name from identity name but from disco form fields because identity name is set to localpart on some servers
  * Do we want to replace a referenced nick with the local version?
- * Adhoc, Impromptu group chat; come up with a cool default settings like members only, non-anon, allow pm?, allow subject change, allow invite. What to expose
-Behavioral changes in impromptu mucs (send chat states, display read markers, e2ee by default, prefer 1:1 instead of PM when contacting a participant) and how to recogonize and impromptu chat (isMemberOnly && isNonAnon)
-* Afflitations
-   * Do we need an owner. Should in a three person chat someone be the 'owner' 
+ * Ad hoc, Impromptu group chat; come up with a cool default settings like members only, non-anon, allow pm?, allow subject change, allow invite. What to expose
+Behavioral changes in impromptu MUCs (send chat states, display read markers, e2ee by default, prefer 1:1 instead of PM when contacting a participant) and how to recognize and impromptu chat (isMemberOnly && isNonAnon)
+* Affiliations
+   * Do we need an owner. Should in a three person chat someone be the 'owner'
    * Administrators might make sense. But maybe we want to show owner and admin as the same.
    * Maybe it makes sense to make everyone owner and then call owner the admin
 
 * Do we need different profiles?
    * Private, non-anon
    * Public
-   * Annoucements. w/o presence broadcast, moderated
+   * Announcements. w/o presence broadcast, moderated
    * should those profiles be locked afterwards
 
 
 * Do we want to keep bookmarks or just use it as a sync mechanism?
   * open/close conversations when bookmark created / autojoin flag removed?
-  * do we also leave when bookmark is removed? Does that work? this basically means no join without bookmark. 'remove bookmark' (w/o leave) can not be an action anymores
- 
+  * do we also leave when bookmark is removed? Does that work? this basically means no join without bookmark. 'remove bookmark' (w/o leave) can not be an action anymore
+
 
 ## Naming things?!
 
@@ -78,7 +78,7 @@ Behavioral changes in impromptu mucs (send chat states, display read markers, e2
   * Jabber is the community, XMPP is the protocol
   * What about calling it "Conversations ID", or "Converse ID", or "Movim ID", all at the same time. Might be confusing for users when they use multiple clients but most don't.
   * Some other protocols use "username" (with a hint for the default domain)
-  
+
 Consensus: "XMPP Address"? (until another user-friendly term for "XMPP" can be found/agreed upon)
 
 
@@ -86,19 +86,21 @@ Consensus: "XMPP Address"? (until another user-friendly term for "XMPP" can be f
 
 
 ### XMPP Address / Jabber ID
- - XMPP Address input: Always use one field. Never split into localpart and domain part. If possible do autocomplete on the server part in drop down
+ - XMPP Address input: Always use one field. Never split into localpart and domain part. If possible do auto-complete on the server part in drop down
 
-  
+
 ### Group chats / channels:
  - Private group chat (or groupchat)
+
     - members only
-    - Jid visibility: all
+    - JID visibility: all
     - MAM: yes
     - not listed (non public)
-    - peristence
+    - persistence
     - users can invite. default off. (does this need to be configurable?)
     - subject editability: owner only (probably make it configurable?)
     - disallow pm
+
  - Public channel
     - public / everyone can join
     - MAM: yes
@@ -108,10 +110,10 @@ Consensus: "XMPP Address"? (until another user-friendly term for "XMPP" can be f
     - subject editability: admins only (probably make it configurable)
  - Possibility to omit the words 'private' and 'public' later down the UI flow and just talk about 'groupchat' and 'channel' (for example when constrained on screen estate)
  
-   - recognize on members only AND visible JIDs AND not listed, everything else is a public channel. but a client should maybe warn before entering a public channel that makes your jid public. Those three 'detection properties' are immutable for private group chats
-  
-   - private group chats use randomized, auto generated JID (always on the server’s own muc host)
-   - public channels always ask for bare jid on create (auto suggest of know muc hosts)
+   - recognize on members only AND visible JIDs AND not listed, everything else is a public channel. but a client should maybe warn before entering a public channel that makes your JID public. Those three 'detection properties' are immutable for private group chats
+
+   - private group chats use randomized, auto generated JID (always on the server’s own MUC host)
+   - public channels always ask for bare JID on create (auto suggest of know MUC hosts)
       - UI suggestion. ask for name first. Then normalize to local part of JID. But let user change the JID if they want to
 
 
