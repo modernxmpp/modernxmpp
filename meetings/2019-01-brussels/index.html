@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>UX Sprint (January 2019, Brussels) - Modern XMPP</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/modernxmpp.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Modern XMPP</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guidelines <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../client/design/">User Interface</a>
+</li>
+                                    
+<li >
+    <a href="../../client/protocol/">Protocol</a>
+</li>
+                                    
+<li >
+    <a href="../../client/groupchat/">Multi-user Chats</a>
+</li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../../terminology/">Terminology</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li>
+                                <a href="https://github.com/modernxmpp/modernxmpp/edit/draft/docs/meetings/2019-01-brussels.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#ux-sprint-january-2019-brussels">UX Sprint (January 2019, Brussels)</a></li>
+            <li><a href="#todo">TODO</a></li>
+            <li><a href="#naming-things">Naming things?!</a></li>
+            <li><a href="#results-consensus">Results / Consensus</a></li>
+            <li><a href="#places-to-updateremove">Places to update/remove</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="ux-sprint-january-2019-brussels">UX Sprint (January 2019, Brussels)<a class="headerlink" href="#ux-sprint-january-2019-brussels" title="Permanent link">&para;</a></h1>
+<p>These are the archived notes from the Jan 2019 Brussels sprint,
+which focused primarily on discussing various UX issues facing
+the community as a whole. There is an associated
+<a href="https://wiki.xmpp.org/web/Sprints/2019_January_Brussels">wiki page</a>.</p>
+<p>The notes were taken in realtime by volunteers during the discussions.
+As such, they are far from editorially perfect, and are not intended as
+documentation. Relevant items around which consensus was formed are
+either already merged or in the process of being merged into the actual
+documentation.</p>
+<p>I don't know why Tux is here, but I'll let him stay.</p>
+<hr />
+<pre><code>              .-&quot;&quot;&quot;-.
+             '       \
+            |,.  ,-.  |
+            |()L( ()| |
+            |,'  `&quot;.| |
+            |.___.',| `
+           .j `--&quot;' `  `.
+          / '        '   \
+         / /          `   `.
+        / /            `    .
+       / /              l   |
+      . ,               |   |
+      ,&quot;`.             .|   |
+   _.'   ``.          | `..-'l
+  |       `.`,        |      `.
+  |         `.    __.j         )
+  |__        |--&quot;&quot;___|      ,-'
+     `&quot;--...,+&quot;&quot;&quot;&quot;   `._,.-' 
+</code></pre>
+
+<h2 id="todo">TODO<a class="headerlink" href="#todo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Extend https://wiki.xmpp.org/web/Usability/Glossary</li>
+</ul>
+<h3 id="daniels-list">Daniel’s list<a class="headerlink" href="#daniels-list" title="Permanent link">&para;</a></h3>
+<ul>
+<li>What to name things?</li>
+<li>Common Jabber vocabulary for Groups, 'Jabber ID', bookmarks, "muc members / participants"</li>
+<li>Persons; (preference of roster name, pep name, local sync name (address book).</li>
+<li>Persons in MUC (order of preference of room nick, roster name, pep name, …)<ul>
+<li>order of people in member list admins first?, alphabetical? (see affiliations)</li>
+</ul>
+</li>
+<li>Groups / Chats (preference of description, subject, local part, name, bookmark name, auto generated name)</li>
+<li>do not get muc name from identity name but from disco form fields because identity name is set to localpart on some servers</li>
+<li>Do we want to replace a referenced nick with the local version?</li>
+<li>Adhoc, Impromptu group chat; come up with a cool default settings like members only, non-anon, allow pm?, allow subject change, allow invite. What to expose
+Behavioral changes in impromptu mucs (send chat states, display read markers, e2ee by default, prefer 1:1 instead of PM when contacting a participant) and how to recogonize and impromptu chat (isMemberOnly &amp;&amp; isNonAnon)</li>
+<li>Afflitations</li>
+<li>Do we need an owner. Should in a three person chat someone be the 'owner' </li>
+<li>Administrators might make sense. But maybe we want to show owner and admin as the same.</li>
+<li>
+<p>Maybe it makes sense to make everyone owner and then call owner the admin</p>
+</li>
+<li>
+<p>Do we need different profiles?</p>
+</li>
+<li>Private, non-anon</li>
+<li>Public</li>
+<li>Annoucements. w/o presence broadcast, moderated</li>
+<li>
+<p>should those profiles be locked afterwards</p>
+</li>
+<li>
+<p>Do we want to keep bookmarks or just use it as a sync mechanism?</p>
+</li>
+<li>open/close conversations when bookmark created / autojoin flag removed?</li>
+<li>do we also leave when bookmark is removed? Does that work? this basically means no join without bookmark. 'remove bookmark' (w/o leave) can not be an action anymores</li>
+</ul>
+<h2 id="naming-things">Naming things?!<a class="headerlink" href="#naming-things" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Jabber ID? JID? XMPP address?<ul>
+<li>"Jabber" trademark</li>
+</ul>
+</li>
+<li>"JID" widely used but might be a more technical term</li>
+<li>"something address" is clear to people</li>
+<li>"XMPP" is usually hard to remember, "Jabber" is more friendly to the ear</li>
+<li>Jabber is the community, XMPP is the protocol</li>
+<li>What about calling it "Conversations ID", or "Converse ID", or "Movim ID", all at the same time. Might be confusing for users when they use multiple clients but most don't.</li>
+<li>Some other protocols use "username" (with a hint for the default domain)</li>
+</ul>
+<p>Consensus: "XMPP Address"? (until another user-friendly term for "XMPP" can be found/agreed upon)</p>
+<h2 id="results-consensus">Results / Consensus<a class="headerlink" href="#results-consensus" title="Permanent link">&para;</a></h2>
+<h3 id="xmpp-address-jabber-id">XMPP Address / Jabber ID<a class="headerlink" href="#xmpp-address-jabber-id" title="Permanent link">&para;</a></h3>
+<ul>
+<li>XMPP Address input: Always use one field. Never split into localpart and domain part. If possible do autocomplete on the server part in drop down</li>
+</ul>
+<h3 id="group-chats-channels">Group chats / channels:<a class="headerlink" href="#group-chats-channels" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Private group chat (or groupchat)</li>
+<li>members only</li>
+<li>Jid visibility: all</li>
+<li>MAM: yes</li>
+<li>not listed (non public)</li>
+<li>peristence</li>
+<li>users can invite. default off. (does this need to be configurable?)</li>
+<li>subject editability: owner only (probably make it configurable?)</li>
+<li>disallow pm</li>
+<li>Public channel</li>
+<li>public / everyone can join</li>
+<li>MAM: yes</li>
+<li>listed: yes</li>
+<li>persistent</li>
+<li>JID: visibility anonymous</li>
+<li>subject editability: admins only (probably make it configurable)</li>
+<li>
+<p>Possibility to omit the words 'private' and 'public' later down the UI flow and just talk about 'groupchat' and 'channel' (for example when constrained on screen estate)</p>
+</li>
+<li>
+<p>recognize on members only AND visible JIDs AND not listed, everything else is a public channel. but a client should maybe warn before entering a public channel that makes your jid public. Those three 'detection properties' are immutable for private group chats</p>
+</li>
+<li>
+<p>private group chats use randomized, auto generated JID (always on the server’s own muc host)</p>
+</li>
+<li>public channels always ask for bare jid on create (auto suggest of know muc hosts)<ul>
+<li>UI suggestion. ask for name first. Then normalize to local part of JID. But let user change the JID if they want to</li>
+</ul>
+</li>
+</ul>
+<p>Group chats and channels should be clearly distinguished visually.</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="center">Groupchat</th>
+<th align="center">Channel</th>
+<th align="center">Immutable for groupchats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Members-only</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">X</td>
+</tr>
+<tr>
+<td align="left">Reveal JIDs</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">X</td>
+</tr>
+<tr>
+<td align="left">Publicly listed</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">X</td>
+</tr>
+<tr>
+<td align="left">Persistent</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">MAM enabled</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">Subject editable</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">PMs</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">X</td>
+</tr>
+</tbody>
+</table>
+<h3 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h3>
+<p>People in the group chat / channel: Participants    </p>
+<table>
+<thead>
+<tr>
+<th align="left">Affiliations</th>
+<th align="center">In groupchats</th>
+<th align="center">In channels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">none</td>
+<td align="center">N/A **</td>
+<td align="center">Guest</td>
+</tr>
+<tr>
+<td align="left">member</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">admin</td>
+<td align="center"><em>Admin</em> (*)</td>
+<td align="center">Admin</td>
+</tr>
+<tr>
+<td align="left">owner</td>
+<td align="center">Owner</td>
+<td align="center">Owner</td>
+</tr>
+</tbody>
+</table>
+<p>Roles should not be used anymore.</p>
+<p>(*) A group chat will display an existing admin as such but it will not encourage/allow someone to be promoted to admin. UI options in group chats only allow a member to become an owner but not admin. So admins are discouraged by the UI but will be displayed as such if the end up being one for some reason.</p>
+<p>clients MAY create an 'advanced view' that displays roles as well.</p>
+<p>** Everybody is a member in groupchats</p>
+<h3 id="suggested-order-of-what-to-call-an-individual">Suggested order of what to call an individual<a class="headerlink" href="#suggested-order-of-what-to-call-an-individual" title="Permanent link">&para;</a></h3>
+<p>message: roster name, (address book), user nickname, localpart
+groupchat message: roster name, (address book), user nickname, resource (mentions refer to resource. if you do proper references you can live replace it with the 'nice' name)
+channel message: resource
+roster: roster name, user nickname, bare JID
+profile: roster name, user nickname, bare JID</p>
+<p>Avatar display should follow the same order</p>
+<h3 id="bookmarks">Bookmarks<a class="headerlink" href="#bookmarks" title="Permanent link">&para;</a></h3>
+<p>Unbookmarking a bookmark doesn’t do magic leave on any devices
+when receiving set/unset autojoin will join/leave on all devices
+leave/join will unset/set the autojoin flag (exposed as a choice to the user)
+clients should offer global sync-opt-out (Don’t adhere to autojoin)
+clients should store the list of groupchats open, unrelated to the autojoined bookmarks</p>
+<p>Summary: clients store the list of open chats (groupchats or not) and restore it on next start; on receiving a bookmark with a new autojoin from PEP, add the room to that list and open it; on receiving one without an autojoin, remove it from that list and close it; on joining a room add an autojoin bookmark; on leaving a room ask whether to leave it globally (then remove the autojoin from the bookmark), or to leave it locally (then remove the bookmark).</p>
+<h2 id="places-to-updateremove">Places to update/remove<a class="headerlink" href="#places-to-updateremove" title="Permanent link">&para;</a></h2>
+<p>https://wiki.xmpp.org/web/Usability/Glossary
+https://wiki.xmpp.org/web/Easy_Group_Chats</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
