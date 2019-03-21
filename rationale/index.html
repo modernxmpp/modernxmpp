@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Terminology - Modern XMPP</title>
+        <title>Rationale - Modern XMPP</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -67,8 +67,8 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="active">
-                                <a href="./">Terminology</a>
+                            <li >
+                                <a href="../terminology/">Terminology</a>
                             </li>
                         </ul>
 
@@ -78,18 +78,8 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li >
-                                <a rel="next" href="../client/groupchat/">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="disabled">
-                                <a rel="prev" >
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                             <li>
-                                <a href="https://github.com/modernxmpp/modernxmpp/edit/draft/docs/terminology.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/modernxmpp/modernxmpp/edit/draft/docs/rationale.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -99,40 +89,83 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#terminology">Terminology</a></li>
+        <li class="main active"><a href="#rationale">Rationale</a></li>
+            <li><a href="#group-chats">Group chats</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h1>
-<p>To reduce user confusion when switching between clients, it is good to use only recommended
-terms.</p>
-<table>
-<thead>
-<tr>
-<th>Historic terms</th>
-<th>Recommended terms</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MUC, Room, Chatroom, Conference</td>
-<td><em>Group chat</em> or <em>Channel</em> (see <a href="../client/groupchat/">Multi-user Chats</a>)</td>
-</tr>
-<tr>
-<td>Occupant</td>
-<td><em>Participant</em></td>
-</tr>
-<tr>
-<td>JID</td>
-<td><em>Address</em> or <em>XMPP address</em></td>
-</tr>
-<tr>
-<td>Roster</td>
-<td><em>Contact list</em></td>
-</tr>
-</tbody>
-</table></div>
+<h1 id="rationale">Rationale<a class="headerlink" href="#rationale" title="Permanent link">&para;</a></h1>
+<p>This page gives additional insight into why some of the recommendations
+in the Modern XMPP documentation are made.</p>
+<h2 id="group-chats">Group chats<a class="headerlink" href="#group-chats" title="Permanent link">&para;</a></h2>
+<p>Discussion about the UI/UX issues around group chats initially happened
+at the first <a href="meetings/2019-01-brussels.md">UX sprint</a>. Some observations
+were made:</p>
+<ul>
+<li>MUC configuration is messy, for users and developers</li>
+<li>Most MUCs fall roughly into a couple of standard configurations</li>
+</ul>
+<h3 id="types-of-groups">Types of groups<a class="headerlink" href="#types-of-groups" title="Permanent link">&para;</a></h3>
+<p>Software is about people. Good UX design is about understanding how
+people use the software.</p>
+<p>Group communication is a well-studied area of human interaction in
+general<sup id="fnref:wp-group-dynamics"><a class="footnote-ref" href="#fn:wp-group-dynamics" rel="footnote">1</a></sup>. It has been noted by researchers that
+groups can fall into four different types<sup id="fnref:wp-group-types"><a class="footnote-ref" href="#fn:wp-group-types" rel="footnote">2</a></sup>.</p>
+<p>Of the four group types, two are formed of people that share a personal
+or social connection (the so-called 'Primary' and 'Social' groups). Examples
+include families, groups of friends, colleagues or clubs.</p>
+<p>The other two group types ('Collective' and 'Category') are formed from
+people who share common traits, goals or interests. Such groups tend
+to be larger, less sticky, lack concrete social bonds and thus be more
+open.</p>
+<p>The developers of the Fractal IM client noted<sup id="fnref:banquets-bbqs"><a class="footnote-ref" href="#fn:banquets-bbqs" rel="footnote">3</a></sup> the struggle
+they faced trying to design an ideal UI for chats in their Matrix client.
+They observed the two high-level categories which they termed "Barbeque"
+(small, social-focused, closed, trusted) and "Banquet" (large,
+topic-focused, open, untrusted).</p>
+<p>The Fractal developers went as far to consider two completely separate
+applications to cater for the two types of discussions. </p>
+<p>Many other modern messaging apps contain both types of group chat, but
+unlike most XMPP clients, they <em>do</em> distinguish them visually.</p>
+<p>From a protocol perspective this distinction is unnatural - XMPP, like
+similar open chat protocols such as IRC and Matrix cares little for how
+the group is used, and provides various fine-grained configuration options.
+Other than minor configuration tweaks there is little to distinguish the
+two use-cases at a technical level.</p>
+<p>However dividing these up at the UI level provides a number of advantages:</p>
+<ul>
+<li>Removes/reduces the need for fine-grained configuration options that users
+    may not understand, or mis-use</li>
+<li>Helps prevent user confusion when sharing content (it is harder to
+    accidentally share family photos with an open-source project's chatroom
+    full of strangers, if the family group and project group are strongly
+    separated)</li>
+<li>Makes managing notification rules easier</li>
+</ul>
+<h4 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h4>
+<p>It was agreed that "room" terminology is outdated<sup id="fnref:trend-chat-room"><a class="footnote-ref" href="#fn:trend-chat-room" rel="footnote">4</a></sup>, and not used by
+any modern messaging systems. s a result, people do not tend to be familiar</p>
+<!-- Footnotes -->
+
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:wp-group-dynamics">
+<p>https://en.wikipedia.org/wiki/Group_dynamics&#160;<a class="footnote-backref" href="#fnref:wp-group-dynamics" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:wp-group-types">
+<p>https://en.wikipedia.org/wiki/Group_dynamics#Types_of_groups&#160;<a class="footnote-backref" href="#fnref:wp-group-types" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:banquets-bbqs">
+<p>https://blogs.gnome.org/tbernard/2018/05/16/banquets-and-barbecues/&#160;<a class="footnote-backref" href="#fnref:banquets-bbqs" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:trend-chat-room">
+<p>Google Trends notes a significant decline since
+<a href="https://trends.google.com/trends/explore?date=all&amp;q=chat%20room">at least 2004</a>.&#160;<a class="footnote-backref" href="#fnref:trend-chat-room" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></div>
         </div>
 
         <footer class="col-md-12">

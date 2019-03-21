@@ -169,6 +169,10 @@ be requested by default at startup, but should be accessible through an advanced
 <td align="left">Connect port</td>
 <td align="left">The network port to connect to</td>
 </tr>
+<tr>
+<td align="left">TLS Mode<sup id="fnref:tls-mode"><a class="footnote-ref" href="#fn:tls-mode" rel="footnote">2</a></sup></td>
+<td align="left">Multiple choice: "STARTTLS" or "Direct TLS"</td>
+</tr>
 </tbody>
 </table>
 <p>Both of the above should be automatically discovered from DNS, according to the <a href="https://xmpp.org/rfcs/rfc6120.html#tcp-resolution">rules in RFC 6120</a>.
@@ -244,7 +248,7 @@ SHOULD NOT rely on color alone to distinguish different status values<sup id="fn
 Not required. Describe how to display multiple accounts in a single client?</p>
 </div>
 <h2 id="group-chat">Group chat<a class="headerlink" href="#group-chat" title="Permanent link">&para;</a></h2>
-<p>You can find more details about <a href="../groupchat/">Group Chats here</a>.</p>
+<p>You can find more details about <a href="../groupchat/">group chats here</a>.</p>
 <h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
 <p>Clients should have documentation covering essential functionality, including:</p>
 <div class="admonition todo">
@@ -261,7 +265,7 @@ to UI that should be mentioned, however.</p>
 <h2 id="names">Names<a class="headerlink" href="#names" title="Permanent link">&para;</a></h2>
 <p>When displaying messages received from a remote JID, either within a one-to-one or multi-user chat, clients need to show a human-readable
 name for that sender.</p>
-<p>There are multiple sources for such a display name, which depend on the context (e.g. whether the conversation is a private or group chat).</p>
+<p>There are multiple sources for such a display name, which depend on the context (e.g. whether the conversation is one-to-one or a group chat).</p>
 <h3 id="name-sources">Name sources<a class="headerlink" href="#name-sources" title="Permanent link">&para;</a></h3>
 <p>Valid sources are:</p>
 <dl>
@@ -325,6 +329,11 @@ should be checked in the order described by the table below, displaying the firs
 <li><a href="https://webaim.org/resources/contrastchecker/">Color contrast checker</a></li>
 </ul>
 <p><a class="footnote-backref" href="#fnref:color" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:tls-mode">
+<p>This is presented as a multiple-choice option. A checkbox labelled e.g. "Direct TLS"
+may confuse users by implying that the opposite of "Direct TLS" is potentially "No TLS". Security is
+not an option, and TLS is always used. This option is about what style the server supports.&#160;<a class="footnote-backref" href="#fnref:tls-mode" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></div>
