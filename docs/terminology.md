@@ -5,9 +5,9 @@ terms.
 
 | Historic terms                   | Recommended terms                                     |
 |----------------------------------|-------------------------------------------------------|
-| MUC, Room, Chatroom, Conference  | 'Group Chat' or 'Channel' (see [Multi-user Chats][])  |
-| Occupant                         | 'Participant'                                         |
-| JID                              | 'Address' or 'XMPP address'                           |
-| Roster                           | 'Contact list'                                        |
+| MUC, Room, Chatroom, Conference  | *Group chat* or *Channel* (see [Multi-user Chats][])  |
+| Occupant                         | *Participant*                                         |
+| JID                              | *Address* or *XMPP address*                           |
+| Roster                           | *Contact list*                                        |
 
 [Multi-user Chats]: client/groupchat.md

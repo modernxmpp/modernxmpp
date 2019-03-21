@@ -2,7 +2,7 @@
 
 ## Types of chat
 
-There are two kinds of multi-user chat. Private group chats, and public channels.
+There are two kinds of multi-user chat. Private *group chats*, and public *channels*.
 
 ### Properties
 
@@ -16,28 +16,28 @@ There are two kinds of multi-user chat. Private group chats, and public channels
 | Publicly listed  | No  (\*)   | Yes     |
 | PMs              | No  (\*)   | Yes     |
 
-(\*) Immutable for group chats.
+(\*) Immutable for *group chats*.
 
 ### Terminology
 
-People in the group chat / channel: Participants
+People in the *group chat* / *channel*: *Participants*
 
 Roles are not displayed and cannot be modified through the UI.
 
 
-| Affiliations | In groupchats | In channels |
-|:-------------|:-------------:|:-----------:|
-| none         | N/A **        | Guest       |
-| member       | -             | -           |
-| admin        | *Admin* (\*)  | Admin       |
-| owner        | Owner         | Owner       |
+| Affiliations | In group chats | In channels |
+|:-------------|:--------------:|:-----------:|
+| none         | N/A **         | Guest       |
+| member       | -              | -           |
+| admin        | *Admin* (\*)   | Admin       |
+| owner        | Owner          | Owner       |
 
-(\*) A group chat will display an existing admin as such but it will not encourage/allow
-someone to be promoted to admin. UI options in group chats only allow a member to become
+(\*) A *group chat* will display an existing admin as such but it will not encourage/allow
+someone to be promoted to admin. UI options in *group chats* only allow a member to become
 an owner but not admin. So admins are discouraged by the UI but will be displayed as such
 if the end up being one for some reason.
 
-(\*\*) Everybody is a member in groupchats
+(\*\*) Everybody is a member in *group chats*
 
 Clients MAY create an 'advanced view' that displays roles as well.
 
