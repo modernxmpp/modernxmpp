@@ -168,7 +168,7 @@ implement this mechanism to provide the best user experience.
 #### Benefits
 
 - Does not depend on the recipient supporting it (simply falls back to sending a URL)
-- Works with Group Chats
+- Works with group chats
 - Works when the recipient is offline
 - Allows the recipient to receive on multiple devices
 
@@ -224,7 +224,7 @@ it suitable for larger files.
 - Because it is a multi-purpose framework it can be complex.
 - Not all clients support it.
 - In the case of the recipient having multiple devices, only a single one can receive the file.
-- Does not work for sharing a file with multiple people (e.g. in a Group Chat)
+- Does not work for sharing a file with multiple people (e.g. in a group chat)
 - Only works if the recipient is online
 
 !!! note
@@ -254,14 +254,14 @@ is required (and HTTP Upload does not suffice for some reason).
 
 - Deprecated. Modern clients are switching to Jingle negotiation.
 - In the case of the recipient having multiple devices, only a single one can receive the file.
-- Does not work for sharing a file with multiple people (e.g. in a Group Chat)
+- Does not work for sharing a file with multiple people (e.g. in a group chat)
 - Only works if the recipient is online
 
 ## Avatars
 
 TODO
 
-## Group Chat
+## Group chat
 
 TODO
 
@@ -293,7 +293,7 @@ encryption protocol "OTR".
 Although it sufficed for simple use cases (sender and recipient have
 a single device connected, and both support OTR), it has a number of
 drawbacks when used within XMPP. Traditionally it has not supported multiple devices
-very well, nor Group Chats, and it only protects the message body.
+very well, nor group chats, and it only protects the message body.
 
 These issues lead to a poor user experience.
 

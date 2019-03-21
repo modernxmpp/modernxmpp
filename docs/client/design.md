@@ -115,9 +115,9 @@ Support for multiple accounts is OPTIONAL.
     Research recommendations for the best way to handle multiple accounts. E.g. merge contacts, or not.
     Not required. Describe how to display multiple accounts in a single client?
 
-## Group Chat
+## Group chat
 
-You can find more details about [Group Chats here](groupchat.md).
+You can find more details about [group chats here](groupchat.md).
 
 ## Documentation
 
@@ -139,7 +139,7 @@ Clients must not reveal full JID. Don't query unsubscribed contacts.
 When displaying messages received from a remote JID, either within a one-to-one or multi-user chat, clients need to show a human-readable
 name for that sender.
 
-There are multiple sources for such a display name, which depend on the context (e.g. whether the conversation is a private or Group Chat).
+There are multiple sources for such a display name, which depend on the context (e.g. whether the conversation is one-to-one or a group chat).
 
 ### Name sources
 
