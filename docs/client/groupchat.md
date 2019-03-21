@@ -41,7 +41,7 @@ if the end up being one for some reason.
 
 Clients MAY create an 'advanced view' that displays roles as well.
 
-# User nickname
+## User nickname
 
 When joining a group chat, a client needs to select a nickname to use. There are multiple
 sources from which this name may be selected. The client should use the following sources
@@ -67,7 +67,7 @@ Local nickname
 JID username
 : The username portion of the user's JID (i.e. before the '@').
 
-# Bookmarks
+## Bookmarks
 
 !!! todo
     Bookmark management logic
