@@ -32,10 +32,11 @@ List recommended configuration options.
 Support for these options is OPTIONAL. If included in the client, they MUST NOT
 be requested by default at startup, but should be accessible through an advanced options interface.
 
-| Option       | Description                        |
-|:-------------|:-----------------------------------|
-| Connect host | The network hostname to connect to |
-| Connect port | The network port to connect to     |
+| Option              | Description                                  |
+|:--------------------|:---------------------------------------------|
+| Connect host        | The network hostname to connect to           |
+| Connect port        | The network port to connect to               |
+| TLS Mode[^tls-mode] | Multiple choice: "STARTTLS" or "Direct TLS"  |
 
 Both of the above should be automatically discovered from DNS, according to the [rules in RFC 6120](https://xmpp.org/rfcs/rfc6120.html#tcp-resolution).
 Clients that support other connection mechanisms, such as BOSH, SHOULD also implement [XEP-0156](https://xmpp.org/extensions/xep-0156.html).
@@ -185,3 +186,7 @@ Avatar display should follow the same order
     
     * [WCAG 2.1: Understanding Use of Color](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html)
     * [Color contrast checker](https://webaim.org/resources/contrastchecker/)
+
+[^tls-mode]: This is presented as a multiple-choice option. A checkbox labelled e.g. "Direct TLS"
+    may confuse users by implying that the opposite of "Direct TLS" is potentially "No TLS". Security is
+    not an option, and TLS is always used. This option is about what style the server supports.
