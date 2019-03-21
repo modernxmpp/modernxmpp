@@ -67,6 +67,10 @@ Local nickname
 JID username
 : The username portion of the user's JID (i.e. before the '@').
 
+### Other user's names
+
+The display of other user's names is covered in the [general UI recommendations](design.md#names).
+
 ## Bookmarks
 
 !!! todo
