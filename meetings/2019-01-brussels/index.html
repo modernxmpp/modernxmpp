@@ -103,7 +103,7 @@
 which focused primarily on discussing various UX issues facing
 the community as a whole. There is an associated
 <a href="https://wiki.xmpp.org/web/Sprints/2019_January_Brussels">wiki page</a>.</p>
-<p>The notes were taken in realtime by volunteers during the discussions.
+<p>The notes were taken in real-time by volunteers during the discussions.
 As such, they are far from editorially perfect, and are not intended as
 documentation. Relevant items around which consensus was formed are
 either already merged or in the process of being merged into the actual
@@ -127,7 +127,7 @@ documentation.</p>
   |       `.`,        |      `.
   |         `.    __.j         )
   |__        |--&quot;&quot;___|      ,-'
-     `&quot;--...,+&quot;&quot;&quot;&quot;   `._,.-' 
+     `&quot;--...,+&quot;&quot;&quot;&quot;   `._,.-'
 </code></pre>
 
 <h2 id="todo">TODO<a class="headerlink" href="#todo" title="Permanent link">&para;</a></h2>
@@ -137,19 +137,19 @@ documentation.</p>
 <h3 id="daniels-list">Daniel’s list<a class="headerlink" href="#daniels-list" title="Permanent link">&para;</a></h3>
 <ul>
 <li>What to name things?</li>
-<li>Common Jabber vocabulary for Groups, 'Jabber ID', bookmarks, "muc members / participants"</li>
+<li>Common Jabber vocabulary for Groups, 'Jabber ID', bookmarks, "MUC members / participants"</li>
 <li>Persons; (preference of roster name, pep name, local sync name (address book).</li>
 <li>Persons in MUC (order of preference of room nick, roster name, pep name, …)<ul>
 <li>order of people in member list admins first?, alphabetical? (see affiliations)</li>
 </ul>
 </li>
 <li>Groups / Chats (preference of description, subject, local part, name, bookmark name, auto generated name)</li>
-<li>do not get muc name from identity name but from disco form fields because identity name is set to localpart on some servers</li>
+<li>do not get MUC name from identity name but from disco form fields because identity name is set to localpart on some servers</li>
 <li>Do we want to replace a referenced nick with the local version?</li>
-<li>Adhoc, Impromptu group chat; come up with a cool default settings like members only, non-anon, allow pm?, allow subject change, allow invite. What to expose
-Behavioral changes in impromptu mucs (send chat states, display read markers, e2ee by default, prefer 1:1 instead of PM when contacting a participant) and how to recogonize and impromptu chat (isMemberOnly &amp;&amp; isNonAnon)</li>
-<li>Afflitations</li>
-<li>Do we need an owner. Should in a three person chat someone be the 'owner' </li>
+<li>Ad hoc, Impromptu group chat; come up with a cool default settings like members only, non-anon, allow pm?, allow subject change, allow invite. What to expose
+Behavioral changes in impromptu MUCs (send chat states, display read markers, e2ee by default, prefer 1:1 instead of PM when contacting a participant) and how to recognize and impromptu chat (isMemberOnly &amp;&amp; isNonAnon)</li>
+<li>Affiliations</li>
+<li>Do we need an owner. Should in a three person chat someone be the 'owner'</li>
 <li>Administrators might make sense. But maybe we want to show owner and admin as the same.</li>
 <li>
 <p>Maybe it makes sense to make everyone owner and then call owner the admin</p>
@@ -159,7 +159,7 @@ Behavioral changes in impromptu mucs (send chat states, display read markers, e2
 </li>
 <li>Private, non-anon</li>
 <li>Public</li>
-<li>Annoucements. w/o presence broadcast, moderated</li>
+<li>Announcements. w/o presence broadcast, moderated</li>
 <li>
 <p>should those profiles be locked afterwards</p>
 </li>
@@ -167,7 +167,7 @@ Behavioral changes in impromptu mucs (send chat states, display read markers, e2
 <p>Do we want to keep bookmarks or just use it as a sync mechanism?</p>
 </li>
 <li>open/close conversations when bookmark created / autojoin flag removed?</li>
-<li>do we also leave when bookmark is removed? Does that work? this basically means no join without bookmark. 'remove bookmark' (w/o leave) can not be an action anymores</li>
+<li>do we also leave when bookmark is removed? Does that work? this basically means no join without bookmark. 'remove bookmark' (w/o leave) can not be an action anymore</li>
 </ul>
 <h2 id="naming-things">Naming things?!<a class="headerlink" href="#naming-things" title="Permanent link">&para;</a></h2>
 <ul>
@@ -186,22 +186,26 @@ Behavioral changes in impromptu mucs (send chat states, display read markers, e2
 <h2 id="results-consensus">Results / Consensus<a class="headerlink" href="#results-consensus" title="Permanent link">&para;</a></h2>
 <h3 id="xmpp-address-jabber-id">XMPP Address / Jabber ID<a class="headerlink" href="#xmpp-address-jabber-id" title="Permanent link">&para;</a></h3>
 <ul>
-<li>XMPP Address input: Always use one field. Never split into localpart and domain part. If possible do autocomplete on the server part in drop down</li>
+<li>XMPP Address input: Always use one field. Never split into localpart and domain part. If possible do auto-complete on the server part in drop down</li>
 </ul>
 <h3 id="group-chats-channels">Group chats / channels:<a class="headerlink" href="#group-chats-channels" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Private group chat (or groupchat)<ul>
+<li>
+<p>Private group chat (or groupchat)</p>
+<ul>
 <li>members only</li>
-<li>Jid visibility: all</li>
+<li>JID visibility: all</li>
 <li>MAM: yes</li>
 <li>not listed (non public)</li>
-<li>peristence</li>
+<li>persistence</li>
 <li>users can invite. default off. (does this need to be configurable?)</li>
 <li>subject editability: owner only (probably make it configurable?)</li>
 <li>disallow pm</li>
 </ul>
 </li>
-<li>Public channel<ul>
+<li>
+<p>Public channel</p>
+<ul>
 <li>public / everyone can join</li>
 <li>MAM: yes</li>
 <li>listed: yes</li>
@@ -214,12 +218,12 @@ Behavioral changes in impromptu mucs (send chat states, display read markers, e2
 <p>Possibility to omit the words 'private' and 'public' later down the UI flow and just talk about 'groupchat' and 'channel' (for example when constrained on screen estate)</p>
 </li>
 <li>
-<p>recognize on members only AND visible JIDs AND not listed, everything else is a public channel. but a client should maybe warn before entering a public channel that makes your jid public. Those three 'detection properties' are immutable for private group chats</p>
+<p>recognize on members only AND visible JIDs AND not listed, everything else is a public channel. but a client should maybe warn before entering a public channel that makes your JID public. Those three 'detection properties' are immutable for private group chats</p>
 </li>
 <li>
-<p>private group chats use randomized, auto generated JID (always on the server’s own muc host)</p>
+<p>private group chats use randomized, auto generated JID (always on the server’s own MUC host)</p>
 </li>
-<li>public channels always ask for bare jid on create (auto suggest of know muc hosts)<ul>
+<li>public channels always ask for bare JID on create (auto suggest of know MUC hosts)<ul>
 <li>UI suggestion. ask for name first. Then normalize to local part of JID. But let user change the JID if they want to</li>
 </ul>
 </li>
