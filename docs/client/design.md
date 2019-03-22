@@ -183,10 +183,10 @@ Avatar display should follow the same order
 <!-- Footnotes -->
 
 [^color]: Resources for the use of color in interface design:
-    
+
     * [WCAG 2.1: Understanding Use of Color](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html)
     * [Color contrast checker](https://webaim.org/resources/contrastchecker/)
 
-[^tls-mode]: This is presented as a multiple-choice option. A checkbox labelled e.g. "Direct TLS"
+[^tls-mode]: This is presented as a multiple-choice option. A checkbox labeled e.g. "Direct TLS"
     may confuse users by implying that the opposite of "Direct TLS" is potentially "No TLS". Security is
     not an option, and TLS is always used. This option is about what style the server supports.

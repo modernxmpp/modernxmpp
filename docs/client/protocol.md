@@ -87,7 +87,7 @@ approach to messaging, where all their devices are in sync.
 Modern XMPP clients should not set a priority in their presence, and they should implement the
 following XEPs:
 
-- XEP-0280 - Carbons - for "live" synchronisation of conversations between online devices
+- XEP-0280 - Carbons - for "live" synchronization of conversations between online devices
 - XEP-0313 - MAM - for "catch-up" of messages that were exchanged while a device was offline
 
 ### Known issues
@@ -190,10 +190,10 @@ element in the message stanza with the same URL.
 
     To enable automatic display of media in the conversation view, Conversations (at least) currently requires
     that the `<body>` contain *just* the URL, and it must be identical to the URL in the `jabber:x:oob` payload.
-    
+
     The `<desc>` element is not used or supported by Conversations.
-    
-    This behaviour means that it is not possible for any text to directly accompany a media file, and must
+
+    This behavior means that it is not possible for any text to directly accompany a media file, and must
     be sent separately.
 
 ### Jingle
@@ -209,8 +209,8 @@ Jingle is split into multiple XEPs. For file transfer the following are relevant
 
 - XEP-0166 - the core Jingle framework
 - XEP-0234 - the Jingle file transfer definition
-- XEP-0260 - the most common transport mechanism for files (SOCKS5 bytestreams - may be directly peer-to-peer or server-mediated)
-- XEP-0261 - a fallback transport for tunnelling the data directly over the XMPP stream (inefficient and slow, but always succeeds)
+- XEP-0260 - the most common transport mechanism for files (SOCKS5 Bytestreams - may be directly peer-to-peer or server-mediated)
+- XEP-0261 - a fallback transport for tunneling the data directly over the XMPP stream (inefficient and slow, but always succeeds)
 
 #### Advantages
 
@@ -277,7 +277,7 @@ All XMPP streams must be encrypted using TLS as specified in RFC 6920.
 
 Clients may additionally support encrypting messages within the XMPP
 stream. This can prevent untrusted servers from viewing or modifying
-the contents of exchanged messsages, and is known as 'end-to-end
+the contents of exchanged messages, and is known as 'end-to-end
 encryption'.
 
 The current preferred protocol for this in XMPP is OMEMO, specified

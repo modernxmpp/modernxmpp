@@ -32,12 +32,12 @@ open.
 
 The developers of the Fractal IM client noted[^banquets-bbqs] the struggle
 they faced trying to design an ideal UI for chats in their Matrix client.
-They observed the two high-level categories which they termed "Barbeque"
+They observed the two high-level categories which they termed "Barbecue"
 (small, social-focused, closed, trusted) and "Banquet" (large,
 topic-focused, open, untrusted).
 
 The Fractal developers went as far to consider two completely separate
-applications to cater for the two types of discussions. 
+applications to cater for the two types of discussions.
 
 Many other modern messaging apps contain both types of group chat, but
 unlike most XMPP clients, they *do* distinguish them visually.
@@ -51,7 +51,7 @@ two use-cases at a technical level.
 However dividing these up at the UI level provides a number of advantages:
 
 * Removes/reduces the need for fine-grained configuration options that users
-    may not understand, or mis-use
+    may not understand, or misuse
 * Helps prevent user confusion when sharing content (it is harder to
     accidentally share family photos with an open-source project's chatroom
     full of strangers, if the family group and project group are strongly
