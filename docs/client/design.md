@@ -152,7 +152,7 @@ Address book
 : Platform-dependent. If the application is somehow linked to the user's address book and is able to access a contact's information there.
 
 User nickname
-: A nickname published by the sender in PEP per XEP-0172.
+: A nickname published by the sender in PEP per [XEP-0172](https://xmpp.org/extensions/xep-0172.html).
 
 Resource
 : The resource of the sending JID.
