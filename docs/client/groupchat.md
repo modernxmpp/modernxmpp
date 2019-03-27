@@ -35,7 +35,7 @@ Roles are not displayed and cannot be modified through the UI.
 (\*) A *group chat* will display an existing admin as such but it will not encourage/allow
 someone to be promoted to admin. UI options in *group chats* only allow a member to become
 an owner but not admin. So admins are discouraged by the UI but will be displayed as such
-if the end up being one for some reason.
+if they end up being one for some reason.
 
 (\*\*) Everybody is a member in *group chats*
 
