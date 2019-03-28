@@ -193,7 +193,7 @@ element in the message stanza with the same URL.
 
     The `<desc>` element is not used or supported by Conversations.
 
-    This behavior means that it is not possible for any text to directly accompany a media file, and must
+    This behavior means that it is not possible for any text to directly accompany a media file, and must be sent separately.
 
 ### Jingle
 
