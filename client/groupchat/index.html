@@ -103,6 +103,7 @@
             <li><a href="#types-of-chat">Types of chat</a></li>
             <li><a href="#user-nickname">User nickname</a></li>
             <li><a href="#bookmarks">Bookmarks</a></li>
+            <li><a href="#private-messages">Private messages</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -195,7 +196,7 @@
 <p>(*) A <em>group chat</em> will display an existing admin as such but it will not encourage/allow
 someone to be promoted to admin. UI options in <em>group chats</em> only allow a member to become
 an owner but not admin. So admins are discouraged by the UI but will be displayed as such
-if the end up being one for some reason.</p>
+if they end up being one for some reason.</p>
 <p>(**) Everybody is a member in <em>group chats</em></p>
 <p>Clients MAY create an 'advanced view' that displays roles as well.</p>
 <h2 id="user-nickname">User nickname<a class="headerlink" href="#user-nickname" title="Permanent link">&para;</a></h2>
@@ -225,6 +226,8 @@ name that is registered by the user for that chat.</dd>
 <p class="admonition-title">Todo</p>
 <p>Bookmark management logic</p>
 </div>
+<h2 id="private-messages">Private messages<a class="headerlink" href="#private-messages" title="Permanent link">&para;</a></h2>
+<p>Clients must always use real JIDs for messaging privately within a <em>group chat</em> if (and only if) JIDs are publicly visible to all participants.<sup id="fnref:pm-realjid"><a class="footnote-ref" href="#fn:pm-realjid">2</a></sup></p>
 <!-- Footnotes -->
 
 <div class="footnote">
@@ -233,6 +236,15 @@ name that is registered by the user for that chat.</dd>
 <li id="fn:local-nickname">
 <p>To avoid requiring the user to configure a nickname manually on each device, shared cross-device
 stores such as PEP and vCard should be preferred.&#160;<a class="footnote-backref" href="#fnref:local-nickname" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pm-realjid">
+<p>If real JIDs are known to all participants, it is preferable to use that for private communication to avoid confusion. Through-MUC PMs have the following disadvantages:</p>
+<ul>
+<li>Only work while connected to the group chat</li>
+<li>Do not interact well with multiple devices (e.g. not all of a recipient's devices may be in a group chat)</li>
+<li>Can cause confusion if talking to the same person through different views (e.g. if the person is already a contact in your roster, and you already have a chat open with them)</li>
+</ul>
+<p>However if the sending user is an admin of a room where JIDs are hidden, using a real JID will reveal the admin's private JID to the recipient. Either warn the sender that their JID will be revealed, or always use the in-room JID in such channels.&#160;<a class="footnote-backref" href="#fnref:pm-realjid" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></div>
