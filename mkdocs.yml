@@ -15,6 +15,7 @@ markdown_extensions:
   - toc:
       permalink: true
 
+site_url: https://docs.modernxmpp.org/
 repo_url: https://github.com/modernxmpp/modernxmpp
 edit_uri: edit/draft/docs
 
