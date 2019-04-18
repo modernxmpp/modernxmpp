@@ -2,7 +2,7 @@
 
 ## Types of chat
 
-There are two kinds of multi-user chat. Private *group chats*, and public *channels*.
+There are two kinds of multi-user chat. Private *group chats*, and public *channels*[^rationale-gc].
 
 ### Properties
 
@@ -82,13 +82,12 @@ Clients must always use real JIDs for messaging privately within a *group chat* 
 
 <!-- Footnotes -->
 
-[^local-nickname]: To avoid requiring the user to configure a nickname manually on each device, shared cross-device
-    stores such as PEP and vCard should be preferred.
-
+[^rationale-gc]: Rationale [group chats](/rationale#group-chats)
+[^local-nickname]: To avoid requiring the user to configure a nickname manually on each device, shared cross-device stores such as PEP and vCard should be preferred.
 [^pm-realjid]: If real JIDs are known to all participants, it is preferable to use that for private communication to avoid confusion. Through-MUC PMs have the following disadvantages:
-    
+
     - Only work while connected to the group chat
     - Do not interact well with multiple devices (e.g. not all of a recipient's devices may be in a group chat)
     - Can cause confusion if talking to the same person through different views (e.g. if the person is already a contact in your roster, and you already have a chat open with them)
-    
+
     However if the sending user is an admin of a room where JIDs are hidden, using a real JID will reveal the admin's private JID to the recipient. Either warn the sender that their JID will be revealed, or always use the in-room JID in such channels.
