@@ -15,40 +15,40 @@ Dino          | [Weblate](https://hosted.weblate.org/projects/dino/)
 Gajim         | [Pootle](https://translate.gajim.org/)
 PSI(+)        | [Transifex](https://www.transifex.com/tehnick/psi-plus/)
 Swift         | [swift.im git](https://swift.im/git/swift/tree/Swift/Translations)
-yax.im        | ?
+yax.im        | [launchpad.net](https://translations.launchpad.net/yaxim/master)
 
 
 ## German
 
 ### Terms currently used in clients
 
-| Term \ Client        | Conversations                 | Converse.js                   | Dino                   | Gajim[^gajim-MR]          | PSI(+)                       | Swift.im            | yax.im |
-|----------------------|-------------------------------|-------------------------------|------------------------|---------------------------|------------------------------|---------------------|--------|
-| XMPP address         | XMPP-Adresse                  | XMPP-Adresse                  | JID                    | XMPP-Adresse              | JID                          | JID, Jabber-ID      |        |
-| contact list         | Kontaktliste                  | Kontakte                      | Kontaktliste           | Kontaktliste              | Kontaktliste                 | Kontaktliste        |        |
-| bookmarks            | Lesezeichen                   | Lesezeichen                   | -                      | Gespeicherte Gruppenchats | Lesezeichen                  | Lesezeichen         |        |
-| auto join            | Auto-Join-Funktion            | automatisch beitreten         | -                      | automatisch beitreten     | automatisch beitreten        | -                   |        |
-| channel              | Channel                       | Gruppenchat, Raum             | Kanal/Konferenz        | Gruppenchat               | Gruppenchat, Chatraum        | Chatraum            |        |
-| group chat           | Gruppenchat                   | Gruppenchat                   | Raum                   | Gruppenchat               | Gruppenchat, Chatraum        | Chatraum            |        |
-| role                 | ?                             | Rechte, Rolle                 | -                      | Rolle                     | Rolle, Funktion              | Rolle               |        |
-| moderator            | Moderator                     | Moderator                     | -                      | Moderator                 | Moderator                    | Moderator           |        |
-| participant          | Teilnehmer                    | Teilnehmer                    | members ?              | Teilnehmer                | Teilnehmer                   | Teilnehmer          |        |
-| kick                 | ausschließen?                 | hinauswerfen                  | hinauswerfen           | rauswerfen                | rauswerfen                   | rausschmeißen       |        |
-| ban                  | ausschließen?                 | entfernen                     | -                      | sperren                   | verbannen                    | verbannen           |        |
-| affiliation          | Rechte?                       | Zugehörigkeit                 | -                      | Gruppenzugehörigkeit      | Mitgliedschaft, Angliederung | Zugehörigkeit       |        |
-| owner                | Eigentümer                    | Eigentümer                    | Eigentümer             | Besitzer                  | Besitzer                     | Besitzer            |        |
-| admin                | Administrator                 | Admin                         | Administrator          | Administrator             | Administrator                | Administrator       |        |
-| member               | Mitglied                      | Mitglied                      | Mitglied               | Mitglied                  | Mitglied                     | Mitglied            |        |
-| user                 | -                             | Besucher                      | Gast                   | -                         | -                            | -                   |        |
-| nickname             | Nickname                      | Spitzname, Nickname           | Spitzname              | Spitzname                 | Spitzname                    | Spitzname, Nickname |        |
-| history              | Verlauf                       | -                             | Gesprächsverlauf       | Unterhaltungsverlauf      | Nachrichtenchronik           | Verlauf             |        |
-| fingerprint          | Fingerabdruck                 | Fingerabdruck                 | Fingerabdruck          | Fingerabdruck             | Fingerabdruck                | -                   |        |
-| subscription request | Online-Status anfragen        | Kontaktanfrage[^sub-converse] | Kontaktanfrage         | Kontaktanfrage            | Anfrage                      | Anfrage             |        |
-| subscription         | Online-Status                 | Anwesenheitsabonnement        | -                      | Abonnement                | Abonnement                   | Abonnement          |        |
-| chat                 | Unterhaltung                  | Chat                          | Unterhaltung           | Chat                      | Chat                         | Chat                |        |
-| read receipts        | Lese- und Empfangsbestätigung | -                             | Lesebestätigungen      | Empfangsbestätigungen     | Übermittlungsbestätigung     | Empfangsbestätigung |        |
-| typing notifications | Tipp-Benachrichtigung         | -                             | Tippbenachrichtigungen | Chatstatus                | Tipp-Benachrichtigung        | -                   |        |
-| avatar               | Avatar                        | Avatarbild                    | -                      | Kontaktbild               | Avatar                       | Bild                |        |
+| Term \ Client        | Conversations                 | Converse.js                   | Dino                   | Gajim[^gajim-MR]          | PSI(+)                       | Swift.im            | yax.im                            |
+|----------------------|-------------------------------|-------------------------------|------------------------|---------------------------|------------------------------|---------------------|-----------------------------------|
+| XMPP address         | XMPP-Adresse                  | XMPP-Adresse                  | JID                    | XMPP-Adresse              | JID                          | JID, Jabber-ID      | JID                               |
+| contact list         | Kontaktliste                  | Kontakte                      | Kontaktliste           | Kontaktliste              | Kontaktliste                 | Kontaktliste        | Liste?                            |
+| bookmarks            | Lesezeichen                   | Lesezeichen                   | -                      | Gespeicherte Gruppenchats | Lesezeichen                  | Lesezeichen         | -                                 |
+| auto join            | Auto-Join-Funktion            | automatisch beitreten         | -                      | automatisch beitreten     | automatisch beitreten        | -                   | -                                 |
+| channel              | Channel                       | Gruppenchat, Raum             | Kanal/Konferenz        | Gruppenchat               | Gruppenchat, Chatraum        | Chatraum            | Gruppenchat                       |
+| group chat           | Gruppenchat                   | Gruppenchat                   | Raum                   | Gruppenchat               | Gruppenchat, Chatraum        | Chatraum            | Gruppenchat                       |
+| role                 | ?                             | Rechte, Rolle                 | -                      | Rolle                     | Rolle, Funktion              | Rolle               | -                                 |
+| moderator            | Moderator                     | Moderator                     | -                      | Moderator                 | Moderator                    | Moderator           | -                                 |
+| participant          | Teilnehmer                    | Teilnehmer                    | members ?              | Teilnehmer                | Teilnehmer                   | Teilnehmer          | Teilnehmer                        |
+| kick                 | ausschließen?                 | hinauswerfen                  | hinauswerfen           | rauswerfen                | rauswerfen                   | rausschmeißen       | kick                              |
+| ban                  | ausschließen?                 | entfernen                     | -                      | sperren                   | verbannen                    | verbannen           | ban                               |
+| affiliation          | Rechte?                       | Zugehörigkeit                 | -                      | Gruppenzugehörigkeit      | Mitgliedschaft, Angliederung | Zugehörigkeit       | -                                 |
+| owner                | Eigentümer                    | Eigentümer                    | Eigentümer             | Besitzer                  | Besitzer                     | Besitzer            | -                                 |
+| admin                | Administrator                 | Admin                         | Administrator          | Administrator             | Administrator                | Administrator       | -                                 |
+| member               | Mitglied                      | Mitglied                      | Mitglied               | Mitglied                  | Mitglied                     | Mitglied            | -                                 |
+| user                 | -                             | Besucher                      | Gast                   | -                         | -                            | -                   | -                                 |
+| nickname             | Nickname                      | Spitzname, Nickname           | Spitzname              | Spitzname                 | Spitzname                    | Spitzname, Nickname | Nickname                          |
+| history              | Verlauf                       | -                             | Gesprächsverlauf       | Unterhaltungsverlauf      | Nachrichtenchronik           | Verlauf             | Chatverlauf, Unterhaltungsverlauf |
+| fingerprint          | Fingerabdruck                 | Fingerabdruck                 | Fingerabdruck          | Fingerabdruck             | Fingerabdruck                | -                   | -                                 |
+| subscription request | Online-Status anfragen        | Kontaktanfrage[^sub-converse] | Kontaktanfrage         | Kontaktanfrage            | Anfrage                      | Anfrage             | Abonnementanfrage                 |
+| subscription         | Online-Status                 | Anwesenheitsabonnement        | -                      | Abonnement                | Abonnement                   | Abonnement          | -                                 |
+| chat                 | Unterhaltung                  | Chat                          | Unterhaltung           | Chat                      | Chat                         | Chat                | (Unterhaltung)                    |
+| read receipts        | Lese- und Empfangsbestätigung | -                             | Lesebestätigungen      | Empfangsbestätigungen     | Übermittlungsbestätigung     | Empfangsbestätigung | -                                 |
+| typing notifications | Tipp-Benachrichtigung         | -                             | Tippbenachrichtigungen | Chatstatus                | Tipp-Benachrichtigung        | -                   | -                                 |
+| avatar               | Avatar                        | Avatarbild                    | -                      | Kontaktbild               | Avatar                       | Bild                | -                                 |
 
 ### Recommended translation
 
