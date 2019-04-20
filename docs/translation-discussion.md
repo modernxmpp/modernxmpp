@@ -15,14 +15,14 @@ Dino          | [Weblate](https://hosted.weblate.org/projects/dino/)
 Gajim         | [Pootle](https://translate.gajim.org/)
 PSI(+)        | [Transifex](https://www.transifex.com/tehnick/psi-plus/)
 Swift         | [swift.im git](https://swift.im/git/swift/tree/Swift/Translations)
-yax.im        | [launchpad.net](https://translations.launchpad.net/yaxim/master)
+yaxim         | [launchpad.net](https://translations.launchpad.net/yaxim/master)
 
 
 ## German
 
 ### Terms currently used in clients
 
-| Term \ Client        | Conversations                 | Converse.js                   | Dino                   | Gajim[^gajim-MR]          | PSI(+)                       | Swift.im            | yax.im                            |
+| Term \ Client        | Conversations                 | Converse.js                   | Dino                   | Gajim[^gajim-MR]          | PSI(+)                       | Swift.im            | yaxim                             |
 |----------------------|-------------------------------|-------------------------------|------------------------|---------------------------|------------------------------|---------------------|-----------------------------------|
 | XMPP address         | XMPP-Adresse                  | XMPP-Adresse                  | JID                    | XMPP-Adresse              | JID                          | JID, Jabber-ID      | JID                               |
 | contact list         | Kontaktliste                  | Kontakte                      | Kontaktliste           | Kontaktliste              | Kontaktliste                 | Kontaktliste        | Liste?                            |
