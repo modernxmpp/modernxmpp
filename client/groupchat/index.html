@@ -110,7 +110,7 @@
 
 <h1 id="multi-user-chats">Multi-user Chats<a class="headerlink" href="#multi-user-chats" title="Permanent link">&para;</a></h1>
 <h2 id="types-of-chat">Types of chat<a class="headerlink" href="#types-of-chat" title="Permanent link">&para;</a></h2>
-<p>There are two kinds of multi-user chat. Private <em>group chats</em>, and public <em>channels</em>.</p>
+<p>There are two kinds of multi-user chat. Private <em>group chats</em>, and public <em>channels</em><sup id="fnref:rationale-gc"><a class="footnote-ref" href="#fn:rationale-gc">1</a></sup>.</p>
 <h3 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -215,7 +215,7 @@ name that is registered by the user for that chat.</dd>
 <dt>User nickname (vCard)</dt>
 <dd>The name stored in the user's vCard as <code>NICKNAME</code>.</dd>
 <dt>Local nickname</dt>
-<dd>(Optional, not recommended<sup id="fnref:local-nickname"><a class="footnote-ref" href="#fn:local-nickname">1</a></sup>) A nickname previously configured by the user in this client instance.</dd>
+<dd>(Optional, not recommended<sup id="fnref:local-nickname"><a class="footnote-ref" href="#fn:local-nickname">2</a></sup>) A nickname previously configured by the user in this client instance.</dd>
 <dt>JID username</dt>
 <dd>The username portion of the user's JID (i.e. before the '@').</dd>
 </dl>
@@ -227,15 +227,17 @@ name that is registered by the user for that chat.</dd>
 <p>Bookmark management logic</p>
 </div>
 <h2 id="private-messages">Private messages<a class="headerlink" href="#private-messages" title="Permanent link">&para;</a></h2>
-<p>Clients must always use real JIDs for messaging privately within a <em>group chat</em> if (and only if) JIDs are publicly visible to all participants.<sup id="fnref:pm-realjid"><a class="footnote-ref" href="#fn:pm-realjid">2</a></sup></p>
+<p>Clients must always use real JIDs for messaging privately within a <em>group chat</em> if (and only if) JIDs are publicly visible to all participants.<sup id="fnref:pm-realjid"><a class="footnote-ref" href="#fn:pm-realjid">3</a></sup></p>
 <!-- Footnotes -->
 
 <div class="footnote">
 <hr />
 <ol>
+<li id="fn:rationale-gc">
+<p>Rationale <a href="/rationale#group-chats">group chats</a>&#160;<a class="footnote-backref" href="#fnref:rationale-gc" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
 <li id="fn:local-nickname">
-<p>To avoid requiring the user to configure a nickname manually on each device, shared cross-device
-stores such as PEP and vCard should be preferred.&#160;<a class="footnote-backref" href="#fnref:local-nickname" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>To avoid requiring the user to configure a nickname manually on each device, shared cross-device stores such as PEP and vCard should be preferred.&#160;<a class="footnote-backref" href="#fnref:local-nickname" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:pm-realjid">
 <p>If real JIDs are known to all participants, it is preferable to use that for private communication to avoid confusion. Through-MUC PMs have the following disadvantages:</p>
@@ -244,7 +246,7 @@ stores such as PEP and vCard should be preferred.&#160;<a class="footnote-backre
 <li>Do not interact well with multiple devices (e.g. not all of a recipient's devices may be in a group chat)</li>
 <li>Can cause confusion if talking to the same person through different views (e.g. if the person is already a contact in your roster, and you already have a chat open with them)</li>
 </ul>
-<p>However if the sending user is an admin of a room where JIDs are hidden, using a real JID will reveal the admin's private JID to the recipient. Either warn the sender that their JID will be revealed, or always use the in-room JID in such channels.&#160;<a class="footnote-backref" href="#fnref:pm-realjid" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>However if the sending user is an admin of a room where JIDs are hidden, using a real JID will reveal the admin's private JID to the recipient. Either warn the sender that their JID will be revealed, or always use the in-room JID in such channels.&#160;<a class="footnote-backref" href="#fnref:pm-realjid" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></div>
