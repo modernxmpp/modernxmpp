@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Translation discussion - Modern XMPP</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/modernxmpp.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">Modern XMPP</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="..">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guidelines <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../client/design/">User Interface</a>
+</li>
+                                    
+<li >
+    <a href="../client/protocol/">Protocol</a>
+</li>
+                                    
+<li >
+    <a href="../client/groupchat/">Multi-user Chats</a>
+</li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../terminology/">Terminology</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li>
+                                <a href="https://github.com/modernxmpp/modernxmpp/edit/draft/docs/translation-discussion.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#translation-discussion">Translation discussion</a></li>
+            <li><a href="#german">German</a></li>
+            <li><a href="#french">French</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="translation-discussion">Translation discussion<a class="headerlink" href="#translation-discussion" title="Permanent link">&para;</a></h1>
+<p>Most XMPP clients are distributed in multiple languages. In the process of translating a client, people with various backgrounds (not necessarily XMPP-related) are contributing translations.</p>
+<p>The following tables are gathering the various translations of key terms in (a limited set of) clients to give an overview about what is currently used. This document intends to serve as a basis to discuss recommendations for key term translations.</p>
+<p><strong>Translation services used by clients</strong></p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Service</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conversations</td>
+<td><a href="https://www.transifex.com/siacs/conversations/">Transifex</a></td>
+</tr>
+<tr>
+<td>converse.js</td>
+<td><a href="https://hosted.weblate.org/projects/conversejs/">Weblate</a></td>
+</tr>
+<tr>
+<td>Dino</td>
+<td><a href="https://hosted.weblate.org/projects/dino/">Weblate</a></td>
+</tr>
+<tr>
+<td>Gajim</td>
+<td><a href="https://translate.gajim.org/">Pootle</a></td>
+</tr>
+<tr>
+<td>PSI(+)</td>
+<td><a href="https://www.transifex.com/tehnick/psi-plus/">Transifex</a></td>
+</tr>
+<tr>
+<td>Swift</td>
+<td><a href="https://swift.im/git/swift/tree/Swift/Translations">swift.im git</a></td>
+</tr>
+<tr>
+<td>yaxim</td>
+<td><a href="https://translations.launchpad.net/yaxim/master">launchpad.net</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="german">German<a class="headerlink" href="#german" title="Permanent link">&para;</a></h2>
+<h3 id="terms-currently-used-in-clients">Terms currently used in clients<a class="headerlink" href="#terms-currently-used-in-clients" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Term \ Client</th>
+<th>Conversations</th>
+<th>Converse.js</th>
+<th>Dino</th>
+<th>Gajim<sup id="fnref:gajim-MR"><a class="footnote-ref" href="#fn:gajim-MR">1</a></sup></th>
+<th>PSI(+)</th>
+<th>Swift.im</th>
+<th>yaxim</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XMPP address</td>
+<td>XMPP-Adresse</td>
+<td>XMPP-Adresse</td>
+<td>JID</td>
+<td>XMPP-Adresse</td>
+<td>JID</td>
+<td>JID, Jabber-ID</td>
+<td>JID</td>
+</tr>
+<tr>
+<td>contact list</td>
+<td>Kontaktliste</td>
+<td>Kontakte</td>
+<td>Kontaktliste</td>
+<td>Kontaktliste</td>
+<td>Kontaktliste</td>
+<td>Kontaktliste</td>
+<td>Liste?</td>
+</tr>
+<tr>
+<td>bookmarks</td>
+<td>Lesezeichen</td>
+<td>Lesezeichen</td>
+<td>-</td>
+<td>Gespeicherte Gruppenchats</td>
+<td>Lesezeichen</td>
+<td>Lesezeichen</td>
+<td>-</td>
+</tr>
+<tr>
+<td>auto join</td>
+<td>Auto-Join-Funktion</td>
+<td>automatisch beitreten</td>
+<td>-</td>
+<td>automatisch beitreten</td>
+<td>automatisch beitreten</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>Channel</td>
+<td>Gruppenchat, Raum</td>
+<td>Kanal/Konferenz</td>
+<td>Gruppenchat</td>
+<td>Gruppenchat, Chatraum</td>
+<td>Chatraum</td>
+<td>Gruppenchat</td>
+</tr>
+<tr>
+<td>group chat</td>
+<td>Gruppenchat</td>
+<td>Gruppenchat</td>
+<td>Raum</td>
+<td>Gruppenchat</td>
+<td>Gruppenchat, Chatraum</td>
+<td>Chatraum</td>
+<td>Gruppenchat</td>
+</tr>
+<tr>
+<td>role</td>
+<td>?</td>
+<td>Rechte, Rolle</td>
+<td>-</td>
+<td>Rolle</td>
+<td>Rolle, Funktion</td>
+<td>Rolle</td>
+<td>-</td>
+</tr>
+<tr>
+<td>moderator</td>
+<td>Moderator</td>
+<td>Moderator</td>
+<td>-</td>
+<td>Moderator</td>
+<td>Moderator</td>
+<td>Moderator</td>
+<td>-</td>
+</tr>
+<tr>
+<td>participant</td>
+<td>Teilnehmer</td>
+<td>Teilnehmer</td>
+<td>members ?</td>
+<td>Teilnehmer</td>
+<td>Teilnehmer</td>
+<td>Teilnehmer</td>
+<td>Teilnehmer</td>
+</tr>
+<tr>
+<td>kick</td>
+<td>ausschließen?</td>
+<td>hinauswerfen</td>
+<td>hinauswerfen</td>
+<td>rauswerfen</td>
+<td>rauswerfen</td>
+<td>rausschmeißen</td>
+<td>kick</td>
+</tr>
+<tr>
+<td>ban</td>
+<td>ausschließen?</td>
+<td>entfernen</td>
+<td>-</td>
+<td>sperren</td>
+<td>verbannen</td>
+<td>verbannen</td>
+<td>ban</td>
+</tr>
+<tr>
+<td>affiliation</td>
+<td>Rechte?</td>
+<td>Zugehörigkeit</td>
+<td>-</td>
+<td>Gruppenzugehörigkeit</td>
+<td>Mitgliedschaft, Angliederung</td>
+<td>Zugehörigkeit</td>
+<td>-</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>Eigentümer</td>
+<td>Eigentümer</td>
+<td>Eigentümer</td>
+<td>Besitzer</td>
+<td>Besitzer</td>
+<td>Besitzer</td>
+<td>-</td>
+</tr>
+<tr>
+<td>admin</td>
+<td>Administrator</td>
+<td>Admin</td>
+<td>Administrator</td>
+<td>Administrator</td>
+<td>Administrator</td>
+<td>Administrator</td>
+<td>-</td>
+</tr>
+<tr>
+<td>member</td>
+<td>Mitglied</td>
+<td>Mitglied</td>
+<td>Mitglied</td>
+<td>Mitglied</td>
+<td>Mitglied</td>
+<td>Mitglied</td>
+<td>-</td>
+</tr>
+<tr>
+<td>user</td>
+<td>-</td>
+<td>Besucher</td>
+<td>Gast</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>nickname</td>
+<td>Nickname</td>
+<td>Spitzname, Nickname</td>
+<td>Spitzname</td>
+<td>Spitzname</td>
+<td>Spitzname</td>
+<td>Spitzname, Nickname</td>
+<td>Nickname</td>
+</tr>
+<tr>
+<td>history</td>
+<td>Verlauf</td>
+<td>-</td>
+<td>Gesprächsverlauf</td>
+<td>Unterhaltungsverlauf</td>
+<td>Nachrichtenchronik</td>
+<td>Verlauf</td>
+<td>Chatverlauf, Unterhaltungsverlauf</td>
+</tr>
+<tr>
+<td>fingerprint</td>
+<td>Fingerabdruck</td>
+<td>Fingerabdruck</td>
+<td>Fingerabdruck</td>
+<td>Fingerabdruck</td>
+<td>Fingerabdruck</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>subscription request</td>
+<td>Online-Status anfragen</td>
+<td>Kontaktanfrage<sup id="fnref:sub-converse"><a class="footnote-ref" href="#fn:sub-converse">2</a></sup></td>
+<td>Kontaktanfrage</td>
+<td>Kontaktanfrage</td>
+<td>Anfrage</td>
+<td>Anfrage</td>
+<td>Abonnementanfrage</td>
+</tr>
+<tr>
+<td>subscription</td>
+<td>Online-Status</td>
+<td>Anwesenheitsabonnement</td>
+<td>-</td>
+<td>Abonnement</td>
+<td>Abonnement</td>
+<td>Abonnement</td>
+<td>-</td>
+</tr>
+<tr>
+<td>chat</td>
+<td>Unterhaltung</td>
+<td>Chat</td>
+<td>Unterhaltung</td>
+<td>Chat</td>
+<td>Chat</td>
+<td>Chat</td>
+<td>(Unterhaltung)</td>
+</tr>
+<tr>
+<td>read receipts</td>
+<td>Lese- und Empfangsbestätigung</td>
+<td>-</td>
+<td>Lesebestätigungen</td>
+<td>Empfangsbestätigungen</td>
+<td>Übermittlungsbestätigung</td>
+<td>Empfangsbestätigung</td>
+<td>-</td>
+</tr>
+<tr>
+<td>typing notifications</td>
+<td>Tipp-Benachrichtigung</td>
+<td>-</td>
+<td>Tippbenachrichtigungen</td>
+<td>Chatstatus</td>
+<td>Tipp-Benachrichtigung</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>Avatar</td>
+<td>Avatarbild</td>
+<td>-</td>
+<td>Kontaktbild</td>
+<td>Avatar</td>
+<td>Bild</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="recommended-translation">Recommended translation<a class="headerlink" href="#recommended-translation" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>term</th>
+<th>translation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XMPP address</td>
+<td></td>
+</tr>
+<tr>
+<td>contact list</td>
+<td></td>
+</tr>
+<tr>
+<td>bookmarks</td>
+<td></td>
+</tr>
+<tr>
+<td>auto join</td>
+<td></td>
+</tr>
+<tr>
+<td>...</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="french">French<a class="headerlink" href="#french" title="Permanent link">&para;</a></h2>
+<h3 id="notes-for-french-translations-from-pep">Notes for french translations (from pep.)<a class="headerlink" href="#notes-for-french-translations-from-pep" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>English</th>
+<th>French</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>group chat</td>
+<td>groupe (de discussion)</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>salon (de discussion)</td>
+</tr>
+<tr>
+<td>participant</td>
+<td>participant</td>
+</tr>
+<tr>
+<td>XMPP address</td>
+<td>Adresse XMPP</td>
+</tr>
+<tr>
+<td>contact list</td>
+<td>Liste de contact</td>
+</tr>
+</tbody>
+</table>
+<!-- Footnotes -->
+
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:gajim-MR">
+<p>Refers to current master and <a href="https://dev.gajim.org/gajim/gajim/merge_requests/384">this merge request</a>&#160;<a class="footnote-backref" href="#fnref:gajim-MR" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:sub-converse">
+<p>Subscription requests in converse.js are called contact requests&#160;<a class="footnote-backref" href="#fnref:sub-converse" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
