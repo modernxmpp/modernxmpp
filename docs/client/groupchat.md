@@ -6,15 +6,15 @@ There are two kinds of multi-user chat. Private *group chats*, and public *chann
 
 ### Properties
 
-|                  | Group chat | Channel |
-|:-----------------|:-----------|:--------|
-| Persistent       | Yes        | Yes     |
-| MAM enabled      | Yes        | Yes     |
-| Subject editable | No         | No      |
-| Members-only     | Yes (\*)   | No      |
-| JIDs revealed    | Yes (\*)   | No      |
-| Publicly listed  | No  (\*)   | Yes     |
-| PMs              | No  (\*)   | Yes     |
+|                         | Group chat | Channel |
+|:------------------------|:-----------|:--------|
+| Persistent              | Yes        | Yes     |
+| MAM enabled             | Yes        | Yes     |
+| Subject editable        | No         | No      |
+| Members-only            | Yes (\*)   | No      |
+| XMPP addresses revealed | Yes (\*)   | No      |
+| Publicly listed         | No  (\*)   | Yes     |
+| PMs                     | No  (\*)   | Yes     |
 
 (\*) Immutable for *group chats*.
 
@@ -64,8 +64,8 @@ User nickname (vCard)
 Local nickname
 : (Optional, not recommended[^local-nickname]) A nickname previously configured by the user in this client instance.
 
-JID username
-: The username portion of the user's JID (i.e. before the '@').
+XMPP address username
+: The username portion of the user's XMPP address (i.e. before the '@').
 
 ### Other user's names
 
@@ -78,16 +78,16 @@ The display of other user's names is covered in the [general UI recommendations]
 
 ## Private messages
 
-Clients must always use real JIDs for messaging privately within a *group chat* if (and only if) JIDs are publicly visible to all participants.[^pm-realjid]
+Clients must always use real XMPP addresses for messaging privately within a *group chat* if (and only if) XMPP addresses are publicly visible to all participants.[^pm-realjid]
 
 <!-- Footnotes -->
 
 [^rationale-gc]: Rationale [group chats](/rationale#group-chats)
 [^local-nickname]: To avoid requiring the user to configure a nickname manually on each device, shared cross-device stores such as PEP and vCard should be preferred.
-[^pm-realjid]: If real JIDs are known to all participants, it is preferable to use that for private communication to avoid confusion. Through-MUC PMs have the following disadvantages:
+[^pm-realjid]: If real XMPP addresses are known to all participants, it is preferable to use that for private communication to avoid confusion. Through-MUC PMs have the following disadvantages:
 
     - Only work while connected to the group chat
     - Do not interact well with multiple devices (e.g. not all of a recipient's devices may be in a group chat)
     - Can cause confusion if talking to the same person through different views (e.g. if the person is already a contact in your roster, and you already have a chat open with them)
 
-    However if the sending user is an admin of a room where JIDs are hidden, using a real JID will reveal the admin's private JID to the recipient. Either warn the sender that their JID will be revealed, or always use the in-room JID in such channels.
+    However if the sending user is an admin of a room where XMPP addresses are hidden, using a real XMPP addresses will reveal the admin's private XMPP addresses to the recipient. Either warn the sender that their XMPP addresses will be revealed, or always use the in-room XMPP address in such channels.
