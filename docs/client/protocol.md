@@ -268,7 +268,7 @@ TODO
 
 ### Blocking
 
-- [XEP-0191](https://xmpp.org/extensions/xep-0191.html) for blocking communication with a list of other JIDs
+- [XEP-0191](https://xmpp.org/extensions/xep-0191.html) for blocking communication with a list of other XMPP addresses
 
 ## Encryption
 
