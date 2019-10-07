@@ -11,7 +11,7 @@ please [open an issue or pull request](https://github.com/modernxmpp/modernxmpp)
 
 ## Initial configuration
 
-At initial startup, a client should present a welcome screen, to prompt the user for their JID,
+At initial startup, a client should present a welcome screen, to prompt the user for their XMPP address,
 and a password. Optionally, a button or link to provide other forms of credentials may be included.
 
 If the client has an out-of-band configuration mechanism, or it can query the OS for sensible defaults,
@@ -22,10 +22,10 @@ List recommended configuration options.
 
 ### Account
 
-| Option | Description           |
-|:-------|:----------------------|
-| JID    | The user's JID        |
-| Password | The user's password |
+| Option       | Description            |
+|:-------------|:-----------------------|
+| XMPP address | The user's XMPP address|
+| Password     | The user's password    |
 
 ### Network
 
@@ -128,7 +128,7 @@ Clients should have documentation covering essential functionality, including:
 
 ## Privacy
 
-Clients must not reveal full JID. Don't query unsubscribed contacts.
+Clients must not reveal full XMPP address. Don't query unsubscribed contacts.
 
 !!! todo
     Probably belongs in protocol reference. Probably some things relevant
@@ -136,7 +136,7 @@ Clients must not reveal full JID. Don't query unsubscribed contacts.
 
 ## Names
 
-When displaying messages received from a remote JID, either within a one-to-one or multi-user chat, clients need to show a human-readable
+When displaying messages received from a remote XMPP address, either within a one-to-one or multi-user chat, clients need to show a human-readable
 name for that sender.
 
 There are multiple sources for such a display name, which depend on the context (e.g. whether the conversation is one-to-one or a group chat).
@@ -155,13 +155,13 @@ User nickname
 : A nickname published by the sender in PEP per [XEP-0172](https://xmpp.org/extensions/xep-0172.html).
 
 Resource
-: The resource of the sending JID.
+: The resource of the sending XMPP address.
 
 Local part
-: The part of a bare JID before the '@' symbol.
+: The part of a bare XMPP address before the '@' symbol.
 
-Bare JID
-: The sending JID with any resource removed.
+Bare XMPP address
+: The sending XMPP address with any resource removed.
 
 ### Contexts
 
@@ -173,8 +173,8 @@ should be checked in the order described by the table below, displaying the firs
 | Conversation - normal   | Roster name, (Address book), User nickname, Local part    |
 | Conversation - group    | Roster name, (Address book), User nickname, Resource (\*) |
 | Conversation - channel  | Resource                                                  |
-| Contact list            | Roster name, User nickname, Bare JID                      |
-| User profile            | Roster name, User nickname, Bare JID                      |
+| Contact list            | Roster name, User nickname, Bare XMPP address             |
+| User profile            | Roster name, User nickname, Bare XMPP address             |
 
 (\*) Mentions refer to resource. if you do proper references you can live replace it with the 'nice' name.
 
