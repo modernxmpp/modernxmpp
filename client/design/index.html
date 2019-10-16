@@ -113,6 +113,7 @@
             <li><a href="#documentation">Documentation</a></li>
             <li><a href="#privacy">Privacy</a></li>
             <li><a href="#names">Names</a></li>
+            <li><a href="#auto-generated-colors">Auto-generated colors</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -317,6 +318,49 @@ should be checked in the order described by the table below, displaying the firs
 </table>
 <p>(*) Mentions refer to resource. if you do proper references you can live replace it with the 'nice' name.</p>
 <p>Avatar display should follow the same order</p>
+<h2 id="auto-generated-colors">Auto-generated colors<a class="headerlink" href="#auto-generated-colors" title="Permanent link">&para;</a></h2>
+<p>A client may want to associate a color with a user. Example use cases for this include, but are not limited to:</p>
+<ul>
+<li>Dummy avatars in contexts where an avatar cannot be or has not yet been retrieved</li>
+<li>Coloring the user name in a conversation log (be aware that this needs to be done very carefully to be accessible!)</li>
+</ul>
+<p>To generate a color for a user, the algorithm described in <a href="https://xmpp.org/extensions/xep-0392.html">XEP-0392</a> MUST be used.</p>
+<h3 id="generator-input-based-on-context">Generator input based on context<a class="headerlink" href="#generator-input-based-on-context" title="Permanent link">&para;</a></h3>
+<p>The generator described in XEP-0392 needs a text input to operate and for which a deterministic color will be generated.</p>
+<p>The following table lists which strings to use as input for the generator:</p>
+<table>
+<thead>
+<tr>
+<th>View type</th>
+<th>Generator Input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conversation - normal</td>
+<td>Normalised Bare JID</td>
+</tr>
+<tr>
+<td>Conversation - group</td>
+<td>Normalised Bare JID</td>
+</tr>
+<tr>
+<td>Conversation - channel</td>
+<td>Resource</td>
+</tr>
+<tr>
+<td>Contact list</td>
+<td>Normalised Bare JID</td>
+</tr>
+<tr>
+<td>User profile</td>
+<td>Normalised Bare JID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="contrast-ratio-considerations">Contrast ratio considerations<a class="headerlink" href="#contrast-ratio-considerations" title="Permanent link">&para;</a></h3>
+<p>To provide a good contrast ratio for accessibility of the resulting user interface, the guidelines from <sup id="fnref2:color"><a class="footnote-ref" href="#fn:color">1</a></sup> should be obeyed. XEP-0392 intentionally allows the implementation to pick a saturation and lightness value based on the environment to allow for high contrast.</p>
+<p>Contrast considerations apply between the generated color and the background, as well as for text rendered on top of the generated color (for example in a dummy avatar).</p>
 <!-- Footnotes -->
 
 <div class="footnote">
@@ -328,7 +372,7 @@ should be checked in the order described by the table below, displaying the firs
 <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html">WCAG 2.1: Understanding Use of Color</a></li>
 <li><a href="https://webaim.org/resources/contrastchecker/">Color contrast checker</a></li>
 </ul>
-<p><a class="footnote-backref" href="#fnref:color" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><a class="footnote-backref" href="#fnref:color" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:color" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:tls-mode">
 <p>This is presented as a multiple-choice option. A checkbox labeled e.g. "Direct TLS"
