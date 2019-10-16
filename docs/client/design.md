@@ -180,6 +180,36 @@ should be checked in the order described by the table below, displaying the firs
 
 Avatar display should follow the same order
 
+## Auto-generated colors
+
+A client may want to associate a color with a user. Example use cases for this include, but are not limited to:
+
+- Dummy avatars in contexts where an avatar cannot be or has not yet been retrieved
+- Coloring the user name in a conversation log (be aware that this needs to be done very carefully to be accessible!)
+
+To generate a color for a user, the algorithm described in [XEP-0392](https://xmpp.org/extensions/xep-0392.html) MUST be used.
+
+### Generator input based on context
+
+The generator described in XEP-0392 needs a text input to operate and for which a deterministic color will be generated.
+
+The following table lists which strings to use as input for the generator:
+
+| View type               | Generator Input     |
+|-------------------------|---------------------|
+| Conversation - normal   | Normalised Bare JID |
+| Conversation - group    | Normalised Bare JID |
+| Conversation - channel  | Resource            |
+| Contact list            | Normalised Bare JID |
+| User profile            | Normalised Bare JID |
+
+### Contrast ratio considerations
+
+To provide a good contrast ratio for accessibility of the resulting user interface, the guidelines from [^color] should be obeyed. XEP-0392 intentionally allows the implementation to pick a saturation and lightness value based on the environment to allow for high contrast.
+
+Contrast considerations apply between the generated color and the background, as well as for text rendered on top of the generated color (for example in a dummy avatar).
+
+
 <!-- Footnotes -->
 
 [^color]: Resources for the use of color in interface design:
