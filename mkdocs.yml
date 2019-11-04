@@ -19,5 +19,11 @@ site_url: https://docs.modernxmpp.org/
 repo_url: https://github.com/modernxmpp/modernxmpp
 edit_uri: edit/draft/docs
 
+site_description: >-
+  Documentation of the Modern XMPP project, an
+  independent project launched to improve the
+  quality of user-to-user messaging applications
+  that use XMPP
+
 extra_css:
   - 'css/modernxmpp.css'
