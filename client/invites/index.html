@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://docs.modernxmpp.org/client/invites/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Registration through invitation - Modern XMPP</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/modernxmpp.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Modern XMPP</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guidelines <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../design/">User Interface</a>
+</li>
+                                    
+<li >
+    <a href="../protocol/">Protocol</a>
+</li>
+                                    
+<li >
+    <a href="../groupchat/">Multi-user Chats</a>
+</li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../../terminology/">Terminology</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li>
+                                <a href="https://github.com/modernxmpp/modernxmpp/edit/draft/docs/client/invites.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#registration-through-invitation">Registration through invitation</a></li>
+            <li><a href="#invitation-types">Invitation types</a></li>
+        <li class="main "><a href="#registration-protocol">Registration protocol</a></li>
+        <li class="main "><a href="#creating-an-invitation">Creating an invitation</a></li>
+            <li><a href="#guidance-for-landing-pages">Guidance for landing pages</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="registration-through-invitation">Registration through invitation<a class="headerlink" href="#registration-through-invitation" title="Permanent link">&para;</a></h1>
+<h2 id="invitation-types">Invitation types<a class="headerlink" href="#invitation-types" title="Permanent link">&para;</a></h2>
+<h3 id="account-only">Account-only<a class="headerlink" href="#account-only" title="Permanent link">&para;</a></h3>
+<p>Invitation to register an account on a given domain:</p>
+<pre><code>xmpp:example.com?register;preauth=3c7efeafc1bb10d034
+</code></pre>
+
+<p>or an invitation to register an account with a <strong>specific</strong> username
+only:</p>
+<pre><code>xmpp:romeo@example.com?register;preauth=3c7efeafc1bb10d034
+</code></pre>
+
+<p>See the <em>Registration protocol</em> section of this document for how to
+handle this type of invitation.</p>
+<h3 id="subscription-only">Subscription-only<a class="headerlink" href="#subscription-only" title="Permanent link">&para;</a></h3>
+<p>A potential contact invites you to communicate with them:</p>
+<pre><code>xmpp:contact@example.com?roster;preauth=3c7efeafc1bb10d034
+</code></pre>
+
+<p>The protocol to handle this type of invitation is specified in
+<a href="https://xmpp.org/extensions/xep-0379.html">XEP-0379: Pre-authenticated Roster Subscriptions</a>.
+After following the protocol, you will have a mutual presence subscription
+with <code>contact@example.com</code>.</p>
+<p>If the user does not currently have an account, the client must walk
+them through the account registration process on a suitable XMPP service.</p>
+<h3 id="account-and-subscription">Account-and-subscription<a class="headerlink" href="#account-and-subscription" title="Permanent link">&para;</a></h3>
+<p>The same as a subscription-only invite, but it indicates you
+are able to use the token to also register an account on the contact's
+domain, signalled by the presence of <code>ibr=y</code> in the URI parameters:</p>
+<pre><code>xmpp:contact@example.com?roster;preauth=3c7efeafc1bb10d034;ibr=y
+</code></pre>
+
+<p>If the recipient of such an invite does not yet have an account, the
+client should follow the <em>Registration protocol</em> section of this document.
+After completing the registration, the user will automatically be subscribed
+to the sender of the invitation.</p>
+<p>If the recipient already has an XMPP account, the invitation should be
+handled the same as a subscription-only invitation documented above,
+and follow the protocol defined in <a href="https://xmpp.org/extensions/xep-0379.html">XEP-0379</a>.</p>
+<h1 id="registration-protocol">Registration protocol<a class="headerlink" href="#registration-protocol" title="Permanent link">&para;</a></h1>
+<p>Server sends stream features:</p>
+<pre><code class="xml">&lt;stream:features&gt;
+  &lt;mechanisms xmlns='urn:xmpp:sasl:0'&gt;
+    &lt;mechanism&gt;EXTERNAL&lt;/mechanism&gt;
+    &lt;mechanism&gt;SCRAM-SHA-1-PLUS&lt;/mechanism&gt;
+    &lt;mechanism&gt;SCRAM-SHA-1&lt;/mechanism&gt;
+    &lt;mechanism&gt;PLAIN&lt;/mechanism&gt;
+  &lt;/mechanisms&gt;
+  &lt;register xmlns='urn:xmpp:invite'/&gt;
+  &lt;register xmlns='http://jabber.org/features/iq-register'/&gt;
+&lt;/stream:features&gt;
+</code></pre>
+
+<p>Client sees that registration through token is supported,
+and initiates the registration flow:</p>
+<pre><code class="xml">&lt;iq type=&quot;set&quot; to=&quot;example.com&quot; id=&quot;pa1&quot;&gt;
+  &lt;preauth xmlns='urn:xmpp:pars:0' token='3c7efeafc1bb10d034' /&gt;
+&lt;/iq&gt;
+</code></pre>
+
+<p>Upon receiving the preauth request, the server should validate that the
+token is acceptable for account registration. However single-use tokens
+MUST NOT be considered used until the actual registration has succeeded.</p>
+<p>In addition, if the token has an expiration time, it MUST only be checked
+at this point. Subsequent actions performed by the client during the current
+session that require a valid token MUST NOT be rejected due to token expiry.</p>
+<p>Server responds with success, and indicates
+the client may now proceed with account registration:</p>
+<pre><code class="xml">&lt;iq type=&quot;result&quot; from=&quot;example.com&quot; id=&quot;pa1&quot; /&gt;
+</code></pre>
+
+<p>If the token provided by the client was unknown, invalid or expired, the
+server should return an appropriate error to the client:</p>
+<pre><code class="xml">&lt;iq type=&quot;error&quot; from=&quot;example.com&quot; id=&quot;pa1&quot;&gt;
+  &lt;error type='cancel'&gt;
+    &lt;item-not-found xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/&gt;
+    &lt;text&gt;The provided token is invalid or expired&lt;/text&gt;
+  &lt;/error&gt;
+&lt;/iq&gt;
+</code></pre>
+
+<p>In the success case, the client proceeds with registration using e.g.
+XEP-0077 in the normal way.</p>
+<h1 id="creating-an-invitation">Creating an invitation<a class="headerlink" href="#creating-an-invitation" title="Permanent link">&para;</a></h1>
+<p>Users may request an invite (suitable for sharing to a desired new contact)
+by using the ad-hoc command defined in <a href="https://xmpp.org/extensions/xep-0401.html#create-invitation">XEP-0401: Easy User Onboarding</a>.</p>
+<p>The server will provide at minimum an <code>xmpp:</code> URI that can be interpreted by any compatible XMPP client. However this URI SHOULD NOT be shared directly by clients. It is generally likely that the recipient of an invite does not yet have an XMPP client installed and configured.</p>
+<p>If the server provides a <code>landing-url</code> in the response, the client SHOULD share this URL with contacts. Otherwise it SHOULD use the URI in combination with a landing page (which may be hosted by the client developer or other entity) to generate a <code>https://</code> URL suitable for sharing. An example landing page can be found at <a href="https://github.com/ge0rg/easy-xmpp-invitation">ge0rg/easy-xmpp-invitation</a>.</p>
+<p>Sharing the URL can be done by visually displaying a QR code on the user's screen (if the contact is in physical proximity) or e.g. through the platform's own sharing mechanism (to share via SMS, email, social apps, etc.)</p>
+<h2 id="guidance-for-landing-pages">Guidance for landing pages<a class="headerlink" href="#guidance-for-landing-pages" title="Permanent link">&para;</a></h2>
+<p>As well as embedding the XMPP URI in a visually obvious clickable/tappable element (e.g. a button), it should include text and download links for compatible XMPP clients.</p>
+<p>If it is possible for a particular platform's download links to automatically relay the <code>xmpp:</code> URI to the installed app, that should be implemented. See for example <a href="https://developer.android.com/google/play/installreferrer/">Google Play Install Referrer</a>.</p>
+<p>If possible, platform detection should be used to highlight download links relevant to the user's current platform.</p>
+<p>If the detected platform is a desktop environment, consider also adding a QR code for easy transmission to a user's mobile device.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
