@@ -63,6 +63,14 @@ auto join    |
 
 ## French
 
+### Terms currently used in clients
+
+| Term \ Client | Conversations          | Converse.js | Dino   | Gajim[^gajim-MR]  | PSI(+)  | Swift.im  | yaxim  |
+|---------------|------------------------|-------------|--------|-------------------|---------|-----------|--------|
+| channel       | Canal                  | Salon       | Salon  |                   |         | Salon     | Salon  |
+| group chat    | Conversation de groupe | Salon       | Salon  |                   |         | Salon     | Salon  |
+
+
 ### Notes for french translations (from pep.)
 
 English      | French
