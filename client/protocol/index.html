@@ -353,7 +353,29 @@ is required (and HTTP Upload does not suffice for some reason).</p>
 <h2 id="avatars">Avatars<a class="headerlink" href="#avatars" title="Permanent link">&para;</a></h2>
 <p>TODO</p>
 <h2 id="group-chat">Group chat<a class="headerlink" href="#group-chat" title="Permanent link">&para;</a></h2>
-<p>TODO</p>
+<h3 id="bookmarks">Bookmarks<a class="headerlink" href="#bookmarks" title="Permanent link">&para;</a></h3>
+<p>Figuring out which group chats to join is the client’s job. For that it
+should store the list of group chats to rejoin automatically on the
+server, named bookmarks. Three protocols exist for this:</p>
+<ul>
+<li><a href="https://xmpp.org/extensions/xep-0402.html">XEP-0402</a> which is the
+  current preferred method</li>
+<li><a href="https://xmpp.org/extensions/xep-0048.html">XEP-0048</a>, recently
+  deprecated but still in use</li>
+<li><a href="https://xmpp.org/extensions/attic/xep-0048-1.0.html">legacy XEP-0048</a>,
+  in wide use, based on
+  <a href="https://xmpp.org/extensions/xep-0049.html">XEP-0049</a></li>
+</ul>
+<p>In order to see the same set of bookmarks as every other client the
+user might be using, it is recommended to implement the legacy one
+first and foremost.</p>
+<p>This protocol however doesn’t support notifications when the bookmarks
+changed, either due to another client or caused by the server. To avoid
+this issue, a modern client should also implement PEP Native Bookmarks,
+but use it only if the account advertises 'urn:xmpp:bookmarks:1#compat'
+(as defined in <a href="https://xmpp.org/extensions/xep-0402.html#sect-idm45862026440880">XEP-0402 paragraph 5.3
+Compatibility</a>).</p>
+<p>Implementing the latest XEP-0048 method is not recommended anymore.</p>
 <h2 id="contact-management">Contact management<a class="headerlink" href="#contact-management" title="Permanent link">&para;</a></h2>
 <h3 id="blocking">Blocking<a class="headerlink" href="#blocking" title="Permanent link">&para;</a></h3>
 <ul>
@@ -414,7 +436,7 @@ the recommended approach for some time to come.</p></div>
                 </p>
                 <form>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
                 <div id="mkdocs-search-results"></div>
