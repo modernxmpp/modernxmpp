@@ -25,11 +25,12 @@ At the moment, this table intends to support discussing the translation of key t
 | Address or XMPP address | XMPP Adresse   | Adresse XMPP      | ?              |
 | Contact list            | Kontaktliste   | Liste de contacts | ?              |
 
+You’ll find more terms in the [term overview](/translation-discussion).
+
 [Add a language...](https://github.com/modernxmpp/modernxmpp)
 
 <!-- Footnotes -->
 
 [^rationale-gc]: Rationale [group chat terminology](/rationale#terminology)
-
 
 [Multi-user Chats]: client/groupchat.md
