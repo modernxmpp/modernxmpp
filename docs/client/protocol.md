@@ -262,7 +262,32 @@ TODO
 
 ## Group chat
 
-TODO
+### Bookmarks
+
+Figuring out which group chats to join is the client’s job. For that it
+should store the list of group chats to rejoin automatically on the
+server, named bookmarks. Three protocols exist for this:
+
+- [XEP-0402](https://xmpp.org/extensions/xep-0402.html) which is the
+  current preferred method
+- [XEP-0048](https://xmpp.org/extensions/xep-0048.html), recently
+  deprecated but still in use
+- [legacy XEP-0048](https://xmpp.org/extensions/attic/xep-0048-1.0.html),
+  in wide use, based on
+  [XEP-0049](https://xmpp.org/extensions/xep-0049.html)
+
+In order to see the same set of bookmarks as every other client the
+user might be using, it is recommended to implement the legacy one
+first and foremost.
+
+This protocol however doesn’t support notifications when the bookmarks
+changed, either due to another client or caused by the server. To avoid
+this issue, a modern client should also implement PEP Native Bookmarks,
+but use it only if the account advertises 'urn:xmpp:bookmarks:1#compat'
+(as defined in [XEP-0402 paragraph 5.3
+Compatibility](https://xmpp.org/extensions/xep-0402.html#sect-idm45862026440880)).
+
+Implementing the latest XEP-0048 method is not recommended anymore.
 
 ## Contact management
 
