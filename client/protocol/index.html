@@ -356,26 +356,52 @@ is required (and HTTP Upload does not suffice for some reason).</p>
 <h3 id="bookmarks">Bookmarks<a class="headerlink" href="#bookmarks" title="Permanent link">&para;</a></h3>
 <p>Figuring out which group chats to join is the client’s job. For that it
 should store the list of group chats to rejoin automatically on the
-server, named bookmarks. Three protocols exist for this:</p>
+server, named bookmarks. Three possible protocols exist for this:</p>
 <ul>
 <li><a href="https://xmpp.org/extensions/xep-0402.html">XEP-0402</a> which is the
   current preferred method</li>
-<li><a href="https://xmpp.org/extensions/xep-0048.html">XEP-0048</a>, recently
-  deprecated but still in use</li>
-<li><a href="https://xmpp.org/extensions/attic/xep-0048-1.0.html">legacy XEP-0048</a>,
+<li><a href="https://xmpp.org/extensions/xep-0048.html">XEP-0048 1.1</a>, recently
+  deprecated but still in use by some clients</li>
+<li><a href="https://xmpp.org/extensions/attic/xep-0048-1.0.html">XEP-0048 1.0</a>,
   in wide use, based on
   <a href="https://xmpp.org/extensions/xep-0049.html">XEP-0049</a></li>
 </ul>
 <p>In order to see the same set of bookmarks as every other client the
-user might be using, it is recommended to implement the legacy one
-first and foremost.</p>
-<p>This protocol however doesn’t support notifications when the bookmarks
-changed, either due to another client or caused by the server. To avoid
-this issue, a modern client should also implement PEP Native Bookmarks,
-but use it only if the account advertises 'urn:xmpp:bookmarks:1#compat'
-(as defined in <a href="https://xmpp.org/extensions/xep-0402.html#sect-idm45862026440880">XEP-0402 paragraph 5.3
+user might be using, it is recommended to implement <strong>XEP-0048 1.0</strong> first
+and foremost when the user's account may be shared with other clients.</p>
+<p>This legacy protocol however doesn’t support notifications when the bookmarks
+change due to another client or the server. To avoid this issue, a modern client
+should also implement <strong>XEP-0402</strong> (PEP Native Bookmarks, but use it <em>only</em> if the account
+advertises 'urn:xmpp:bookmarks:1#compat' (as defined in <a href="https://xmpp.org/extensions/xep-0402.html#sect-idm45862026440880">XEP-0402 paragraph 5.3
 Compatibility</a>).</p>
-<p>Implementing the latest XEP-0048 method is not recommended anymore.</p>
+<p>Implementing XEP-0048 1.1 is not recommended in modern clients.</p>
+<p>The following table summarizes the implementation recommendations described in this section:</p>
+<table>
+<thead>
+<tr>
+<th>XEP</th>
+<th>Implement</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XEP-0048 1.0<br>(Private XML storage)</td>
+<td>Yes<br>(for backwards compatibility)</td>
+<td>When <code>urn:xmpp:bookmarks:1#compat</code> <strong>is not</strong> advertised by the server on the user's account.</td>
+</tr>
+<tr>
+<td>XEP-0048 1.1<br>(PEP storage, single-item)</td>
+<td>No<br>(deprecated in favour of XEP-0402)</td>
+<td>Never</td>
+</tr>
+<tr>
+<td>XEP-0402<br>(PEP storage, multi-item)</td>
+<td>Yes</td>
+<td>When <code>urn:xmpp:bookmarks:1#compat</code> <strong>is</strong> advertised by the server on the user's account.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="contact-management">Contact management<a class="headerlink" href="#contact-management" title="Permanent link">&para;</a></h2>
 <h3 id="blocking">Blocking<a class="headerlink" href="#blocking" title="Permanent link">&para;</a></h3>
 <ul>
