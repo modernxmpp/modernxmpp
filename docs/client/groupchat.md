@@ -18,6 +18,9 @@ There are two kinds of multi-user chat. Private *group chats*, and public *chann
 
 (\*) Immutable for *group chats*.
 
+Options marked `(*) Immutable` should be used when creating group chats, and also as a
+means of detection. These options may be hidden or greyed out in a configuration dialog.
+
 While it is possible to entirely prevent PMs from being sent with
 [`muc#roomconfig_allowpm`](https://xmpp.org/extensions/xep-0045.html#privatemessage),
 clients should prefer using JIDs when `muc#roomconfig_whois` is set to `anyone`.
