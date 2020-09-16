@@ -18,6 +18,15 @@ There are two kinds of multi-user chat. Private *group chats*, and public *chann
 
 (\*) Immutable for *group chats*.
 
+While it is possible to entirely prevent PMs from being sent with
+[`muc#roomconfig_allowpm`](https://xmpp.org/extensions/xep-0045.html#privatemessage),
+clients should prefer using JIDs when `muc#roomconfig_whois` is set to `anyone`.
+
+In channels, if the initiating client has access to revealed JIDs (with
+`muc#roomconfig_whois` set to `moderators`), clients may want to refrain using them to
+prevent disclosing the JID of the user initiating the chat, unless the recipient already
+knows them from another venue (e.g., the recipient is in their roster).
+
 ### Terminology
 
 People in the *group chat* / *channel*: *Participants*
