@@ -26,9 +26,10 @@ While it is possible to entirely prevent PMs from being sent with
 clients should prefer using JIDs when `muc#roomconfig_whois` is set to `anyone`.
 
 In channels, if the initiating client has access to revealed JIDs (with
-`muc#roomconfig_whois` set to `moderators`), clients may want to refrain using them to
-prevent disclosing the JID of the user initiating the chat, unless the recipient already
-knows them from another venue (e.g., the recipient is in their roster).
+`muc#roomconfig_whois` set to `moderators`), clients may want to refrain from
+using them to prevent disclosing the JID of the user initiating the chat,
+unless the recipient already knows them from another venue (e.g., the
+recipient is in their roster).
 
 ### Terminology
 
