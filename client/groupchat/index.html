@@ -125,55 +125,82 @@
 <h2 id="types-of-chat">Types of chat<a class="headerlink" href="#types-of-chat" title="Permanent link">&para;</a></h2>
 <p>There are two kinds of multi-user chat. Private <em>group chats</em>, and public <em>channels</em><sup id="fnref:rationale-gc"><a class="footnote-ref" href="#fn:rationale-gc">1</a></sup>.</p>
 <h3 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h3>
+<p>To detect if a multi-user chat is a <em>group chat</em> or a <em>channel</em></p>
 <table>
 <thead>
 <tr>
 <th align="left"></th>
+<th align="left">MUC Configuration variable (1)</th>
 <th align="left">Group chat</th>
+<th align="left">Disco Feature (2)</th>
 <th align="left">Channel</th>
+<th align="left">Disco Feature (2)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left">Persistent</td>
+<td align="left">muc#roomconfig_persistentroom</td>
 <td align="left">Yes</td>
+<td align="left">muc_persistent</td>
 <td align="left">Yes</td>
+<td align="left">muc_persistent</td>
 </tr>
 <tr>
 <td align="left">MAM enabled</td>
+<td align="left"><strong>Prosody</strong> muc#roomconfig_enablearchiving<br><strong>ejabberd community</strong>: mam<br><strong>ejabberd saas</strong> muc#roomconfig_mam</td>
 <td align="left">Yes</td>
+<td align="left">urn:xmpp:mam:2</td>
 <td align="left">Yes</td>
+<td align="left">urn:xmpp:mam:2</td>
 </tr>
 <tr>
 <td align="left">Subject editable</td>
+<td align="left">muc#roomconfig_changesubject</td>
 <td align="left">No</td>
+<td align="left">muc#roomconfig_changesubject to <code>false</code></td>
 <td align="left">No</td>
+<td align="left">muc#roomconfig_changesubject to <code>false</code></td>
 </tr>
 <tr>
 <td align="left">Members-only</td>
-<td align="left">Yes (*)</td>
+<td align="left">muc#roomconfig_membersonly</td>
+<td align="left">Yes (3)</td>
+<td align="left">muc_membersonly</td>
 <td align="left">No</td>
+<td align="left">muc_open</td>
 </tr>
 <tr>
 <td align="left">JIDs revealed</td>
-<td align="left">Yes (*)</td>
+<td align="left">muc#roomconfig_whois</td>
+<td align="left">Yes (3)</td>
+<td align="left">muc_nonanonymous</td>
 <td align="left">No</td>
+<td align="left">muc_semianonymous</td>
 </tr>
 <tr>
 <td align="left">Publicly listed</td>
-<td align="left">No  (*)</td>
+<td align="left">muc#roomconfig_publicroom</td>
+<td align="left">No  (3)</td>
+<td align="left">muc_hidden</td>
 <td align="left">Yes</td>
+<td align="left">muc_public</td>
 </tr>
 <tr>
 <td align="left">PMs</td>
-<td align="left">No  (*)</td>
+<td align="left">muc#roomconfig_allowpm</td>
+<td align="left">No  (3)</td>
+<td align="left">muc#roomconfig_allowpm to <code>none</code></td>
 <td align="left">Yes</td>
+<td align="left">muc#roomconfig_allowpm to <code>anyone</code></td>
 </tr>
 </tbody>
 </table>
-<p>(*) Immutable for <em>group chats</em>.</p>
-<p>Options marked <code>(*) Immutable</code> should be used when creating group chats, and also as a
-means of detection. These options may be hidden or greyed out in a configuration dialog.</p>
+<p>(1) As defined in <a href="https://xmpp.org/extensions/xep-0045.html#registrar-formtype-owner">XEP-0045: Multi-User Chat - 16.5.3</a></p>
+<p>(2) As defined in <a href="https://xmpp.org/extensions/xep-0045.html#registrar-features">XEP-0045: Multi-User Chat - 16.3</a></p>
+<p>(3) Immutable for <em>group chats</em>.</p>
+<p>Options marked <code>(3) Immutable</code> should be used when creating group chats, and also as a means of detection. These options may be hidden or greyed out in a configuration dialog. The other options are recommendations.</p>
+<h4 id="about-pms">About PMs<a class="headerlink" href="#about-pms" title="Permanent link">&para;</a></h4>
 <p>While it is possible to entirely prevent PMs from being sent with
 <a href="https://xmpp.org/extensions/xep-0045.html#privatemessage"><code>muc#roomconfig_allowpm</code></a>,
 clients should prefer using JIDs when <code>muc#roomconfig_whois</code> is set to <code>anyone</code>.</p>
