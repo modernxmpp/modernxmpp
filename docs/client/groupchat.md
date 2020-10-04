@@ -6,20 +6,27 @@ There are two kinds of multi-user chat. Private *group chats*, and public *chann
 
 ### Properties
 
-|                  | Group chat | Channel |
-|:-----------------|:-----------|:--------|
-| Persistent       | Yes        | Yes     |
-| MAM enabled      | Yes        | Yes     |
-| Subject editable | No         | No      |
-| Members-only     | Yes (\*)   | No      |
-| JIDs revealed    | Yes (\*)   | No      |
-| Publicly listed  | No  (\*)   | Yes     |
-| PMs              | No  (\*)   | Yes     |
+To detect if a multi-user chat is a *group chat* or a *channel*
 
-(\*) Immutable for *group chats*.
+|                  | MUC Configuration variable (1) | Group chat | Disco Feature (2)  | Channel | Disco Feature (2)  |
+|:-----------------|:-------------------|:-----------|:---------------|:--------|:---------------|
+| Persistent       | muc#roomconfig_persistentroom | Yes        | muc_persistent | Yes     | muc_persistent |
+| MAM enabled      | **Prosody** muc#roomconfig_enablearchiving<br>**ejabberd community**: mam<br>**ejabberd saas** muc#roomconfig_mam | Yes        | urn:xmpp:mam:2 | Yes     | urn:xmpp:mam:2  |
+| Subject editable | muc#roomconfig_changesubject | No         | muc#roomconfig_changesubject to `false` | No      | muc#roomconfig_changesubject to `false` |
+| Members-only     | muc#roomconfig_membersonly | Yes (3)   | muc_membersonly | No      | muc_open      |
+| JIDs revealed    | muc#roomconfig_whois | Yes (3)   | muc_nonanonymous| No      | muc_semianonymous |
+| Publicly listed  | muc#roomconfig_publicroom | No  (3)   | muc_hidden      | Yes     | muc_public    |
+| PMs              | muc#roomconfig_allowpm | No  (3)   | muc#roomconfig_allowpm to `none` | Yes     | muc#roomconfig_allowpm to `anyone` |
 
-Options marked `(*) Immutable` should be used when creating group chats, and also as a
-means of detection. These options may be hidden or greyed out in a configuration dialog.
+(1) As defined in [XEP-0045: Multi-User Chat - 16.5.3](https://xmpp.org/extensions/xep-0045.html#registrar-formtype-owner)
+
+(2) As defined in [XEP-0045: Multi-User Chat - 16.3](https://xmpp.org/extensions/xep-0045.html#registrar-features)
+
+(3) Immutable for *group chats*.
+
+Options marked `(3) Immutable` should be used when creating group chats, and also as a means of detection. These options may be hidden or greyed out in a configuration dialog. The other options are recommendations.
+
+#### About PMs
 
 While it is possible to entirely prevent PMs from being sent with
 [`muc#roomconfig_allowpm`](https://xmpp.org/extensions/xep-0045.html#privatemessage),
