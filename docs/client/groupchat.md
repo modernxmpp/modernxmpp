@@ -93,8 +93,37 @@ The display of other user's names is covered in the [general UI recommendations]
 
 ## Bookmarks
 
-!!! todo
-    Bookmark management logic
+Figuring out which group chats to join is the client’s job. For that it
+should store the list of group chats to rejoin automatically on the
+server, named bookmarks. Three possible protocols exist for this:
+
+- [XEP-0402](https://xmpp.org/extensions/xep-0402.html) which is the
+  current preferred method
+- [XEP-0048 1.1](https://xmpp.org/extensions/xep-0048.html), recently
+  deprecated but still in use by some clients
+- [XEP-0048 1.0](https://xmpp.org/extensions/attic/xep-0048-1.0.html),
+  in wide use, based on
+  [XEP-0049](https://xmpp.org/extensions/xep-0049.html)
+
+In order to see the same set of bookmarks as every other client the
+user might be using, it is recommended to implement **XEP-0048 1.0** first
+and foremost when the user's account may be shared with other clients.
+
+This legacy protocol however doesn’t support notifications when the bookmarks
+change due to another client or the server. To avoid this issue, a modern client
+should also implement **XEP-0402** ("PEP Native Bookmarks"), but use it *only* if the account
+advertises 'urn:xmpp:bookmarks:1#compat' (as defined in [XEP-0402 paragraph 5.3
+Compatibility](https://xmpp.org/extensions/xep-0402.html#sect-idm45862026440880)).
+
+Implementing XEP-0048 1.1 is not recommended in modern clients.
+
+The following table summarizes the implementation recommendations described in this section:
+
+| XEP                                        | Implement                                | Use                                                                         |
+|--------------------------------------------|------------------------------------------|-----------------------------------------------------------------------------|
+| XEP-0048 1.0<br>(Private XML storage)      | Yes<br>(for backwards compatibility)     | When `urn:xmpp:bookmarks:1#compat` **is not** advertised by the server on the user's account. |
+| XEP-0048 1.1<br>(PEP storage, single-item) | No<br>(deprecated in favour of XEP-0402) | Never                                                                       |
+| XEP-0402<br>(PEP storage, multi-item)      | Yes                                      | When `urn:xmpp:bookmarks:1#compat` **is** advertised by the server on the user's account.     |
 
 ## Private messages
 
