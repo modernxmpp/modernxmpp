@@ -119,19 +119,16 @@
 <p>Invitation to register an account on a given domain:</p>
 <pre><code>xmpp:example.com?register;preauth=3c7efeafc1bb10d034
 </code></pre>
-
 <p>or an invitation to register an account with a <strong>specific</strong> username
 only:</p>
 <pre><code>xmpp:romeo@example.com?register;preauth=3c7efeafc1bb10d034
 </code></pre>
-
 <p>See the <em>Registration protocol</em> section of this document for how to
 handle this type of invitation.</p>
 <h3 id="subscription-only">Subscription-only<a class="headerlink" href="#subscription-only" title="Permanent link">&para;</a></h3>
 <p>A potential contact invites you to communicate with them:</p>
 <pre><code>xmpp:contact@example.com?roster;preauth=3c7efeafc1bb10d034
 </code></pre>
-
 <p>The protocol to handle this type of invitation is specified in
 <a href="https://xmpp.org/extensions/xep-0379.html">XEP-0379: Pre-authenticated Roster Subscriptions</a>.
 After following the protocol, you will have a mutual presence subscription
@@ -144,7 +141,6 @@ are able to use the token to also register an account on the contact's
 domain, signalled by the presence of <code>ibr=y</code> in the URI parameters:</p>
 <pre><code>xmpp:contact@example.com?roster;preauth=3c7efeafc1bb10d034;ibr=y
 </code></pre>
-
 <p>If the recipient of such an invite does not yet have an account, the
 client should follow the <em>Registration protocol</em> section of this document.
 After completing the registration, the user will automatically be subscribed
@@ -154,7 +150,7 @@ handled the same as a subscription-only invitation documented above,
 and follow the protocol defined in <a href="https://xmpp.org/extensions/xep-0379.html">XEP-0379</a>.</p>
 <h1 id="registration-protocol">Registration protocol<a class="headerlink" href="#registration-protocol" title="Permanent link">&para;</a></h1>
 <p>Server sends stream features:</p>
-<pre><code class="xml">&lt;stream:features&gt;
+<pre><code class="language-xml">&lt;stream:features&gt;
   &lt;mechanisms xmlns='urn:xmpp:sasl:0'&gt;
     &lt;mechanism&gt;EXTERNAL&lt;/mechanism&gt;
     &lt;mechanism&gt;SCRAM-SHA-1-PLUS&lt;/mechanism&gt;
@@ -165,14 +161,12 @@ and follow the protocol defined in <a href="https://xmpp.org/extensions/xep-0379
   &lt;register xmlns='http://jabber.org/features/iq-register'/&gt;
 &lt;/stream:features&gt;
 </code></pre>
-
 <p>Client sees that registration through token is supported,
 and initiates the registration flow:</p>
-<pre><code class="xml">&lt;iq type=&quot;set&quot; to=&quot;example.com&quot; id=&quot;pa1&quot;&gt;
+<pre><code class="language-xml">&lt;iq type=&quot;set&quot; to=&quot;example.com&quot; id=&quot;pa1&quot;&gt;
   &lt;preauth xmlns='urn:xmpp:pars:0' token='3c7efeafc1bb10d034' /&gt;
 &lt;/iq&gt;
 </code></pre>
-
 <p>Upon receiving the preauth request, the server should validate that the
 token is acceptable for account registration. However single-use tokens
 MUST NOT be considered used until the actual registration has succeeded.</p>
@@ -181,19 +175,17 @@ at this point. Subsequent actions performed by the client during the current
 session that require a valid token MUST NOT be rejected due to token expiry.</p>
 <p>Server responds with success, and indicates
 the client may now proceed with account registration:</p>
-<pre><code class="xml">&lt;iq type=&quot;result&quot; from=&quot;example.com&quot; id=&quot;pa1&quot; /&gt;
+<pre><code class="language-xml">&lt;iq type=&quot;result&quot; from=&quot;example.com&quot; id=&quot;pa1&quot; /&gt;
 </code></pre>
-
 <p>If the token provided by the client was unknown, invalid or expired, the
 server should return an appropriate error to the client:</p>
-<pre><code class="xml">&lt;iq type=&quot;error&quot; from=&quot;example.com&quot; id=&quot;pa1&quot;&gt;
+<pre><code class="language-xml">&lt;iq type=&quot;error&quot; from=&quot;example.com&quot; id=&quot;pa1&quot;&gt;
   &lt;error type='cancel'&gt;
     &lt;item-not-found xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/&gt;
     &lt;text&gt;The provided token is invalid or expired&lt;/text&gt;
   &lt;/error&gt;
 &lt;/iq&gt;
 </code></pre>
-
 <p>In the success case, the client proceeds with registration using e.g.
 XEP-0077 in the normal way.</p>
 <h1 id="creating-an-invitation">Creating an invitation<a class="headerlink" href="#creating-an-invitation" title="Permanent link">&para;</a></h1>
