@@ -17,13 +17,13 @@ This table of terms (German, French and Spanish to begin with) aims to be a refe
 
 At the moment, this table intends to support discussing the translation of key terms. [Discuss with us!](xmpp:modernxmpp@rooms.modernxmpp.org?join)
 
-| English term            | German         | French            | Spanish        |
-|-------------------------|----------------|-------------------|----------------|
-| Group chat              | Gruppenchat    | Groupe            | ?              |
-| Channel                 | Channel        | Salon             | ?              |
-| Participant             | Teilnehmer     | Participant       | ?              |
-| Address or XMPP address | XMPP Adresse   | Adresse XMPP      | ?              |
-| Contact list            | Kontaktliste   | Liste de contacts | ?              |
+| English term            | German         | French            | Spanish            |
+|-------------------------|----------------|-------------------|--------------------|
+| Group chat              | Gruppenchat    | Groupe            | Grupo de chat      |
+| Channel                 | Channel        | Salon             | Canal              |
+| Participant             | Teilnehmer     | Participant       | Participantes      |
+| Address or XMPP address | XMPP Adresse   | Adresse XMPP      | Dirección XMPP     |
+| Contact list            | Kontaktliste   | Liste de contacts | Lista de contactos |
 
 You’ll find more terms in the [term overview](/translation-discussion).
 
