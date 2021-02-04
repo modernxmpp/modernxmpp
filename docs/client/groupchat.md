@@ -113,7 +113,7 @@ This legacy protocol however doesn’t support notifications when the bookmarks
 change due to another client or the server. To avoid this issue, a modern client
 should also implement **XEP-0402** ("PEP Native Bookmarks"), but use it *only* if the account
 advertises 'urn:xmpp:bookmarks:1#compat' (as defined in [XEP-0402 paragraph 5.3
-Compatibility](https://xmpp.org/extensions/xep-0402.html#sect-idm45862026440880)).
+Compatibility](https://xmpp.org/extensions/xep-0402.html#compatibility)).
 
 Implementing XEP-0048 1.1 is not recommended in modern clients.
 
