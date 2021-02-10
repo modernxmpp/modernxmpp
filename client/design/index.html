@@ -257,6 +257,19 @@ where necessary. See the main "Terminology" section for more information.</p>
 <h3 id="sorting-of-contact-list">Sorting of contact list<a class="headerlink" href="#sorting-of-contact-list" title="Permanent link">&para;</a></h3>
 <p>The client MUST sort the contact list. Either in <a href="https://en.wikipedia.org/wiki/Lexicographical_order">lexicographical order</a> by contact name or
 chronologically by the time of the last message exchanged with that contact.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Historically, some clients have sorted by presence (available, offline,
+busy, etc.) as a secondary sorting category.
+Due to the rise in mobile clients which always consider themselves
+"available", presence is not always a reliable indicator that a contact is
+available to chat.</p>
+</div>
+<p>If sorting chronologically and/or by presence, clients MUST NOT rearrange the
+contacts list while fetching history, or when the contact list has focus.
+The definition of "focus" depends on the context, but may be the cursor hovering
+over the list, the list pane being visible, or the list being selected in a
+screen reader or during tab selection.</p>
 <h3 id="visualizing-status">Visualizing status<a class="headerlink" href="#visualizing-status" title="Permanent link">&para;</a></h3>
 <p>The client MUST display status messages of contacts when present. It MAY also provide visual indication of the contact's status ('show'), but
 SHOULD NOT rely on color alone to distinguish different status values<sup id="fnref:color"><a class="footnote-ref" href="#fn:color">1</a></sup>.</p>
