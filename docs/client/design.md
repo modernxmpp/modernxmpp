@@ -72,6 +72,13 @@ The client MUST display offline contacts by default, and allow sending messages 
 The client MUST sort the contact list. Either in [lexicographical order](https://en.wikipedia.org/wiki/Lexicographical_order) by contact name or
 chronologically by the time of the last message exchanged with that contact.
 
+!!! Note
+    Historically, some clients have sorted by presence (available, offline,
+    busy, etc.) as a secondary sorting category.
+    Due to the rise in mobile clients which always consider themselves
+    "available", presence is not always a reliable indicator that a contact is
+    available to chat.
+
 ### Visualizing status
 
 The client MUST display status messages of contacts when present. It MAY also provide visual indication of the contact's status ('show'), but
