@@ -79,6 +79,12 @@ chronologically by the time of the last message exchanged with that contact.
     "available", presence is not always a reliable indicator that a contact is
     available to chat.
 
+If sorting chronologically and/or by presence, clients MUST NOT rearrange the
+contacts list while fetching history, or when the contact list has focus.
+The definition of "focus" depends on the context, but may be the cursor hovering
+over the list, the list pane being visible, or the list being selected in a
+screen reader or during tab selection.
+
 ### Visualizing status
 
 The client MUST display status messages of contacts when present. It MAY also provide visual indication of the contact's status ('show'), but
