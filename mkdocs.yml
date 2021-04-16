@@ -7,6 +7,8 @@ nav:
     - 'Protocol': client/protocol.md
     - 'Multi-user Chats': client/groupchat.md
   - 'Terminology': terminology.md
+  - 'Projects':
+    - 'Account portability': projects/portability.md
 
 markdown_extensions:
   - admonition
