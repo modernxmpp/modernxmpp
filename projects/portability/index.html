@@ -6,17 +6,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://docs.modernxmpp.org/terminology/">
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Terminology - Modern XMPP</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
+        <link rel="canonical" href="https://docs.modernxmpp.org/projects/portability/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Account portability - Modern XMPP</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-        <link href="../css/modernxmpp.css" rel="stylesheet">
+        <link href="../../css/modernxmpp.css" rel="stylesheet">
 
-        <script src="../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -24,7 +24,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="..">Modern XMPP</a>
+                <a class="navbar-brand" href="../..">Modern XMPP</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -35,34 +35,34 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href=".." class="nav-link">Home</a>
+                                <a href="../.." class="nav-link">Home</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Guidelines <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../client/design/" class="dropdown-item">User Interface</a>
+    <a href="../../client/design/" class="dropdown-item">User Interface</a>
 </li>
                                     
 <li>
-    <a href="../client/protocol/" class="dropdown-item">Protocol</a>
+    <a href="../../client/protocol/" class="dropdown-item">Protocol</a>
 </li>
                                     
 <li>
-    <a href="../client/groupchat/" class="dropdown-item">Multi-user Chats</a>
+    <a href="../../client/groupchat/" class="dropdown-item">Multi-user Chats</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Terminology</a>
+                            <li class="navitem">
+                                <a href="../../terminology/" class="nav-link">Terminology</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../projects/portability/" class="dropdown-item">Account portability</a>
+    <a href="./" class="dropdown-item active">Account portability</a>
 </li>
                                 </ul>
                             </li>
@@ -75,17 +75,17 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../client/groupchat/" class="nav-link">
+                                <a rel="prev" href="../../terminology/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../projects/portability/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="https://github.com/modernxmpp/modernxmpp/edit/draft/docs/terminology.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/modernxmpp/modernxmpp/edit/draft/docs/projects/portability.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -105,12 +105,8 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#terminology" class="nav-link">Terminology</a>
+            <li class="nav-item" data-level="1"><a href="#xmpp-account-portability" class="nav-link">XMPP Account Portability</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#translation" class="nav-link">Translation</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -118,93 +114,15 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h1>
-<p>To reduce user confusion when switching between clients, it is good to use only recommended
-terms.</p>
-<table>
-<thead>
-<tr>
-<th>Historic terms</th>
-<th>Recommended terms</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MUC, Room, Chatroom, Conference</td>
-<td><em>Group chat</em> or <em>Channel</em><sup id="fnref:rationale-gc"><a class="footnote-ref" href="#fn:rationale-gc">1</a></sup> (see <a href="../client/groupchat/">Multi-user Chats</a>)</td>
-</tr>
-<tr>
-<td>Occupant</td>
-<td><em>Participant</em></td>
-</tr>
-<tr>
-<td>JID</td>
-<td><em>Address</em> or <em>XMPP address</em></td>
-</tr>
-<tr>
-<td>Roster</td>
-<td><em>Contact list</em></td>
-</tr>
-</tbody>
-</table>
-<h2 id="translation">Translation<a class="headerlink" href="#translation" title="Permanent link">&para;</a></h2>
-<p>Most XMPP Clients are distributed in multiple languages. In the process of translating a client, people with various backgrounds (not necessarily XMPP-related) are contributing translations.
-This table of terms (German, French and Spanish to begin with) aims to be a reference for recommended translations in the future.</p>
-<p>At the moment, this table intends to support discussing the translation of key terms. <a href="xmpp:modernxmpp@rooms.modernxmpp.org?join">Discuss with us!</a></p>
-<table>
-<thead>
-<tr>
-<th>English term</th>
-<th>German</th>
-<th>French</th>
-<th>Spanish</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Group chat</td>
-<td>Gruppenchat</td>
-<td>Groupe</td>
-<td>Grupo de chat</td>
-</tr>
-<tr>
-<td>Channel</td>
-<td>Channel</td>
-<td>Salon</td>
-<td>Canal</td>
-</tr>
-<tr>
-<td>Participant</td>
-<td>Teilnehmer</td>
-<td>Participant</td>
-<td>Participantes</td>
-</tr>
-<tr>
-<td>Address or XMPP address</td>
-<td>XMPP Adresse</td>
-<td>Adresse XMPP</td>
-<td>Dirección XMPP</td>
-</tr>
-<tr>
-<td>Contact list</td>
-<td>Kontaktliste</td>
-<td>Liste de contacts</td>
-<td>Lista de contactos</td>
-</tr>
-</tbody>
-</table>
-<p>You’ll find more terms in the <a href="/translation-discussion">term overview</a>.</p>
-<p><a href="https://github.com/modernxmpp/modernxmpp">Add a language...</a></p>
-<!-- Footnotes -->
-
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:rationale-gc">
-<p>Rationale <a href="/rationale#terminology">group chat terminology</a>&#160;<a class="footnote-backref" href="#fnref:rationale-gc" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div></div>
+<h1 id="xmpp-account-portability">XMPP Account Portability<a class="headerlink" href="#xmpp-account-portability" title="Permanent link">&para;</a></h1>
+<p>The <em>XMPP Account Portability project</em> is standardizing a way to migrate a
+user’s account data from one XMPP-based service provider or software to
+another. The project will develop and publish a suitable protocol and data
+format via the <a href="https://xmpp.org/">XMPP Standards Foundation</a>’s standards
+process, as well as a reference implementation. Finally, the work will be
+integrated into <a href="https://snikket.org/">Snikket</a>, a suite of XMPP-based
+open-source communication software.</p>
+<p><em>No updates published yet.</em></p></div>
             </div>
         </div>
 
@@ -213,11 +131,11 @@ This table of terms (German, French and Spanish to begin with) aims to be a refe
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "..",
+            var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../js/base.js" defer></script>
-        <script src="../search/main.js" defer></script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
