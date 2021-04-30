@@ -8,6 +8,8 @@ process, as well as a reference implementation. Finally, the work will be
 integrated into [Snikket](https://snikket.org/), a suite of XMPP-based
 open-source communication software.
 
+- **April 2021:** Read the project announcement on the [Snikket blog](https://snikket.org/blog/dapsi-fund-account-portability/)!
+
 <div style="display:flex; flex-direction: column;">
   <div>
     <h2>Credits</h2>
