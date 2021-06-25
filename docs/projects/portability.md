@@ -8,7 +8,11 @@ process, as well as a reference implementation. Finally, the work will be
 integrated into [Snikket](https://snikket.org/), a suite of XMPP-based
 open-source communication software.
 
+**Updates**
+
 - **April 2021:** Read the project announcement on the [Snikket blog](https://snikket.org/blog/dapsi-fund-account-portability/)!
+- **May 2021:** Research and document drafting.
+- **June 2021:** XEP-0227 revision 1.1 [has been submitted](https://github.com/xsf/xeps/pull/1064) to the XSF. A new proto-XEP "Moved 2.0" [has also been submitted](https://xmpp.org/extensions/inbox/moved2.html). Both submissions are awaiting approval from the [XSF technical council](https://xmpp.org/about/xmpp-standards-foundation.html#council).
 
 <div style="display:flex; flex-direction: column;">
   <div>
