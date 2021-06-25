@@ -12,12 +12,12 @@
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
         <link href="../../css/modernxmpp.css" rel="stylesheet">
 
         <script src="../../js/jquery-1.10.2.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
@@ -122,8 +122,11 @@ format via the <a href="https://xmpp.org/">XMPP Standards Foundation</a>’s sta
 process, as well as a reference implementation. Finally, the work will be
 integrated into <a href="https://snikket.org/">Snikket</a>, a suite of XMPP-based
 open-source communication software.</p>
+<p><strong>Updates</strong></p>
 <ul>
 <li><strong>April 2021:</strong> Read the project announcement on the <a href="https://snikket.org/blog/dapsi-fund-account-portability/">Snikket blog</a>!</li>
+<li><strong>May 2021:</strong> Research and document drafting.</li>
+<li><strong>June 2021:</strong> XEP-0227 revision 1.1 <a href="https://github.com/xsf/xeps/pull/1064">has been submitted</a> to the XSF. A new proto-XEP "Moved 2.0" <a href="https://xmpp.org/extensions/inbox/moved2.html">has also been submitted</a>. Both submissions are awaiting approval from the <a href="https://xmpp.org/about/xmpp-standards-foundation.html#council">XSF technical council</a>.</li>
 </ul>
 <div style="display:flex; flex-direction: column;">
   <div>
@@ -162,16 +165,13 @@ open-source communication software.</p>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
+                <p>From here you can search these documents. Enter your search terms below.</p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>
