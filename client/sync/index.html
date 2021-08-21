@@ -4,27 +4,27 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Documentation of the Modern XMPP project, an independent project launched to improve the quality of user-to-user messaging applications that use XMPP">
         
-        <link rel="canonical" href="https://docs.modernxmpp.org/">
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Modern XMPP</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="canonical" href="https://docs.modernxmpp.org/client/sync/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Syncing Message History - Modern XMPP</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
-        <link href="css/modernxmpp.css" rel="stylesheet">
+        <link href="../../css/modernxmpp.css" rel="stylesheet">
 
-        <script src="js/jquery-1.10.2.min.js" defer></script>
-        <script src="js/bootstrap.min.js" defer></script>
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href=".">Modern XMPP</a>
+                <a class="navbar-brand" href="../..">Modern XMPP</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -34,35 +34,35 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem active">
-                                <a href="." class="nav-link">Home</a>
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Guidelines <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="client/design/" class="dropdown-item">User Interface</a>
+    <a href="../design/" class="dropdown-item">User Interface</a>
 </li>
                                     
 <li>
-    <a href="client/protocol/" class="dropdown-item">Protocol</a>
+    <a href="../protocol/" class="dropdown-item">Protocol</a>
 </li>
                                     
 <li>
-    <a href="client/groupchat/" class="dropdown-item">Multi-user Chats</a>
+    <a href="../groupchat/" class="dropdown-item">Multi-user Chats</a>
 </li>
                                 </ul>
                             </li>
                             <li class="navitem">
-                                <a href="terminology/" class="nav-link">Terminology</a>
+                                <a href="../../terminology/" class="nav-link">Terminology</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="projects/portability/" class="dropdown-item">Account portability</a>
+    <a href="../../projects/portability/" class="dropdown-item">Account portability</a>
 </li>
                                 </ul>
                             </li>
@@ -75,17 +75,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="client/design/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://github.com/modernxmpp/modernxmpp/edit/draft/docs/index.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/modernxmpp/modernxmpp/edit/draft/docs/client/sync.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -105,13 +95,9 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#modern-xmpp" class="nav-link">Modern XMPP</a>
+            <li class="nav-item" data-level="1"><a href="#syncing-message-history" class="nav-link">Syncing Message History</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#overview" class="nav-link">Overview</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#current-status" class="nav-link">Current status</a>
+            <li class="nav-item" data-level="2"><a href="#mam-strategies" class="nav-link">MAM Strategies</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -122,25 +108,59 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="modern-xmpp">Modern XMPP<a class="headerlink" href="#modern-xmpp" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p><strong>Modern XMPP</strong> is an independent project launched to improve the quality of user-to-user messaging applications
-that use XMPP. <a href="https://xmpp.org/">XMPP</a> is a mature open standard for internet messaging. If you are reading
-this, you have probably heard of it.</p>
-<p>We are developing a handful of simple documents aimed at people who wish to build on top of XMPP. The recommendations are derived from healthy discussions between developers from multiple XMPP projects and other members of the XMPP community.</p>
-<p>Our recommendations highlight only the XEPs you need to implement for a modern messaging application,
-ignoring historical cruft and excessive backwards-compatibility.</p>
-<p>We also intend to provide a comprehensive set of guidelines for UI and UX design. Developing a client was never just about the protocol. In fact in most cases the protocol is a secondary concern. Having a concrete set of guidelines will help to provide a more uniform user experience between different applications, ensuring they use the same terminology, and provide interoperable feature sets.</p>
-<p>Times change, and we expect our recommendations to evolve over time. Our guidelines will be versioned,
-and thus make it possible to identify and weed out software that falls behind the times.</p>
-<h2 id="current-status">Current status<a class="headerlink" href="#current-status" title="Permanent link">&para;</a></h2>
-<p>It is early days. We are still building the foundations of what will become the initial set of documents. Nevertheless, we already have a bunch of stuff documented that developers of XMPP software (both new and experienced) will find useful. This includes <a href="client/design/">design guidelines</a> and lower-level <a href="client/protocol/">protocol implementation recommendations</a>.</p>
-<p>If you're interested in joining us, our primary discussion venue is our <em>channel</em> which can be reached at:</p>
+<h1 id="syncing-message-history">Syncing Message History<a class="headerlink" href="#syncing-message-history" title="Permanent link">&para;</a></h1>
+<h2 id="mam-strategies">MAM Strategies<a class="headerlink" href="#mam-strategies" title="Permanent link">&para;</a></h2>
+<p>Fetching history from the server is accomplished with <a href="https://xmpp.org/extensions/xep-0313.html">Message Archive
+Management</a> (MAM).
+New XMPP clients frequently use naïve methods of querying history that result in
+long wait times for history, or frozen UIs.
+However, a robust strategy for fetching history has not been previously
+documented.
+This section documents strategies used by clients in the wild, as well as
+implementation recommendations for MAM.</p>
+<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
 <ul>
-<li>XMPP: <a href="xmpp:modernxmpp@rooms.modernxmpp.org?join">modernxmpp@rooms.modernxmpp.org</a></li>
-<li>Web: <a href="https://chat.modernxmpp.org/">chat.modernxmpp.org</a></li>
+<li>Allow the user to send a message in response to history fetched from the
+  server as quickly as possible</li>
+<li>Do not generate dozens of notifications for old messages</li>
 </ul>
-<p>Contributions to the docs can be made through Github <a href="https://github.com/modernxmpp/modernxmpp">modernxmpp/modernxmpp</a>.</p></div>
+<h3 id="implementation-notes">Implementation Notes<a class="headerlink" href="#implementation-notes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Don't treat history like normal incoming messages.
+  If querying lots of messages, aggregate and commit them to the data store
+  (assuming a transactional database) as a group.
+  Do the same for updating the UI and displaying notifications (ie. display one
+  notification, not dozens or perhaps hundreds as messages come in).</li>
+<li>Look up the last message <em>in your datastore before</em> sending initial presence,
+  otherwise you may receive a message before you get the last ID and end up with
+  a gap.</li>
+<li>If using paging, committing one page at a time to the DB/UI is a natural way
+  to break up large transactions and provide the user with quicker feeling
+  updates.</li>
+<li>If <code>mam:2#extended</code> is supported, query using <code>after-id</code> and <code>before-id</code> and
+  fall back to using the time of the last or earliest message (<code>before</code> and
+  <code>after</code>) if not.</li>
+</ul>
+<h3 id="communique">Communiqué<a class="headerlink" href="#communique" title="Permanent link">&para;</a></h3>
+<ul>
+<li>On client start iterate through all items in the roster</li>
+<li>If no messages exist in the local archive:<ul>
+<li>Query in reverse order (in case the server breaks it up by page and we end
+  up committing pages separately) with <code>before: now &amp;&amp; limit: X</code> (where X is
+  some configurable number or a guess at a page number based on screen size,
+  etc.)</li>
+</ul>
+</li>
+<li>Else:<ul>
+<li>Query with <code>after-id: &lt;last message&gt;</code> or <code>after: &lt;last message time&gt;</code>
+  (making sure that the last message was pulled from the DB before we send
+  initial presence)</li>
+</ul>
+</li>
+<li>If the user scrolls to the top:</li>
+<li>Query in reverse order with <code>before-id: &lt;first message&gt; &amp;&amp; limit: X</code> or
+    <code>before: &lt;first message time&gt; &amp;&amp; limit: X</code></li>
+</ul></div>
             </div>
         </div>
 
@@ -149,11 +169,11 @@ and thus make it possible to identify and weed out software that falls behind th
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = ".",
+            var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js" defer></script>
-        <script src="search/main.js" defer></script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -218,8 +238,3 @@ and thus make it possible to identify and weed out software that falls behind th
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.2.2
-Build Date UTC : 2021-08-21 16:52:12.624385+00:00
--->
