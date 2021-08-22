@@ -31,24 +31,24 @@ implementation recommendations for MAM.
   to break up large transactions and provide the user with quicker feeling
   updates.
 - If `mam:2#extended` is supported, query using `after-id` and `before-id` and
-  fall back to using the time of the last or earliest message (`before` and
-  `after`) if not.
+  fall back to using the time of the last or earliest message (`start` and
+  `end`) if not.
 
 ### Communiqué
 
 - On client start iterate through all items in the roster
-  - If no messages exist in the local archive:
-    - Query in reverse order (in case the server breaks it up by page and we end
-      up committing pages separately) with `before: now && limit: X` (where X is
-      some configurable number or a guess at a page number based on screen size,
-      etc.)
-  - Else:
-    - Query with `after-id: <last message>` or `after: <last message time>`
-      (making sure that the last message was pulled from the DB before we send
-      initial presence)
+    - If no messages exist in the local archive:
+        - Query in reverse order (in case the server breaks it up by page and we
+          end up committing pages separately) with `end: now && limit: X` (where
+          X is some configurable number or a guess at a page number based on
+          screen size, etc.)
+    - Else:
+        - Query with `after-id: <last message>` or `start: <last message time>`
+          (making sure that the last message was pulled from the DB before we
+          send initial presence)
 - If the user scrolls to the top:
-  - Query in reverse order with `before-id: <first message> && limit: X` or
-    `before: <first message time> && limit: X`
+    - Query in reverse order with `before-id: <first message> && limit: X` or
+      `end: <first message time> && limit: X`
 
 
 [MAM]: https://xmpp.org/extensions/xep-0313.html
