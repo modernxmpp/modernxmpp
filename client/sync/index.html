@@ -138,28 +138,32 @@ implementation recommendations for MAM.</p>
   to break up large transactions and provide the user with quicker feeling
   updates.</li>
 <li>If <code>mam:2#extended</code> is supported, query using <code>after-id</code> and <code>before-id</code> and
-  fall back to using the time of the last or earliest message (<code>before</code> and
-  <code>after</code>) if not.</li>
+  fall back to using the time of the last or earliest message (<code>start</code> and
+  <code>end</code>) if not.</li>
 </ul>
 <h3 id="communique">Communiqué<a class="headerlink" href="#communique" title="Permanent link">&para;</a></h3>
 <ul>
-<li>On client start iterate through all items in the roster</li>
+<li>On client start iterate through all items in the roster<ul>
 <li>If no messages exist in the local archive:<ul>
-<li>Query in reverse order (in case the server breaks it up by page and we end
-  up committing pages separately) with <code>before: now &amp;&amp; limit: X</code> (where X is
-  some configurable number or a guess at a page number based on screen size,
-  etc.)</li>
+<li>Query in reverse order (in case the server breaks it up by page and we
+  end up committing pages separately) with <code>end: now &amp;&amp; limit: X</code> (where
+  X is some configurable number or a guess at a page number based on
+  screen size, etc.)</li>
 </ul>
 </li>
 <li>Else:<ul>
-<li>Query with <code>after-id: &lt;last message&gt;</code> or <code>after: &lt;last message time&gt;</code>
-  (making sure that the last message was pulled from the DB before we send
-  initial presence)</li>
+<li>Query with <code>after-id: &lt;last message&gt;</code> or <code>start: &lt;last message time&gt;</code>
+  (making sure that the last message was pulled from the DB before we
+  send initial presence)</li>
 </ul>
 </li>
-<li>If the user scrolls to the top:</li>
+</ul>
+</li>
+<li>If the user scrolls to the top:<ul>
 <li>Query in reverse order with <code>before-id: &lt;first message&gt; &amp;&amp; limit: X</code> or
-    <code>before: &lt;first message time&gt; &amp;&amp; limit: X</code></li>
+  <code>end: &lt;first message time&gt; &amp;&amp; limit: X</code></li>
+</ul>
+</li>
 </ul></div>
             </div>
         </div>
