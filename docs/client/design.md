@@ -29,8 +29,7 @@ List recommended configuration options.
 
 ### Network
 
-Support for these options is OPTIONAL. If included in the client, they MUST NOT
-be requested by default at startup, but should be accessible through an advanced options interface.
+Support for these options is OPTIONAL, but **not** recommended. They are only needed for testing/development purposes or working around misconfigured server deployments. If included in the client, they MUST NOT be requested by default at startup, but should be accessible through an advanced options interface.
 
 | Option              | Description                                  |
 |:--------------------|:---------------------------------------------|
