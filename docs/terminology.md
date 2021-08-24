@@ -22,7 +22,7 @@ At the moment, this table intends to support discussing the translation of key t
 | Group chat              | Gruppenchat    | Groupe            | Grupo de chat      | Grupo de conversa  |
 | Channel                 | Channel        | Salon             | Canal              | Canal              |
 | Participant             | Teilnehmer     | Participant       | Participantes      | Participantes      |
-| Address or XMPP address | XMPP Adresse   | Adresse XMPP      | Dirección XMPP     | Endereço XMPP      |
+| Address or XMPP address | XMPP-Adresse   | Adresse XMPP      | Dirección XMPP     | Endereço XMPP      |
 | Contact list            | Kontaktliste   | Liste de contacts | Lista de contactos | Lista de contactos |
 
 You’ll find more terms in the [term overview](/translation-discussion).
