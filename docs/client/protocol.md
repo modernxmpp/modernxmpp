@@ -256,9 +256,16 @@ is required (and HTTP Upload does not suffice for some reason).
 - Does not work for sharing a file with multiple people (e.g. in a group chat)
 - Only works if the recipient is online
 
-## Avatars
+## User Profiles
 
-TODO
+-   [XEP-0163](https://xmpp.org/extensions/xep-0163.html) is the base publishing method.
+-   [XEP-0222](https://xmpp.org/extensions/xep-0222.html) for access controls.
+-   [XEP-0084](https://xmpp.org/extensions/xep-0084.html) for profile picture.
+-   [XEP-0172](https://xmpp.org/extensions/xep-0172.html) for nickname.
+-   [XEP-0292](https://xmpp.org/extensions/xep-0292.html) for extended details (optional).
+
+Simpler clients may choose to only use XEP-0084 and XEP-0172 to provide a limited user profile,
+while more advanced clients could publish more details via XEP-0292.
 
 ## Group chat
 
