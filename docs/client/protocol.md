@@ -267,6 +267,18 @@ is required (and HTTP Upload does not suffice for some reason).
 Simpler clients may choose to only use XEP-0084 and XEP-0172 to provide a limited user profile,
 while more advanced clients could publish more details via XEP-0292.
 
+### Avatars
+
+-   **Do** publish avatars via XEP-0084.
+-   **Do not** publish avatars via XEP-0292.
+
+#### Format and size considerations
+
+Use widely supported format such as PNG or JPEG.
+
+The avatar must fit within stanza size restrictions, after being base64-encoded and wrapped in
+protocol.
+
 ## Group chat
 
 See [Group Chat](../groupchat/).
