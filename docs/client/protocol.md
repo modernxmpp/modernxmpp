@@ -298,6 +298,13 @@ such as:
 -   Public picture and nickname, private profile
 -   Everything public
 
+### Legacy
+
+-   [XEP-0054](https://xmpp.org/extensions/xep-0054.html) is the legacy profile publishing method.
+-   [XEP-0153](https://xmpp.org/extensions/xep-0153.html) notifies contacts about avatar changes.
+-   [XEP-0398](https://xmpp.org/extensions/xep-0398.html) tells you whether you can ignore that and
+    let the server do it for you.
+
 ## Group chat
 
 See [Group Chat](../groupchat/).
