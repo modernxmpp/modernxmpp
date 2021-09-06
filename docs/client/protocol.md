@@ -279,6 +279,25 @@ Use widely supported format such as PNG or JPEG.
 The avatar must fit within stanza size restrictions, after being base64-encoded and wrapped in
 protocol.
 
+### Access control
+
+Data published via [XEP-0163](https://xmpp.org/extensions/xep-0163.html) would by default be
+available only to the user's contacts. Historically, profiles published via the legacy
+[XEP-0054](https://xmpp.org/extensions/xep-0054.html) method were public.
+
+Modern PEP implementations should implement for 'access model' as described by
+[XEP-0222](https://xmpp.org/extensions/xep-0222.html), and allow users to share or limit their
+personal details as they choose.
+
+Access model for both XEP-0084 nodes and the XEP-0172 node should be kept the same.
+
+Access to the full XEP-0292 profile, if supported, may be configured separately or via a tri-state
+such as:
+
+-   Everything contacts only
+-   Public picture and nickname, private profile
+-   Everything public
+
 ## Group chat
 
 See [Group Chat](../groupchat/).
