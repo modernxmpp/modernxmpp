@@ -256,9 +256,55 @@ is required (and HTTP Upload does not suffice for some reason).
 - Does not work for sharing a file with multiple people (e.g. in a group chat)
 - Only works if the recipient is online
 
-## Avatars
+## User Profiles
 
-TODO
+-   [XEP-0163](https://xmpp.org/extensions/xep-0163.html) is the base publishing method.
+-   [XEP-0222](https://xmpp.org/extensions/xep-0222.html) for access controls.
+-   [XEP-0084](https://xmpp.org/extensions/xep-0084.html) for profile picture.
+-   [XEP-0172](https://xmpp.org/extensions/xep-0172.html) for nickname.
+-   [XEP-0292](https://xmpp.org/extensions/xep-0292.html) for extended details (optional).
+
+Simpler clients may choose to only use XEP-0084 and XEP-0172 to provide a limited user profile,
+while more advanced clients could publish more details via XEP-0292.
+
+### Avatars
+
+-   **Do** publish avatars via XEP-0084.
+-   **Do not** publish avatars via XEP-0292.
+
+#### Format and size considerations
+
+Use widely supported format such as PNG or JPEG.
+
+The avatar must fit within stanza size restrictions, after being base64-encoded and wrapped in
+protocol.  Recommended to keep the avatar no larger than 72 KiB which would keep resulting stanzas
+under 100 KiB.
+
+### Access control
+
+Data published via [XEP-0163](https://xmpp.org/extensions/xep-0163.html) would by default be
+available only to the user's contacts. Historically, profiles published via the legacy
+[XEP-0054](https://xmpp.org/extensions/xep-0054.html) method were public.
+
+Modern PEP implementations should implement for 'access model' as described by
+[XEP-0222](https://xmpp.org/extensions/xep-0222.html), and allow users to share or limit their
+personal details as they choose.
+
+Access model for both XEP-0084 nodes and the XEP-0172 node should be kept the same.
+
+Access to the full XEP-0292 profile, if supported, may be configured separately or via a tri-state
+such as:
+
+-   Everything contacts only
+-   Public picture and nickname, private profile
+-   Everything public
+
+### Legacy
+
+-   [XEP-0054](https://xmpp.org/extensions/xep-0054.html) is the legacy profile publishing method.
+-   [XEP-0153](https://xmpp.org/extensions/xep-0153.html) notifies contacts about avatar changes.
+-   [XEP-0398](https://xmpp.org/extensions/xep-0398.html) tells you whether you can ignore that and
+    let the server do it for you.
 
 ## Group chat
 
