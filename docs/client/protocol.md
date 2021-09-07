@@ -2,7 +2,7 @@
 
 ## Overview
 
-The XSF has published [nearly 400 XEPs](https://xmpp.org/extensions/) over many years. However as technology,
+The XSF has published [over 400 XEPs](https://xmpp.org/extensions/) over many years. However as technology,
 user expectations and best practices evolve, the protocol too is always evolving.
 
 This leads to confusion about which set of XEPs are "current", which are required
