@@ -277,7 +277,8 @@ while more advanced clients could publish more details via XEP-0292.
 Use widely supported format such as PNG or JPEG.
 
 The avatar must fit within stanza size restrictions, after being base64-encoded and wrapped in
-protocol.
+protocol.  Recommended to keep the avatar no larger than 72 KiB which would keep resulting stanzas
+under 100 KiB.
 
 ### Access control
 
