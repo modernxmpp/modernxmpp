@@ -135,7 +135,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#avatars" class="nav-link">Avatars</a>
+            <li class="nav-item" data-level="2"><a href="#user-profiles" class="nav-link">User Profiles</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -359,8 +359,48 @@ is required (and HTTP Upload does not suffice for some reason).</p>
 <li>Does not work for sharing a file with multiple people (e.g. in a group chat)</li>
 <li>Only works if the recipient is online</li>
 </ul>
-<h2 id="avatars">Avatars<a class="headerlink" href="#avatars" title="Permanent link">&para;</a></h2>
-<p>TODO</p>
+<h2 id="user-profiles">User Profiles<a class="headerlink" href="#user-profiles" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://xmpp.org/extensions/xep-0163.html">XEP-0163</a> is the base publishing method.</li>
+<li><a href="https://xmpp.org/extensions/xep-0222.html">XEP-0222</a> for access controls.</li>
+<li><a href="https://xmpp.org/extensions/xep-0084.html">XEP-0084</a> for profile picture.</li>
+<li><a href="https://xmpp.org/extensions/xep-0172.html">XEP-0172</a> for nickname.</li>
+<li><a href="https://xmpp.org/extensions/xep-0292.html">XEP-0292</a> for extended details (optional).</li>
+</ul>
+<p>Simpler clients may choose to only use XEP-0084 and XEP-0172 to provide a limited user profile,
+while more advanced clients could publish more details via XEP-0292.</p>
+<h3 id="avatars">Avatars<a class="headerlink" href="#avatars" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Do</strong> publish avatars via XEP-0084.</li>
+<li><strong>Do not</strong> publish avatars via XEP-0292.</li>
+</ul>
+<h4 id="format-and-size-considerations">Format and size considerations<a class="headerlink" href="#format-and-size-considerations" title="Permanent link">&para;</a></h4>
+<p>Use widely supported format such as PNG or JPEG.</p>
+<p>The avatar must fit within stanza size restrictions, after being base64-encoded and wrapped in
+protocol.  Recommended to keep the avatar no larger than 72 KiB which would keep resulting stanzas
+under 100 KiB.</p>
+<h3 id="access-control">Access control<a class="headerlink" href="#access-control" title="Permanent link">&para;</a></h3>
+<p>Data published via <a href="https://xmpp.org/extensions/xep-0163.html">XEP-0163</a> would by default be
+available only to the user's contacts. Historically, profiles published via the legacy
+<a href="https://xmpp.org/extensions/xep-0054.html">XEP-0054</a> method were public.</p>
+<p>Modern PEP implementations should implement for 'access model' as described by
+<a href="https://xmpp.org/extensions/xep-0222.html">XEP-0222</a>, and allow users to share or limit their
+personal details as they choose.</p>
+<p>Access model for both XEP-0084 nodes and the XEP-0172 node should be kept the same.</p>
+<p>Access to the full XEP-0292 profile, if supported, may be configured separately or via a tri-state
+such as:</p>
+<ul>
+<li>Everything contacts only</li>
+<li>Public picture and nickname, private profile</li>
+<li>Everything public</li>
+</ul>
+<h3 id="legacy">Legacy<a class="headerlink" href="#legacy" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://xmpp.org/extensions/xep-0054.html">XEP-0054</a> is the legacy profile publishing method.</li>
+<li><a href="https://xmpp.org/extensions/xep-0153.html">XEP-0153</a> notifies contacts about avatar changes.</li>
+<li><a href="https://xmpp.org/extensions/xep-0398.html">XEP-0398</a> tells you whether you can ignore that and
+    let the server do it for you.</li>
+</ul>
 <h2 id="group-chat">Group chat<a class="headerlink" href="#group-chat" title="Permanent link">&para;</a></h2>
 <p>See <a href="../groupchat/">Group Chat</a>.</p>
 <h2 id="contact-management">Contact management<a class="headerlink" href="#contact-management" title="Permanent link">&para;</a></h2>
