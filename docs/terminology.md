@@ -9,6 +9,7 @@ terms.
 | Occupant                         | *Participant*                                                        |
 | JID                              | *Address* or *XMPP address*                                          |
 | Roster                           | *Contact list*                                                       |
+| Avatar                           | *Profile picture*                                                    |
 
 **Note:** The recommendations only apply to user-facing text, such as application UIs and other content directed towards end users. There is no intent to change the language used by developers for discussing protocol elements[^rationale-dev-terms]. This is why you will still see terms such as "JID" used across the developer-oriented documentation of this project, for example.
 
@@ -26,6 +27,7 @@ At the moment, this table intends to support discussing the translation of key t
 | Participant             | Teilnehmer     | Participant       | Participantes      | Participantes      |
 | Address or XMPP address | XMPP-Adresse   | Adresse XMPP      | Dirección XMPP     | Endereço XMPP      |
 | Contact list            | Kontaktliste   | Liste de contacts | Lista de contactos | Lista de contactos |
+| Profile picture         |                |                   |                    |                    |
 
 You’ll find more terms in the [term overview](/translation-discussion).
 
