@@ -3,12 +3,14 @@
 To reduce user confusion when switching between clients, it is good to use only recommended
 terms.
 
-| Historic terms                   | Recommended terms                                                    |
+| Historic/protocol terms          | Recommended user-facing terms                                        |
 |----------------------------------|----------------------------------------------------------------------|
 | MUC, Room, Chatroom, Conference  | *Group chat* or *Channel*[^rationale-gc] (see [Multi-user Chats][])  |
 | Occupant                         | *Participant*                                                        |
 | JID                              | *Address* or *XMPP address*                                          |
 | Roster                           | *Contact list*                                                       |
+
+**Note:** The recommendations only apply to user-facing text, such as application UIs and other content directed towards end users. There is no intent to change the language used by developers for discussing protocol elements[^rationale-dev-terms]. This is why you will still see terms such as "JID" used across the developer-oriented documentation of this project, for example.
 
 ## Translation
 
@@ -34,3 +36,5 @@ You’ll find more terms in the [term overview](/translation-discussion).
 [^rationale-gc]: Rationale [group chat terminology](/rationale#terminology)
 
 [Multi-user Chats]: client/groupchat.md
+
+[^rationale-dev-terms]: General agreement is that this would only cause confusion, for little gain. See e.g. discussion at https://github.com/modernxmpp/modernxmpp/pull/23
