@@ -27,5 +27,7 @@ site_description: >-
   quality of user-to-user messaging applications
   that use XMPP
 
+copyright: "CC-BY-SA 4.0"
+
 extra_css:
   - 'css/modernxmpp.css'
