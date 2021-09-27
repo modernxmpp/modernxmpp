@@ -153,6 +153,12 @@ read on another device.
 - [XEP-0333](https://xmpp.org/extensions/xep-0333.html): Chat Markers -
   to signal that messages have been shown to the user.
 
+### Notifications
+
+Avoid notifications while activity from another client is detected via
+Carbons. Combine with Chat Marker tracking to determine whether to
+notify after activity ceases, with some timeout.
+
 ## File transfer
 
 Transferring a file from A to B is surprisingly a non-trivial problem for the internet, it seems.
