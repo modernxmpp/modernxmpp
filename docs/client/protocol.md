@@ -141,6 +141,24 @@ ensuring reliable message delivery and reporting.
 - [XEP-0184](https://xmpp.org/extensions/xep-0184.html) - end-to-end acknowledgement, i.e. the recipient has successfully received the message
 - [XEP-0198](https://xmpp.org/extensions/xep-0198.html) - hop-to-hop acknowledgement, and allows efficient resume of broken connections without data loss
 
+## Read state synchronization
+
+[Multi-device][#multi-device] support is all well and good but one thing
+that further improves the experience is not having to dismiss
+notifications and unread counters for messages that have already been
+read on another device.
+
+- [XEP-0280](https://xmpp.org/extensions/xep-0280.html): Carbon copies
+  of replies, implying that prior messages have been read.
+- [XEP-0333](https://xmpp.org/extensions/xep-0333.html): Chat Markers -
+  to signal that messages have been shown to the user.
+
+### Notifications
+
+Avoid notifications while activity from another client is detected via
+Carbons. Combine with Chat Marker tracking to determine whether to
+notify after activity ceases, with some timeout.
+
 ## File transfer
 
 Transferring a file from A to B is surprisingly a non-trivial problem for the internet, it seems.
