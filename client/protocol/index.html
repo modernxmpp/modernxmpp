@@ -131,6 +131,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#read-state-synchronization" class="nav-link">Read state synchronization</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#file-transfer" class="nav-link">File transfer</a>
               <ul class="nav flex-column">
               </ul>
@@ -262,6 +266,21 @@ ensuring reliable message delivery and reporting.</p>
 <li><a href="https://xmpp.org/extensions/xep-0184.html">XEP-0184</a> - end-to-end acknowledgement, i.e. the recipient has successfully received the message</li>
 <li><a href="https://xmpp.org/extensions/xep-0198.html">XEP-0198</a> - hop-to-hop acknowledgement, and allows efficient resume of broken connections without data loss</li>
 </ul>
+<h2 id="read-state-synchronization">Read state synchronization<a class="headerlink" href="#read-state-synchronization" title="Permanent link">&para;</a></h2>
+<p>[Multi-device][#multi-device] support is all well and good but one thing
+that further improves the experience is not having to dismiss
+notifications and unread counters for messages that have already been
+read on another device.</p>
+<ul>
+<li><a href="https://xmpp.org/extensions/xep-0280.html">XEP-0280</a>: Carbon copies
+  of replies, implying that prior messages have been read.</li>
+<li><a href="https://xmpp.org/extensions/xep-0333.html">XEP-0333</a>: Chat Markers -
+  to signal that messages have been shown to the user.</li>
+</ul>
+<h3 id="notifications">Notifications<a class="headerlink" href="#notifications" title="Permanent link">&para;</a></h3>
+<p>Avoid notifications while activity from another client is detected via
+Carbons. Combine with Chat Marker tracking to determine whether to
+notify after activity ceases, with some timeout.</p>
 <h2 id="file-transfer">File transfer<a class="headerlink" href="#file-transfer" title="Permanent link">&para;</a></h2>
 <p>Transferring a file from A to B is surprisingly a non-trivial problem for the internet, it seems.</p>
 <p>A number of approaches have been tried in XMPP. They are documented here, and fall into two categories:
