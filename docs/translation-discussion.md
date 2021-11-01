@@ -11,6 +11,7 @@ Client        | Service
 Conversations | [Transifex](https://www.transifex.com/siacs/conversations/)
 converse.js   | [Weblate](https://hosted.weblate.org/projects/conversejs/)
 Dino          | [Weblate](https://hosted.weblate.org/projects/dino/)
+Monal         | [Weblate](https://hosted.weblate.org/projects/monal/)
 Gajim         | [Weblate](https://translate.gajim.org/)
 PSI(+)        | [Transifex](https://www.transifex.com/tehnick/psi-plus/)
 Swift         | [swift.im git](https://swift.im/git/swift/tree/Swift/Translations)
