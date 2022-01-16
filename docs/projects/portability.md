@@ -14,6 +14,11 @@ open-source communication software.
 - **May 2021:** Research and document drafting.
 - **June 2021:** XEP-0227 revision 1.1 [has been submitted](https://github.com/xsf/xeps/pull/1064) to the XSF. A new proto-XEP "Moved 2.0" [has also been submitted](https://xmpp.org/extensions/inbox/moved2.html). Both submissions are awaiting approval from the [XSF technical council](https://xmpp.org/about/xmpp-standards-foundation.html#council).
 - **July 2021:** A beta web-based [XMPP account migrator](https://migrate.modernxmpp.org/) is now online!
+- **August 2021:** Initial implementation in Prosody, as [mod_storage_xep0227](https://prosody.im/doc/modules/mod_storage_xep0227) and [mod_auto_moved](https://modules.prosody.im/mod_auto_moved).
+- **September 2021:** Implementation work continues, meanwhile the XSF approved and published the updated version (1.1) of XEP-0227. Also ejabberd, another popular server implementation, [gains support for the new XEP-0227 features](https://github.com/processone/ejabberd/issues/3676).
+- **October 2021:** The project is evaluated by the DAPSI team, and approved to continue to the second phase! Work on implementation and testing in Prosody continues.
+- **Nov/Dec 2021:** Implementation in Snikket begins, including a friendly user interface to download and import account data.
+- **January 2022:** Finish implementation and submit documentation for final evaluation by DAPSI.
 
 <div style="display:flex; flex-direction: column;">
   <div>
