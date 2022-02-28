@@ -101,16 +101,14 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#registration-protocol" class="nav-link">Registration protocol</a>
+            <li class="nav-item" data-level="2"><a href="#protocols" class="nav-link">Protocols</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-level="1"><a href="#creating-an-invitation" class="nav-link">Creating an invitation</a>
+            <li class="nav-item" data-level="2"><a href="#creating-an-invitation" class="nav-link">Creating an invitation</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#guidance-for-landing-pages" class="nav-link">Guidance for landing pages</a>
               <ul class="nav flex-column">
               </ul>
@@ -123,25 +121,41 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="registration-through-invitation">Registration through invitation<a class="headerlink" href="#registration-through-invitation" title="Permanent link">&para;</a></h1>
+<p>It is possible to create invitation links in XMPP. There are currently a few
+types of invitation possible, e.g. you may be invited to register on a server,
+or be invited to add someone as a contact, or both.</p>
 <h2 id="invitation-types">Invitation types<a class="headerlink" href="#invitation-types" title="Permanent link">&para;</a></h2>
+<p>There are three types of invitation:</p>
+<ul>
+<li><a href="#account-only">Account-only</a></li>
+<li><a href="#subscription-only">Subscription-only</a></li>
+<li><a href="#account-and-subscription">Account-and-subscription</a></li>
+</ul>
+<p>They are described individually in the following sections.</p>
 <h3 id="account-only">Account-only<a class="headerlink" href="#account-only" title="Permanent link">&para;</a></h3>
-<p>Invitation to register an account on a given domain:</p>
+<p>This type of invitation can be used by server operators to allow
+people to create accounts on their server, without needing to open up
+registration to the public.</p>
+<h4 id="format">Format<a class="headerlink" href="#format" title="Permanent link">&para;</a></h4>
+<p>Invitation to register an account on a given domain (e.g. 'example.com'):</p>
 <pre><code>xmpp:example.com?register;preauth=3c7efeafc1bb10d034
 </code></pre>
-<p>or an invitation to register an account with a <strong>specific</strong> username
-only:</p>
+<p>or an invitation to register an account with a <strong>specific</strong> username (e.g.
+'romeo') only:</p>
 <pre><code>xmpp:romeo@example.com?register;preauth=3c7efeafc1bb10d034
 </code></pre>
-<p>See the <em>Registration protocol</em> section of this document for how to
-handle this type of invitation.</p>
+<p>See <a href="https://xmpp.org/extensions/xep-0445.html" title="Pre-Authenticated In-Band Registration">XEP-0445</a> for how to register an account using this type of invitation.</p>
 <h3 id="subscription-only">Subscription-only<a class="headerlink" href="#subscription-only" title="Permanent link">&para;</a></h3>
+<p>This invitation type can be shared with someone who you would
+like to add you as a contact. Unlike a normal XMPP subscription request, these
+invitations can be shared to people via any mechanism (e.g. email, SMS, web)
+and if you don't know the recipient's XMPP address or they don't yet have one.</p>
 <p>A potential contact invites you to communicate with them:</p>
 <pre><code>xmpp:contact@example.com?roster;preauth=3c7efeafc1bb10d034
 </code></pre>
 <p>The protocol to handle this type of invitation is specified in
-<a href="https://xmpp.org/extensions/xep-0379.html">XEP-0379: Pre-authenticated Roster Subscriptions</a>.
-After following the protocol, you will have a mutual presence subscription
-with <code>contact@example.com</code>.</p>
+<a href="https://xmpp.org/extensions/xep-0379.html" title="Pre-Authenticated Roster Subscription">XEP-0379</a>. After following the protocol, you will have a mutual presence
+subscription with <code>contact@example.com</code>.</p>
 <p>If the user does not currently have an account, the client must walk
 them through the account registration process on a suitable XMPP service.</p>
 <h3 id="account-and-subscription">Account-and-subscription<a class="headerlink" href="#account-and-subscription" title="Permanent link">&para;</a></h3>
@@ -150,59 +164,35 @@ are able to use the token to also register an account on the contact's
 domain, signalled by the presence of <code>ibr=y</code> in the URI parameters:</p>
 <pre><code>xmpp:contact@example.com?roster;preauth=3c7efeafc1bb10d034;ibr=y
 </code></pre>
-<p>If the recipient of such an invite does not yet have an account, the
+<p>If the recipient of such an invite does not yet have an XMPP account, their
 client should follow the <em>Registration protocol</em> section of this document.
 After completing the registration, the user will automatically be subscribed
 to the sender of the invitation.</p>
 <p>If the recipient already has an XMPP account, the invitation should be
 handled the same as a subscription-only invitation documented above,
-and follow the protocol defined in <a href="https://xmpp.org/extensions/xep-0379.html">XEP-0379</a>.</p>
-<h1 id="registration-protocol">Registration protocol<a class="headerlink" href="#registration-protocol" title="Permanent link">&para;</a></h1>
-<p>Server sends stream features:</p>
-<pre><code class="language-xml">&lt;stream:features&gt;
-  &lt;mechanisms xmlns='urn:xmpp:sasl:0'&gt;
-    &lt;mechanism&gt;EXTERNAL&lt;/mechanism&gt;
-    &lt;mechanism&gt;SCRAM-SHA-1-PLUS&lt;/mechanism&gt;
-    &lt;mechanism&gt;SCRAM-SHA-1&lt;/mechanism&gt;
-    &lt;mechanism&gt;PLAIN&lt;/mechanism&gt;
-  &lt;/mechanisms&gt;
-  &lt;register xmlns='urn:xmpp:invite'/&gt;
-  &lt;register xmlns='http://jabber.org/features/iq-register'/&gt;
-&lt;/stream:features&gt;
-</code></pre>
-<p>Client sees that registration through token is supported,
-and initiates the registration flow:</p>
-<pre><code class="language-xml">&lt;iq type=&quot;set&quot; to=&quot;example.com&quot; id=&quot;pa1&quot;&gt;
-  &lt;preauth xmlns='urn:xmpp:pars:0' token='3c7efeafc1bb10d034' /&gt;
-&lt;/iq&gt;
-</code></pre>
-<p>Upon receiving the preauth request, the server should validate that the
-token is acceptable for account registration. However single-use tokens
-MUST NOT be considered used until the actual registration has succeeded.</p>
-<p>In addition, if the token has an expiration time, it MUST only be checked
-at this point. Subsequent actions performed by the client during the current
-session that require a valid token MUST NOT be rejected due to token expiry.</p>
-<p>Server responds with success, and indicates
-the client may now proceed with account registration:</p>
-<pre><code class="language-xml">&lt;iq type=&quot;result&quot; from=&quot;example.com&quot; id=&quot;pa1&quot; /&gt;
-</code></pre>
-<p>If the token provided by the client was unknown, invalid or expired, the
-server should return an appropriate error to the client:</p>
-<pre><code class="language-xml">&lt;iq type=&quot;error&quot; from=&quot;example.com&quot; id=&quot;pa1&quot;&gt;
-  &lt;error type='cancel'&gt;
-    &lt;item-not-found xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/&gt;
-    &lt;text&gt;The provided token is invalid or expired&lt;/text&gt;
-  &lt;/error&gt;
-&lt;/iq&gt;
-</code></pre>
-<p>In the success case, the client proceeds with registration using e.g.
-XEP-0077 in the normal way.</p>
-<h1 id="creating-an-invitation">Creating an invitation<a class="headerlink" href="#creating-an-invitation" title="Permanent link">&para;</a></h1>
-<p>Users may request an invite (suitable for sharing to a desired new contact)
-by using the ad-hoc command defined in <a href="https://xmpp.org/extensions/xep-0401.html#create-invitation">XEP-0401: Easy User Onboarding</a>.</p>
-<p>The server will provide at minimum an <code>xmpp:</code> URI that can be interpreted by any compatible XMPP client. However this URI SHOULD NOT be shared directly by clients. It is generally likely that the recipient of an invite does not yet have an XMPP client installed and configured.</p>
-<p>If the server provides a <code>landing-url</code> in the response, the client SHOULD share this URL with contacts. Otherwise it SHOULD use the URI in combination with a landing page (which may be hosted by the client developer or other entity) to generate a <code>https://</code> URL suitable for sharing. An example landing page can be found at <a href="https://github.com/ge0rg/easy-xmpp-invitation">ge0rg/easy-xmpp-invitation</a>.</p>
-<p>Sharing the URL can be done by visually displaying a QR code on the user's screen (if the contact is in physical proximity) or e.g. through the platform's own sharing mechanism (to share via SMS, email, social apps, etc.)</p>
+and follow the protocol defined in <a href="https://xmpp.org/extensions/xep-0379.html" title="Pre-Authenticated Roster Subscription">XEP-0379</a>.</p>
+<h2 id="protocols">Protocols<a class="headerlink" href="#protocols" title="Permanent link">&para;</a></h2>
+<p>There are three standards governing the creation and consumption of invitations:</p>
+<ul>
+<li><a href="https://xmpp.org/extensions/xep-0401.html" title="Ad-hoc Account Invitation Generation">XEP-0401</a> - describes how to create new invitations (of all types).</li>
+<li><a href="https://xmpp.org/extensions/xep-0445.html" title="Pre-Authenticated In-Band Registration">XEP-0445</a> - describes how to register an account using an account-only or account-and-subscription invitation.</li>
+<li><a href="https://xmpp.org/extensions/xep-0379.html" title="Pre-Authenticated Roster Subscription">XEP-0379</a> - describes how to convert an invitation (subscription-only or account-and-subscription types) into a roster subscription.</li>
+</ul>
+<h3 id="registration-protocol">Registration protocol<a class="headerlink" href="#registration-protocol" title="Permanent link">&para;</a></h3>
+<p>The account-only and account-and-subscription invitation types allow a recipient
+to create an account on a server (which may otherwise have closed registration).
+XMPP clients can use these invitation types to create an account by following
+the protocol in <a href="https://xmpp.org/extensions/xep-0445.html" title="Pre-Authenticated In-Band Registration">XEP-0445</a>.</p>
+<h2 id="creating-an-invitation">Creating an invitation<a class="headerlink" href="#creating-an-invitation" title="Permanent link">&para;</a></h2>
+<p>To create an invitation, use <a href="https://xmpp.org/extensions/xep-0401.html" title="Ad-hoc Account Invitation Generation">XEP-0401: Ad-hoc Account Invitation Generation</a>.
+Your server may also provide a mechanism (e.g. web interface or command-line
+utility) to create invitations.</p>
+<p>Services may restrict the types of invitation that can be created, depending
+on policy. E.g. private servers may allow anyone to create contact invitations,
+but only allow administrators to create account invitations.</p>
+<p>When using XEP-0401, the server will provide at minimum an <code>xmpp:</code> URI that can be interpreted by any compatible XMPP client. However this URI SHOULD NOT be shared directly by clients. It is generally likely that the recipient of an invite does not yet have an XMPP client installed and configured.</p>
+<p>Instead, if the server provides a <code>landing-url</code> in the response, the client SHOULD share this URL with contacts. Otherwise it SHOULD use the URI in combination with a landing page (which may be hosted by the client developer or other entity) to generate a <code>https://</code> URL suitable for sharing. One such landing page implementation can be found at <a href="https://github.com/ge0rg/easy-xmpp-invitation">ge0rg/easy-xmpp-invitation</a>.
+Sharing the URL can be done by visually displaying a QR code on the user's screen (if the contact is in physical proximity) or e.g. through the platform's own sharing mechanism (to share via SMS, email, social apps, etc.)</p>
 <h2 id="guidance-for-landing-pages">Guidance for landing pages<a class="headerlink" href="#guidance-for-landing-pages" title="Permanent link">&para;</a></h2>
 <p>As well as embedding the XMPP URI in a visually obvious clickable/tappable element (e.g. a button), it should include text and download links for compatible XMPP clients.</p>
 <p>If it is possible for a particular platform's download links to automatically relay the <code>xmpp:</code> URI to the installed app, that should be implemented. See for example <a href="https://developer.android.com/google/play/installreferrer/">Google Play Install Referrer</a>.</p>
