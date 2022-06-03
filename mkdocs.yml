@@ -9,6 +9,7 @@ nav:
   - 'Terminology': terminology.md
   - 'Projects':
     - 'Account portability': projects/portability.md
+    - 'Modern auth': projects/auth.md
 
 markdown_extensions:
   - admonition
