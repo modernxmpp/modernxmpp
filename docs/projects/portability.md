@@ -8,7 +8,20 @@ process, as well as a reference implementation. Finally, the work will be
 integrated into [Snikket](https://snikket.org/), a suite of XMPP-based
 open-source communication software.
 
-**Updates**
+This project was officially completed in January 2022. The results of the
+project are all open-source and publicly available, now living on in their
+various places:
+
+- **Standards:** [XEP-0227: Portable Import/Export Format for XMPP-IM Servers](https://xmpp.org/extensions/xep-0227.html), [XEP-0283: Moved](https://xmpp.org/extensions/xep-0283.html)
+- **Snikket:** The [January 2022 Snikket server release](https://snikket.org/blog/jan-2022-server-release/)
+    added account import and export functionality.
+- **Prosody:** The work resulted in creating/updating several modules: [mod_storage_xep0227](https://prosody.im/doc/modules/mod_storage_xep0227),
+    [mod_http_xep227](https://modules.prosody.im/mod_http_xep227), [mod_auto_moved](https://modules.prosody.im/mod_auto_moved).
+- **Web-based account migrator:** https://migrate.modernxmpp.org/ ([source](https://github.com/snikket-im/xmpp-account-exporter))
+
+A detailed report of the project results, as submitted to DAPSI (who funded the project), is available as a PDF: [XPORTA Project Final Evaluation.pdf (75KB)](/files/XPORTA%20Project%20Final%20Evaluation.pdf)
+
+**Timeline**
 
 - **April 2021:** Read the project announcement on the [Snikket blog](https://snikket.org/blog/dapsi-fund-account-portability/)!
 - **May 2021:** Research and document drafting.
