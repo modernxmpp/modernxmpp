@@ -33,7 +33,8 @@ encouraged to explore the new extensions at appropriate points in the project.
 
 **Updates**
 
-- **June 2022:** The project is just getting started! The primary source for updates will be [Prosody's blog](https://blog.prosody.im/).
+- **June 2022:** The project is just getting started! The primary source for updates will be [Prosody's blog](https://blog.prosody.im/modern-xmpp-auth/).
+- **August 2022:** The first milestone has been completed - support for per-session [roles and dynamic permissions in Prosody](https://blog.prosody.im/role-auth/)..
 
 <div style="display:flex; flex-direction: column;">
   <div>
