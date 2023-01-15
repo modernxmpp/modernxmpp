@@ -8,7 +8,7 @@ The following tables are gathering the various translations of key terms in (a l
 
 Client        | Service
 --------------|-------------------------------------------------------------------
-Conversations | [Transifex](https://www.transifex.com/siacs/conversations/)
+Conversations | [Weblate](https://translate.codeberg.org/projects/conversations/)
 converse.js   | [Weblate](https://hosted.weblate.org/projects/conversejs/)
 Dino          | [Weblate](https://hosted.weblate.org/projects/dino/)
 Monal         | [Weblate](https://hosted.weblate.org/projects/monal/)
