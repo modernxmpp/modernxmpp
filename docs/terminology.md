@@ -20,14 +20,14 @@ This table of terms (German, French and Spanish to begin with) aims to be a refe
 
 At the moment, this table intends to support discussing the translation of key terms. [Discuss with us!](xmpp:modernxmpp@rooms.modernxmpp.org?join)
 
-| English term            | German         | French            | Spanish            | Portuguese         |
-|-------------------------|----------------|-------------------|--------------------|--------------------|
-| Group chat              | Gruppenchat    | Groupe            | Grupo de chat      | Grupo de conversa  |
-| Channel                 | Channel        | Salon             | Canal              | Canal              |
-| Participant             | Teilnehmer     | Participant       | Participantes      | Participantes      |
-| Address or XMPP address | XMPP-Adresse   | Adresse XMPP      | Dirección XMPP     | Endereço XMPP      |
-| Contact list            | Kontaktliste   | Liste de contacts | Lista de contactos | Lista de contactos |
-| Profile picture         |                |                   |                    |                    |
+| English term            | German         | French            | Spanish            | Portuguese         | Japanese         |
+|-------------------------|----------------|-------------------|--------------------|--------------------|------------------|
+| Group chat              | Gruppenchat    | Groupe            | Grupo de chat      | Grupo de conversa  | グループチャット |
+| Channel                 | Channel        | Salon             | Canal              | Canal              | チャンネル       |
+| Participant             | Teilnehmer     | Participant       | Participantes      | Participantes      | 参加者           |
+| Address or XMPP address | XMPP-Adresse   | Adresse XMPP      | Dirección XMPP     | Endereço XMPP      | XMPPアドレス     |
+| Contact list            | Kontaktliste   | Liste de contacts | Lista de contactos | Lista de contactos | 連絡帳           |
+| Profile picture         | Profilbild     |                   |                    |                    | プロフィーロ写真 |
 
 You’ll find more terms in the [term overview](/translation-discussion).
 
