@@ -33,7 +33,7 @@ yaxim         | [launchpad.net](https://translations.launchpad.net/yaxim/master)
 | moderator            | Moderator                     | Moderator                     | -                      | Moderator                 | Moderator                    | Moderator           | -                                 |
 | participant          | Teilnehmer                    | Teilnehmer                    | members ?              | Teilnehmer                | Teilnehmer                   | Teilnehmer          | Teilnehmer                        |
 | kick                 | ausschließen?                 | hinauswerfen                  | hinauswerfen           | rauswerfen                | rauswerfen                   | rausschmeißen       | kick                              |
-| ban                  | ausschließen?                 | entfernen                     | -                      | sperren                   | verbannen                    | verbannen           | ban                               |
+| ban                  | ausschließen                 | entfernen                     | -                      | sperren                   | verbannen                    | verbannen           | ban                               |
 | affiliation          | Rechte?                       | Zugehörigkeit                 | -                      | Gruppenzugehörigkeit      | Mitgliedschaft, Angliederung | Zugehörigkeit       | -                                 |
 | owner                | Eigentümer                    | Eigentümer                    | Eigentümer             | Eigentümer                | Besitzer                     | Besitzer            | -                                 |
 | admin                | Administrator                 | Admin                         | Administrator          | Administrator             | Administrator                | Administrator       | -                                 |
@@ -47,7 +47,7 @@ yaxim         | [launchpad.net](https://translations.launchpad.net/yaxim/master)
 | chat                 | Unterhaltung                  | Chat                          | Unterhaltung           | Chat                      | Chat                         | Chat                | (Unterhaltung)                    |
 | read receipts        | Lese- und Empfangsbestätigung | -                             | Lesebestätigungen      | Empfangsbestätigungen     | Übermittlungsbestätigung     | Empfangsbestätigung | -                                 |
 | typing notifications | Tipp-Benachrichtigung         | -                             | Tippbenachrichtigungen | Chatstatus                | Tipp-Benachrichtigung        | -                   | -                                 |
-| avatar               | Avatar                        | Avatarbild                    | -                      | Kontaktbild               | Avatar                       | Bild                | -                                 |
+| avatar               | Profilbild                        | Avatarbild                    | Profilbild                      | Kontaktbild               | Avatar                       | Bild                | -                                 |
 
 ### Recommended translation
 
