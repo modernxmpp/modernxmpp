@@ -12,13 +12,10 @@
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
         <link href="../../css/modernxmpp.css" rel="stylesheet">
-
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
     </head>
 
     <body>
@@ -142,70 +139,70 @@
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="left">MUC Configuration variable (1)</th>
-<th align="left">Group chat</th>
-<th align="left">Disco Feature (2)</th>
-<th align="left">Channel</th>
-<th align="left">Disco Feature (2)</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">MUC Configuration variable (1)</th>
+<th style="text-align: left;">Group chat</th>
+<th style="text-align: left;">Disco Feature (2)</th>
+<th style="text-align: left;">Channel</th>
+<th style="text-align: left;">Disco Feature (2)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Persistent</td>
-<td align="left">muc#roomconfig_persistentroom</td>
-<td align="left">Yes</td>
-<td align="left">muc_persistent</td>
-<td align="left">Yes</td>
-<td align="left">muc_persistent</td>
+<td style="text-align: left;">Persistent</td>
+<td style="text-align: left;">muc#roomconfig_persistentroom</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">muc_persistent</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">muc_persistent</td>
 </tr>
 <tr>
-<td align="left">MAM enabled</td>
-<td align="left"><strong>Prosody</strong> muc#roomconfig_enablearchiving<br><strong>ejabberd community</strong>: mam<br><strong>ejabberd saas</strong> muc#roomconfig_mam</td>
-<td align="left">Yes</td>
-<td align="left">urn:xmpp:mam:2</td>
-<td align="left">Yes</td>
-<td align="left">urn:xmpp:mam:2</td>
+<td style="text-align: left;">MAM enabled</td>
+<td style="text-align: left;"><strong>Prosody</strong> muc#roomconfig_enablearchiving<br><strong>ejabberd community</strong>: mam<br><strong>ejabberd saas</strong> muc#roomconfig_mam</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">urn:xmpp:mam:2</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">urn:xmpp:mam:2</td>
 </tr>
 <tr>
-<td align="left">Subject editable</td>
-<td align="left">muc#roomconfig_changesubject</td>
-<td align="left">No</td>
-<td align="left">muc#roomconfig_changesubject to <code>false</code></td>
-<td align="left">No</td>
-<td align="left">muc#roomconfig_changesubject to <code>false</code></td>
+<td style="text-align: left;">Subject editable</td>
+<td style="text-align: left;">muc#roomconfig_changesubject</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">muc#roomconfig_changesubject to <code>false</code></td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">muc#roomconfig_changesubject to <code>false</code></td>
 </tr>
 <tr>
-<td align="left">Members-only</td>
-<td align="left">muc#roomconfig_membersonly</td>
-<td align="left">Yes (3)</td>
-<td align="left">muc_membersonly</td>
-<td align="left">No</td>
-<td align="left">muc_open</td>
+<td style="text-align: left;">Members-only</td>
+<td style="text-align: left;">muc#roomconfig_membersonly</td>
+<td style="text-align: left;">Yes (3)</td>
+<td style="text-align: left;">muc_membersonly</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">muc_open</td>
 </tr>
 <tr>
-<td align="left">JIDs revealed</td>
-<td align="left">muc#roomconfig_whois</td>
-<td align="left">Yes (3)</td>
-<td align="left">muc_nonanonymous</td>
-<td align="left">No</td>
-<td align="left">muc_semianonymous</td>
+<td style="text-align: left;">JIDs revealed</td>
+<td style="text-align: left;">muc#roomconfig_whois</td>
+<td style="text-align: left;">Yes (3)</td>
+<td style="text-align: left;">muc_nonanonymous</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">muc_semianonymous</td>
 </tr>
 <tr>
-<td align="left">Publicly listed</td>
-<td align="left">muc#roomconfig_publicroom</td>
-<td align="left">No  (3)</td>
-<td align="left">muc_hidden</td>
-<td align="left">Yes</td>
-<td align="left">muc_public</td>
+<td style="text-align: left;">Publicly listed</td>
+<td style="text-align: left;">muc#roomconfig_publicroom</td>
+<td style="text-align: left;">No  (3)</td>
+<td style="text-align: left;">muc_hidden</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">muc_public</td>
 </tr>
 <tr>
-<td align="left">PMs</td>
-<td align="left">muc#roomconfig_allowpm</td>
-<td align="left">No  (3)</td>
-<td align="left">muc#roomconfig_allowpm to <code>none</code></td>
-<td align="left">Yes</td>
-<td align="left">muc#roomconfig_allowpm to <code>anyone</code></td>
+<td style="text-align: left;">PMs</td>
+<td style="text-align: left;">muc#roomconfig_allowpm</td>
+<td style="text-align: left;">No  (3)</td>
+<td style="text-align: left;">muc#roomconfig_allowpm to <code>none</code></td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">muc#roomconfig_allowpm to <code>anyone</code></td>
 </tr>
 </tbody>
 </table>
@@ -228,31 +225,31 @@ recipient is in their roster).</p>
 <table>
 <thead>
 <tr>
-<th align="left">Affiliations</th>
-<th align="center">In group chats</th>
-<th align="center">In channels</th>
+<th style="text-align: left;">Affiliations</th>
+<th style="text-align: center;">In group chats</th>
+<th style="text-align: center;">In channels</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">none</td>
-<td align="center">N/A **</td>
-<td align="center">Guest</td>
+<td style="text-align: left;">none</td>
+<td style="text-align: center;">N/A **</td>
+<td style="text-align: center;">Guest</td>
 </tr>
 <tr>
-<td align="left">member</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: left;">member</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr>
-<td align="left">admin</td>
-<td align="center"><em>Admin</em> (*)</td>
-<td align="center">Admin</td>
+<td style="text-align: left;">admin</td>
+<td style="text-align: center;"><em>Admin</em> (*)</td>
+<td style="text-align: center;">Admin</td>
 </tr>
 <tr>
-<td align="left">owner</td>
-<td align="center">Owner</td>
-<td align="center">Owner</td>
+<td style="text-align: left;">owner</td>
+<td style="text-align: center;">Owner</td>
+<td style="text-align: center;">Owner</td>
 </tr>
 </tbody>
 </table>
@@ -365,12 +362,14 @@ Compatibility</a>).</p>
                 <p>CC-BY-SA 4.0</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
         <script>
             var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

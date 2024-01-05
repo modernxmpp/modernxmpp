@@ -12,13 +12,10 @@
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
         <link href="../../css/modernxmpp.css" rel="stylesheet">
-
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
     </head>
 
     <body>
@@ -192,18 +189,18 @@ it may use these.</p>
 <table>
 <thead>
 <tr>
-<th align="left">Option</th>
-<th align="left">Description</th>
+<th style="text-align: left;">Option</th>
+<th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">JID</td>
-<td align="left">The user's JID</td>
+<td style="text-align: left;">JID</td>
+<td style="text-align: left;">The user's JID</td>
 </tr>
 <tr>
-<td align="left">Password</td>
-<td align="left">The user's password</td>
+<td style="text-align: left;">Password</td>
+<td style="text-align: left;">The user's password</td>
 </tr>
 </tbody>
 </table>
@@ -212,22 +209,22 @@ it may use these.</p>
 <table>
 <thead>
 <tr>
-<th align="left">Option</th>
-<th align="left">Description</th>
+<th style="text-align: left;">Option</th>
+<th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Connect host</td>
-<td align="left">The network hostname to connect to</td>
+<td style="text-align: left;">Connect host</td>
+<td style="text-align: left;">The network hostname to connect to</td>
 </tr>
 <tr>
-<td align="left">Connect port</td>
-<td align="left">The network port to connect to</td>
+<td style="text-align: left;">Connect port</td>
+<td style="text-align: left;">The network port to connect to</td>
 </tr>
 <tr>
-<td align="left">TLS Mode<sup id="fnref:tls-mode"><a class="footnote-ref" href="#fn:tls-mode">2</a></sup></td>
-<td align="left">Multiple choice: "STARTTLS" or "Direct TLS"</td>
+<td style="text-align: left;">TLS Mode<sup id="fnref:tls-mode"><a class="footnote-ref" href="#fn:tls-mode">2</a></sup></td>
+<td style="text-align: left;">Multiple choice: "STARTTLS" or "Direct TLS"</td>
 </tr>
 </tbody>
 </table>
@@ -238,21 +235,21 @@ Clients that support other connection mechanisms, such as BOSH, SHOULD also impl
 <table>
 <thead>
 <tr>
-<th align="left">Option</th>
-<th align="left">Description</th>
-<th align="left">Notes</th>
+<th style="text-align: left;">Option</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Resource</td>
-<td align="left">The resource to request from the server</td>
-<td align="left">see <a href="../protocol/#resource-generation">Resource generation</a></td>
+<td style="text-align: left;">Resource</td>
+<td style="text-align: left;">The resource to request from the server</td>
+<td style="text-align: left;">see <a href="../protocol/#resource-generation">Resource generation</a></td>
 </tr>
 <tr>
-<td align="left">Priority</td>
-<td align="left">The priority to include in presence</td>
-<td align="left">0</td>
+<td style="text-align: left;">Priority</td>
+<td style="text-align: left;">The priority to include in presence</td>
+<td style="text-align: left;">0</td>
 </tr>
 </tbody>
 </table>
@@ -457,12 +454,14 @@ not an option, and TLS is always used. This option is about what style the serve
                 <p>CC-BY-SA 4.0</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
         <script>
             var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

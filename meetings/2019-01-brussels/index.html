@@ -12,13 +12,10 @@
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
         <link href="../../css/modernxmpp.css" rel="stylesheet">
-
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
     </head>
 
     <body>
@@ -257,54 +254,54 @@ Behavioral changes in impromptu MUCs (send chat states, display read markers, e2
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="center">Groupchat</th>
-<th align="center">Channel</th>
-<th align="center">Immutable for groupchats</th>
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Groupchat</th>
+<th style="text-align: center;">Channel</th>
+<th style="text-align: center;">Immutable for groupchats</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Members-only</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">X</td>
+<td style="text-align: left;">Members-only</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">X</td>
 </tr>
 <tr>
-<td align="left">Reveal JIDs</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">X</td>
+<td style="text-align: left;">Reveal JIDs</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">X</td>
 </tr>
 <tr>
-<td align="left">Publicly listed</td>
-<td align="center">No</td>
-<td align="center">Yes</td>
-<td align="center">X</td>
+<td style="text-align: left;">Publicly listed</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">X</td>
 </tr>
 <tr>
-<td align="left">Persistent</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center"></td>
+<td style="text-align: left;">Persistent</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr>
-<td align="left">MAM enabled</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center"></td>
+<td style="text-align: left;">MAM enabled</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr>
-<td align="left">Subject editable</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center"></td>
+<td style="text-align: left;">Subject editable</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr>
-<td align="left">PMs</td>
-<td align="center">No</td>
-<td align="center">Yes</td>
-<td align="center">X</td>
+<td style="text-align: left;">PMs</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">X</td>
 </tr>
 </tbody>
 </table>
@@ -313,31 +310,31 @@ Behavioral changes in impromptu MUCs (send chat states, display read markers, e2
 <table>
 <thead>
 <tr>
-<th align="left">Affiliations</th>
-<th align="center">In groupchats</th>
-<th align="center">In channels</th>
+<th style="text-align: left;">Affiliations</th>
+<th style="text-align: center;">In groupchats</th>
+<th style="text-align: center;">In channels</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">none</td>
-<td align="center">N/A **</td>
-<td align="center">Guest</td>
+<td style="text-align: left;">none</td>
+<td style="text-align: center;">N/A **</td>
+<td style="text-align: center;">Guest</td>
 </tr>
 <tr>
-<td align="left">member</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: left;">member</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr>
-<td align="left">admin</td>
-<td align="center"><em>Admin</em> (*)</td>
-<td align="center">Admin</td>
+<td style="text-align: left;">admin</td>
+<td style="text-align: center;"><em>Admin</em> (*)</td>
+<td style="text-align: center;">Admin</td>
 </tr>
 <tr>
-<td align="left">owner</td>
-<td align="center">Owner</td>
-<td align="center">Owner</td>
+<td style="text-align: left;">owner</td>
+<td style="text-align: center;">Owner</td>
+<td style="text-align: center;">Owner</td>
 </tr>
 </tbody>
 </table>
@@ -370,12 +367,14 @@ https://wiki.xmpp.org/web/Easy_Group_Chats</p></div>
                 <p>CC-BY-SA 4.0</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
         <script>
             var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
