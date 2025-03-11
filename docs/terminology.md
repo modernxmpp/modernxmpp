@@ -28,6 +28,7 @@ At the moment, this table intends to support discussing the translation of key t
 | Address or XMPP address | XMPP-Adresse   | Adresse XMPP      | Dirección XMPP     | Endereço XMPP      | XMPPアドレス     | عنوان XMPP     |
 | Contact list            | Kontaktliste   | Liste de contacts | Lista de contactos | Lista de contactos | 連絡帳           | جهات الاتصال    |
 | Profile picture         | Profilbild     |                   |                    |                    | プロフィーロ写真 | الصورة الشخصية |
+| Hats                    |                | Casquettes        |                    |                    |                  |                |
 
 You’ll find more terms in the [term overview](/translation-discussion).
 
