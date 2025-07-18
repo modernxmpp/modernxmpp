@@ -37,8 +37,8 @@ encouraged to explore the new extensions at appropriate points in the project.
 - **August 2022:** The first milestone has been completed - support for per-session [roles and dynamic permissions in Prosody](https://blog.prosody.im/role-auth/)..
 - **November 2022:** More project milestones achieved! We have unveiled a new secure token auth protocol, in tandem with an important overhaul of several authentication-related XEPs. Read more in our blog post, ["Bringing FASTer authentication to Prosody and XMPP"](https://blog.prosody.im/fast-auth/). Multiple clients have already been updated with support.
 - **August 2024:** Refining and documenting the implementations and protocols for third-party access and management took twice the time expected, but we have finally submitted the results to the XSF!
-    - XEP-xxxx: OAuth Client Login ([Submission](https://github.com/xsf/xeps/pull/1374) | [Rendered](https://matthewwild.co.uk/uploads/xeps-tmp/xep-oauth-client-login.html) | [Prosody implementation](https://modules.prosody.im/mod_http_oauth2))
-    - XEP-xxxx: Client Access Management ([Submission](https://github.com/xsf/xeps/pull/1375) | [Rendered](https://matthewwild.co.uk/uploads/xeps-tmp/xep-client-access-management.html) | [Prosody implementation](https://modules.prosody.im/mod_client_management))
+    - [XEP-0493: OAuth Client Login](https://xmpp.org/extensions/xep-0493.html) ([Submission](https://github.com/xsf/xeps/pull/1374) | [Prosody implementation](https://modules.prosody.im/mod_http_oauth2))
+    - [XEP-0494: Client Access Management](https://xmpp.org/extensions/xep-0494.html) ([Submission](https://github.com/xsf/xeps/pull/1375) | [Prosody implementation](https://modules.prosody.im/mod_client_management))
 
 <div style="display:flex; flex-direction: column;">
   <div>
