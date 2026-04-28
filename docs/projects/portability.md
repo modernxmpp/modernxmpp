@@ -17,7 +17,7 @@ various places:
     added account import and export functionality.
 - **Prosody:** The work resulted in creating/updating several modules: [mod_storage_xep0227](https://prosody.im/doc/modules/mod_storage_xep0227),
     [mod_http_xep227](https://modules.prosody.im/mod_http_xep227), [mod_auto_moved](https://modules.prosody.im/mod_auto_moved).
-- **Web-based account migrator:** https://migrate.modernxmpp.org/ ([source](https://github.com/snikket-im/xmpp-account-exporter))
+- **Web-based account migrator:** <https://migrate.modernxmpp.org/> ([source](https://github.com/snikket-im/xmpp-account-exporter))
 
 A detailed report of the project results, as submitted to DAPSI (who funded the project), is available as a PDF: [XPORTA Project Final Evaluation.pdf (75KB)](/files/XPORTA%20Project%20Final%20Evaluation.pdf)
 
