@@ -324,6 +324,12 @@ such as:
 -   [XEP-0398](https://xmpp.org/extensions/xep-0398.html) tells you whether you can ignore that and
     let the server do it for you.
 
+## Link Previews
+
+To ensure the privacy and security, XMPP prefers sender-included link metadata (instead of e.g. the server or the recipient automatically following links).
+
+The metadata syntax is described in [XEP-0511: Link Metadata](https://xmpp.org/extensions/xep-0511.html).
+
 ## Group chat
 
 See [Group Chat](../groupchat/).
